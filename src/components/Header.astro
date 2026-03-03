@@ -1,0 +1,156 @@
+---
+const categories = [
+  { name: 'Telefoane', slug: 'telefoane' },
+  { name: 'Tablete', slug: 'tablete' },
+  { name: 'Accesorii', slug: 'accesorii' },
+  { name: 'Sfaturi', slug: 'sfaturi' },
+  { name: 'Comparatii', slug: 'comparatii' },
+  { name: 'Oferte', slug: 'oferte' }
+];
+
+const navLinks = [
+  { name: 'Acasa', href: '/' },
+  ...categories.map(cat => ({ name: cat.name, href: `/${cat.slug}/` })),
+  { name: 'Blog', href: '/blog/' }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="hdr" id="site-header">
+  <div class="container">
+    <div class="hdr__inner">
+      <a href="/" class="hdr__logo">
+        <span class="hdr__monogram">TT</span>
+        <span class="hdr__site-name">telefoane-tablete.ro</span>
+      </a>
+
+      <nav class="hdr__nav" aria-label="Navigare principala">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            aria-current={currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) ? 'page' : undefined}
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <button
+        class="hdr__hamburger"
+        id="hdr-hamburger"
+        aria-label="Deschide meniul"
+        aria-expanded="false"
+        aria-controls="hdr-drawer"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Backdrop -->
+<div class="hdr__drawer-backdrop" id="hdr-backdrop"></div>
+
+<!-- Full-screen mobile drawer -->
+<div class="hdr__drawer" id="hdr-drawer" role="dialog" aria-modal="true" aria-label="Meniu navigare">
+  <div class="hdr__drawer-header">
+    <span class="hdr__site-name" style="font-size:1.1rem;font-weight:700;">telefoane-tablete.ro</span>
+    <button class="hdr__drawer-close" id="hdr-drawer-close" aria-label="Inchide meniul">&times;</button>
+  </div>
+  <nav class="hdr__drawer-nav">
+    {navLinks.map(link => (
+      <a
+        href={link.href}
+        aria-current={currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) ? 'page' : undefined}
+      >
+        {link.name}
+      </a>
+    ))}
+    <a href="/contact/">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hdr-hamburger');
+  const drawer = document.getElementById('hdr-drawer');
+  const backdrop = document.getElementById('hdr-backdrop');
+  const closeBtn = document.getElementById('hdr-drawer-close');
+
+  let previousFocus: Element | null = null;
+
+  function openDrawer() {
+    previousFocus = document.activeElement;
+    hamburger?.setAttribute('aria-expanded', 'true');
+    drawer?.classList.add('open');
+    backdrop?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Focus first link in drawer
+    const firstLink = drawer?.querySelector('a');
+    firstLink?.focus();
+  }
+
+  function closeDrawer() {
+    hamburger?.setAttribute('aria-expanded', 'false');
+    drawer?.classList.remove('open');
+    backdrop?.classList.remove('open');
+    document.body.style.overflow = '';
+    // Restore focus
+    if (previousFocus instanceof HTMLElement) {
+      previousFocus.focus();
+    }
+  }
+
+  hamburger?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+
+  // Close on link click
+  drawer?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  // Focus trap
+  drawer?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = drawer.querySelectorAll<HTMLElement>('a, button, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Intersection Observer for sticky state (replaces scroll listener)
+  const header = document.getElementById('site-header');
+  const sentinel = document.createElement('div');
+  sentinel.style.height = '1px';
+  sentinel.style.position = 'absolute';
+  sentinel.style.top = '0';
+  sentinel.style.left = '0';
+  sentinel.style.width = '100%';
+  sentinel.style.pointerEvents = 'none';
+  document.body.prepend(sentinel);
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      header?.classList.toggle('hdr--scrolled', !entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
+  observer.observe(sentinel);
+</script>

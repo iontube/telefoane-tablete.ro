@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import keywordsData from '../../../keywords.json';
+
+const categoryDescriptions: Record<string, string> = {
+  'telefoane': 'Recenzii, top-uri si comparatii de smartphone-uri la cele mai bune preturi. De la telefoane buget la flagshipuri premium.',
+  'tablete': 'Recomandari si comparatii de tablete Samsung, iPad, Lenovo si altele. Gaseste tableta potrivita nevoilor tale.',
+  'accesorii': 'Huse, folii, incarcatoare rapide, casti wireless si powerbank-uri testate si recomandate de echipa noastra.',
+  'sfaturi': 'Sfaturi practice, sfaturi de utilizare si trucuri pentru a profita la maxim de telefonul sau tableta ta.',
+  'comparatii': 'Comparatii head-to-head intre cele mai populare telefoane, tablete si accesorii. Samsung vs iPhone, Android vs iOS.',
+  'oferte': 'Cele mai bune preturi si promotii la telefoane, tablete si accesorii din magazinele romanesti.'
+};
+
+export async function getStaticPaths() {
+  const categories = [
+    { name: 'Telefoane', slug: 'telefoane' },
+    { name: 'Tablete', slug: 'tablete' },
+    { name: 'Accesorii', slug: 'accesorii' },
+    { name: 'Sfaturi', slug: 'sfaturi' },
+    { name: 'Comparatii', slug: 'comparatii' },
+    { name: 'Oferte si Reduceri', slug: 'oferte' }
+  ];
+
+  const ARTICLES_PER_PAGE = 15;
+  const paths = [];
+
+  for (const category of categories) {
+    const categoryArticles = keywordsData.completed
+      .filter(item => item.categorySlug === category.slug)
+      .map(item => ({
+        title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+        slug: item.keyword.toLowerCase()
+          .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+          .replace(/ș/g, 's').replace(/ț/g, 't')
+          .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+        excerpt: item.excerpt || '',
+        image: `/images/articles/${item.keyword.toLowerCase()
+          .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+          .replace(/ș/g, 's').replace(/ț/g, 't')
+          .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+        category: item.category,
+        categorySlug: item.categorySlug,
+        date: item.date || new Date().toISOString(),
+        modifiedDate: item.modifiedDate || item.date || new Date().toISOString()
+      }))
+      .sort((a, b) => new Date(b.modifiedDate).getTime() - new Date(a.modifiedDate).getTime());
+
+    const totalPages = Math.max(1, Math.ceil(categoryArticles.length / ARTICLES_PER_PAGE));
+
+    for (let i = 1; i <= totalPages; i++) {
+      const start = (i - 1) * ARTICLES_PER_PAGE;
+      const end = start + ARTICLES_PER_PAGE;
+      const pageArticles = categoryArticles.slice(start, end);
+
+      paths.push({
+        params: {
+          category: category.slug,
+          page: i === 1 ? undefined : String(i)
+        },
+        props: {
+          categoryName: category.name,
+          categorySlug: category.slug,
+          articles: pageArticles,
+          currentPage: i,
+          totalPages: totalPages
+        }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { categoryName, categorySlug, articles, currentPage, totalPages } = Astro.props;
+const description = categoryDescriptions[categorySlug] || '';
+---
+
+<Layout
+  title={`${categoryName} - Telefoane-Tablete.ro`}
+  description={`${description}`}
+>
+  <div class="container" style="padding-top: var(--sp-xl); padding-bottom: var(--sp-3xl);">
+    <div class="blog-header">
+      <h1>{categoryName}</h1>
+      {description && <p>{description}</p>}
+    </div>
+
+    {articles.length > 0 ? (
+      <>
+        <div class="article-grid">
+          {articles.map(article => (
+            <ArticleCard {...article} variant="grid" />
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <nav class="pagination" aria-label="Paginare">
+            {currentPage > 1 && (
+              <a
+                href={currentPage === 2 ? `/${categorySlug}/` : `/${categorySlug}/${currentPage - 1}/`}
+                class="pagination-link"
+                aria-label="Pagina anterioara"
+              >
+                &larr;
+              </a>
+            )}
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <a
+                href={page === 1 ? `/${categorySlug}/` : `/${categorySlug}/${page}/`}
+                class={`pagination-link ${page === currentPage ? 'active' : ''}`}
+                aria-current={page === currentPage ? 'page' : undefined}
+              >
+                {page}
+              </a>
+            ))}
+
+            {currentPage < totalPages && (
+              <a href={`/${categorySlug}/${currentPage + 1}/`} class="pagination-link" aria-label="Pagina urmatoare">
+                &rarr;
+              </a>
+            )}
+          </nav>
+        )}
+      </>
+    ) : (
+      <p style="text-align: center; color: var(--c-muted); padding: var(--sp-2xl);">
+        Articolele pentru aceasta categorie sunt in curs de pregatire. Revino curand!
+      </p>
+    )}
+  </div>
+</Layout>

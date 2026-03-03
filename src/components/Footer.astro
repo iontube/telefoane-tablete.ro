@@ -1,0 +1,77 @@
+---
+const currentYear = new Date().getFullYear();
+
+const categories = [
+  { name: 'Telefoane', slug: 'telefoane', color: '#00d4aa' },
+  { name: 'Tablete', slug: 'tablete', color: '#6366f1' },
+  { name: 'Accesorii', slug: 'accesorii', color: '#f0a030' },
+  { name: 'Sfaturi', slug: 'sfaturi', color: '#a78bfa' },
+  { name: 'Comparatii', slug: 'comparatii', color: '#22d3ee' },
+  { name: 'Oferte si Reduceri', slug: 'oferte', color: '#ef4444' }
+];
+
+const pages = [
+  { name: 'Acasa', href: '/' },
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Contact', href: '/contact/' }
+];
+
+const legalLinks = [
+  { name: 'Politica de Confidentialitate', href: '/politica-confidentialitate/' },
+  { name: 'Politica GDPR', href: '/gdpr/' },
+  { name: 'Termeni si Conditii', href: '/termeni-si-conditii/' },
+  { name: 'Politica Cookies', href: '/politica-cookies/' },
+  { name: 'Disclaimer Afiliere', href: '/disclaimer-afiliere/' }
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand-col">
+        <div class="footer-logo">telefoane<span class="logo-accent">-tablete</span>.ro</div>
+        <p>Recenzii oneste, comparatii detaliate si recomandari pentru telefoane, tablete si accesorii. Te ajutam sa alegi smart.</p>
+      </div>
+
+      <!-- Categories column -->
+      <div class="footer-col">
+        <h4>Categorii</h4>
+        <ul>
+          {categories.map(cat => (
+            <li>
+              <a href={`/${cat.slug}/`}>
+                <span class="footer-dot" style={`background:${cat.color}`}></span>
+                {cat.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Pages column -->
+      <div class="footer-col">
+        <h4>Pagini</h4>
+        <ul>
+          {pages.map(page => (
+            <li><a href={page.href}>{page.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal column -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          {legalLinks.map(link => (
+            <li><a href={link.href}>{link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; <span class="year">{currentYear}</span> Telefoane-Tablete.ro - Toate drepturile rezervate.</p>
+    </div>
+  </div>
+</footer>

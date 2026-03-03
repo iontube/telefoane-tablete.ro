@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import keywordsData from '../../keywords.json';
+
+const categories = [
+  {
+    name: 'Telefoane',
+    slug: 'telefoane',
+    description: 'Recenzii, comparatii si top-uri de telefoane.',
+    color: '#00d4aa'
+  },
+  {
+    name: 'Tablete',
+    slug: 'tablete',
+    description: 'Recomandari si comparatii de tablete.',
+    color: '#6366f1'
+  },
+  {
+    name: 'Accesorii',
+    slug: 'accesorii',
+    description: 'Huse, incarcatoare, casti wireless.',
+    color: '#f0a030'
+  },
+  {
+    name: 'Sfaturi',
+    slug: 'sfaturi',
+    description: 'Cum alegi, cum setezi, cum optimizezi.',
+    color: '#a78bfa'
+  },
+  {
+    name: 'Comparatii',
+    slug: 'comparatii',
+    description: 'Head-to-head intre modele populare.',
+    color: '#22d3ee'
+  },
+  {
+    name: 'Oferte',
+    slug: 'oferte',
+    description: 'Cele mai bune reduceri verificate.',
+    color: '#ef4444'
+  }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+})).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const recentArticles = allArticles.slice(0, 6);
+
+const categoryCounts = categories.map(cat => ({
+  ...cat,
+  count: allArticles.filter(a => a.categorySlug === cat.slug).length
+}));
+---
+
+<Layout
+  title="Telefoane-Tablete.ro - Recenzii, Comparatii si Recomandari"
+  description="Recenzii oneste, comparatii detaliate si recomandari practice pentru telefoane, tablete si accesorii. Alege informat cu ajutorul testelor noastre."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Alege <span class="accent">smart</span>, cumpara inteligent</h1>
+      <p class="hero__subtitle">
+        Recenzii oneste, comparatii detaliate si recomandari pentru telefoane, tablete si accesorii. Noi testam, tu economisesti.
+      </p>
+      <a href="/blog/" class="hero__cta">
+        Vezi articolele
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Recent Articles Grid -->
+  {recentArticles.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <p class="section__label">Ultimele articole</p>
+        <h2 class="section__title">Cele mai recente recenzii si recomandari</h2>
+        <div class="article-grid" style="margin-top: var(--sp-xl);">
+          {recentArticles.map(article => (
+            <ArticleCard {...article} variant="grid" />
+          ))}
+        </div>
+        {allArticles.length > 6 && (
+          <div class="text-center" style="margin-top: var(--sp-xl);">
+            <a href="/blog/" class="btn-accent-lg">Toate articolele</a>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- Categories -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="section__label">Categorii</p>
+      <h2 class="section__title">Categorii pe domenii de interes</h2>
+      <div class="category-cards" style="margin-top: var(--sp-xl);">
+        {categoryCounts.map(cat => (
+          <a href={`/${cat.slug}/`} class="category-card">
+            <span class="category-card__dot" style={`background:${cat.color}`}></span>
+            <span class="category-card__name">{cat.name}</span>
+            <span class="category-card__desc">{cat.description}</span>
+            {cat.count > 0 && <span class="category-card__count">{cat.count} articole</span>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container">
+      <div class="about-brief">
+        <p class="section__label">Despre noi</p>
+        <h2 class="section__title">De ce Telefoane-Tablete.ro?</h2>
+        <p>
+          Am creat acest site din frustrarea de a nu gasi recenzii oneste si comparatii reale in limba romana. Nu suntem platiti de producatori si nu scriem recenzii la comanda. Fiecare articol e rezultatul testelor si experientei noastre reale cu produsele respective.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

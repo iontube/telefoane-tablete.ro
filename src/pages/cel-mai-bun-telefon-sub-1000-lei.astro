@@ -1,0 +1,637 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+export const frontmatter = {
+  title: "Cel mai bun telefon sub 1000 lei",
+  excerpt: "Cel mai bun telefon sub 1000 lei in 2026 este Xiaomi Redmi Note 13. Acesta ofera un ecran AMOLED de 120Hz, o baterie generoasa de 5000 mAh si un chipset performant pentru aceasta categorie de pret, toate la un cost de aproximativ 800-900 lei.",
+  image: "/images/articles/cel-mai-bun-telefon-sub-1000-lei.webp",
+  category: "Telefoane",
+  categorySlug: "telefoane",
+  date: "2026-03-03T10:51:37.248Z",
+  modifiedDate: "2026-03-03T10:51:37.249Z",
+  author: "Andrei Ionescu",
+  authorRole: "Expert Telefoane Mobile",
+  authorBio: "Pasionat de tehnologie mobila cu peste 8 ani de experienta in recenzii si comparatii de smartphone-uri."
+};
+
+const breadcrumbs = [
+  { name: "Acasa", url: "/" },
+  { name: "Telefoane", url: "/telefoane/" },
+  { name: "Cel mai bun telefon sub 1000 lei", url: "/cel-mai-bun-telefon-sub-1000-lei/" }
+];
+
+const faq = [
+  { question: "Care este cel mai bun telefon sub 1000 lei pentru jocuri?", answer: "Pentru gaming ocazional, Motorola Moto G54 5G cu chipset Dimensity 7020 si 120Hz refresh rate este o alegere buna. Nu astepta performante de top in jocuri complexe, dar se descurca decent la pretul sau." },
+  { question: "Ce autonomie are un telefon sub 1000 lei cu baterie de 5000 mAh?", answer: "Un telefon cu baterie de 5000 mAh, precum Xiaomi Redmi Note 13 sau Samsung Galaxy A15, va oferi o zi completa de utilizare intensa. Utilizatorii moderati pot obtine chiar doua zile de autonomie." },
+  { question: "Merita sa cumperi un telefon cu camera de 108MP sub 1000 lei?", answer: "Da, daca prioritizarea este fotografia in lumina buna. Modele precum Xiaomi Redmi Note 13 sau Realme 11 ofera senzori de 108MP. Totusi, performanta poate varia in conditii de lumina slaba, iar lentilele auxiliare sunt adesea slabe." },
+  { question: "Ce diferenta este intre un ecran AMOLED si IPS LCD la telefoanele sub 1000 lei?", answer: "Ecranele AMOLED (ex: Xiaomi Redmi Note 13, Samsung Galaxy A15) ofera culori mai vii, negru perfect si un contrast superior fata de ecranele IPS LCD (ex: Motorola Moto G54 5G), care sunt totusi decente in aceasta categorie de pret." },
+  { question: "Cum pot gasi cel mai bun pret pentru un telefon sub 1000 lei?", answer: "Compara ofertele magazinelor online din Romania (eMAG, Altex, Flanco, PC Garage). Pretul pentru cel mai bun telefon sub 1000 lei poate varia, asa ca urmareste perioadele de reduceri. Modelele precum Realme 11 sunt adesea disponibile la preturi excelente." }
+];
+
+const toc = [
+  { title: "Xiaomi Redmi Note 13", id: "xiaomi-redmi-note-13" },
+  { title: "Samsung Galaxy A15", id: "samsung-galaxy-a15" },
+  { title: "Motorola Moto G84 5G", id: "motorola-moto-g84-5g" },
+  { title: "Realme 11", id: "realme-11" },
+  { title: "Infinix Note 40 Pro 5G", id: "infinix-note-40-pro-5g" },
+  { title: "Motorola Moto G54 5G", id: "motorola-moto-g54-5g" },
+  { title: "Comparatie Rapida", id: "comparatie" },
+  { title: "Cum alegi cel mai bun telefon sub 1000 lei pentru nevoile tale?", id: "sfaturi" },
+  { title: "Intrebari Frecvente", id: "faq" }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title="Cel mai bun telefon sub 1000 lei - Telefoane-Tablete.ro"
+  description="Cel mai bun telefon sub 1000 lei in 2026 este Xiaomi Redmi Note 13. Acesta ofera un ecran AMOLED de 120Hz, o baterie generoasa de 5000 mAh si un chipset performant pentru aceasta categorie de pret, toate la un cost de aproximativ 800-900 lei."
+  image="/images/articles/cel-mai-bun-telefon-sub-1000-lei.webp"
+  type="article"
+  publishedTime="2026-03-03T10:51:37.248Z"
+  modifiedTime="2026-03-03T10:51:37.249Z"
+  author="Andrei Ionescu"
+  faq={faq}
+  breadcrumbs={breadcrumbs}
+>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <ol>
+        <li><a href="/">Acasa</a></li>
+        <li><a href="/telefoane/">Telefoane</a></li>
+        <li><span>Cel mai bun telefon sub 1000 lei</span></li>
+      </ol>
+    </nav>
+
+    <a href="/telefoane/" class="article-page-category">Telefoane</a>
+    <h1 class="article-page-title">Cel mai bun telefon sub 1000 lei</h1>
+
+    <div class="article-page-meta">
+      <span>Andrei Ionescu</span>
+      <span>&middot;</span>
+      <span>Publicat: 3 martie 2026</span>
+      <span>&middot;</span>
+      <span>Actualizat: 3 martie 2026</span>
+    </div>
+
+    <div class="article-hero">
+      <img src="/images/articles/cel-mai-bun-telefon-sub-1000-lei.webp" alt="Cel mai bun telefon sub 1000 lei" width="800" height="600" decoding="async" fetchpriority="high" />
+    </div>
+
+    <div class="article-layout">
+      <div>
+        <div class="toc-mobile" id="toc-mobile">
+          <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+            Cuprins
+            <span class="toc-chevron">&#9660;</span>
+          </button>
+          <ol class="toc-mobile-list" id="toc-mobile-list">
+            {toc.map(item => (
+              <li><a href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="article-content">
+          <section id="intro">
+            <p>Cel mai bun telefon sub 1000 lei in 2026 este<strong> Xiaomi Redmi Note 13</strong>. Acesta ofera un ecran AMOLED de 120Hz, o baterie generoasa de 5000 mAh si un chipset performant pentru aceasta categorie de pret, toate la un cost de aproximativ 800-900 lei. Totusi, "cel mai bun" depinde de nevoile tale specifice: cauti cea mai buna camera, cea mai buna autonomie sau performanta pura pentru jocuri? Aflam impreuna.</p><p>Piata de telefoane sub 1000 lei este extrem de competitiva, cu optiuni variate de la producatori precum Xiaomi, Samsung, Motorola si altele. Inainte de a te decide, e crucial sa intelegi ce anume iti doresti de la un smartphone in acest buget. Un ecran cu refresh rate mare, o camera cu multi megapixeli sau o baterie care tine doua zile pot fi factori decisivi. Acest articol te va ajuta sa navighezi prin optiunile de top si sa faci alegerea potrivita.</p><p>Ce iti ofera un telefon sub 1000 lei in 2026? De la performante decente pentru uz zilnic, la camere capabile sa surprinda momente importante si baterii care te tin conectat toata ziua, aceste dispozitive au evoluat considerabil. Am analizat cele mai bune modele disponibile pe piata romaneasca pentru a te ghida catre <strong>cel mai bun telefon sub 1000 lei</strong>.</p>
+          </section>
+
+
+          <article class="product-review" id="xiaomi-redmi-note-13">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Xiaomi Redmi Note 13</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 685
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.67 inch AMOLED, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>6 GB / 8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB / 256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>108MP principal + 8MP ultrawide + 2MP macro
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Xiaomi Redmi Note 13 se impune ca o optiune de top pentru <strong>cel mai bun telefon sub 1000 lei</strong>, oferind un pachet echilibrat la un pret accesibil. Ecranul sau AMOLED de 6.67 inci cu o rata de refresh de 120Hz face ca navigarea prin meniuri, scroll-ul pe retelele sociale sau vizionarea clipurilor video sa fie o experienta fluida si placuta. Culorile sunt vibrante, iar luminozitatea este suficienta pentru utilizare in conditii de soare puternic.</p><p>Cat tine bateria de 5000 mAh in utilizare reala? Cu un mix de social media, browsing, YouTube si cateva apeluri, telefonul ajunge lejer la finalul zilei cu 20-30% ramas. Pentru utilizatori mai putin intensi, este posibil sa obtii chiar doua zile de autonomie, ceea ce este un avantaj major.</p><p>Performanta este asigurata de chipsetul Snapdragon 685, suficient pentru sarcinile zilnice precum navigarea pe internet, utilizarea aplicatiilor de mesagerie si a retelelor sociale. Pentru jocuri, se descurca bine cu titluri mai putin solicitante, dar nu te astepta la performante de top in jocurile AAA.</p><p>Camera principala de 108MP poate capta imagini detaliate in conditii bune de iluminare. Rezultatele sunt bune pentru social media, insa lentilele ultrawide si macro sunt mai mult prezente decat performante. Pentru cine este potrivit acest telefon? Pentru utilizatorii care cauta un ecran de calitate, autonomie buna si o performanta solida pentru activitati zilnice, fiind <strong>cel mai bun telefon sub 1000 lei</strong> pentru acest profil.</p><p>Recomandarea noastra pentru Xiaomi Redmi Note 13: daca prioritizarea ta este un ecran de calitate superioara si o autonomie de invidiat la un pret bun, acest model merita toata atentia. Este disponibil la aproximativ 850-950 lei in magazinele online din Romania.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran AMOLED 120Hz excelent</li>
+              <li>Autonomie impresionanta a bateriei</li>
+              <li>Design modern si slim</li>
+              <li>Performanta decenta pentru uz zilnic</li>
+              <li>Camera principala de 108MP cu rezultate bune in lumina naturala</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Performanta limitata in jocuri complexe</li>
+              <li>Lentilele ultrawide si macro sunt slabe</li>
+              <li>Frecventa de actualizare software nu este cea mai rapida</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="samsung-galaxy-a15">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Samsung Galaxy A15</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Dimensity 6100+
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch Super AMOLED, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4 GB / 6 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP principal + 5MP ultrawide + 2MP macro
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung Galaxy A15 se bazeaza pe renumele brandului coreean, oferind o experienta utilizatorului solida in clasa sa. Cu un pret ce variaza in jur de 700-850 lei, se pozitioneaza ca o alternativa viabila pentru <strong>cel mai bun telefon sub 1000 lei</strong>, mai ales pentru cei care prefera ecosistemul Samsung. Display-ul Super AMOLED de 6.5 inci ofera culori vii si negru profund, chiar daca rata de refresh de 90Hz nu este la fel de fluida ca la concurenta directa.</p><p>Ce autonomie ofera bateria de 5000 mAh a lui Galaxy A15? Este un punct forte, asigurand o zi completa de utilizare intensiva fara probleme. Pentru utilizare moderata, se poate intinde si spre doua zile, ceea ce il face un companion de incredere.</p><p>Procesorul MediaTek Dimensity 6100+ se descurca bine in sarcinile uzuale. Navigarea prin aplicatii, browsing-ul si utilizarea social media sunt fluide. Jocuri precum PUBG Mobile pot rula la setari medii, dar nu te astepta la performante exceptionale.</p><p>Camera principala de 50MP face o treaba buna in conditii de lumina naturala, oferind fotografii detaliate si culori realiste. Lentila ultrawide de 5MP este utila, dar calitatea scade comparativ cu senzorul principal. Pentru cine este acest telefon? Este o alegere buna pentru utilizatorii Samsung care cauta un telefon fiabil, cu o autonomie excelenta si un ecran bun, chiar daca nu cel mai performant din segment.</p><p>Recomandarea pentru Samsung Galaxy A15: daca apreciezi interfata Samsung One UI si cauti un telefon cu autonomie solida si o camera principala decenta, acesta este o optiune de luat in calcul. Il poti gasi in oferta magazinelor online la preturi incepand cu 750 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran Super AMOLED cu culori bune</li>
+              <li>Autonomie excelenta a bateriei</li>
+              <li>Interfata software Samsung bine optimizata</li>
+              <li>Actualizari software garantate pe termen lung</li>
+              <li>Design modern si finisaje de calitate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Rata de refresh a ecranului de 90Hz (nu 120Hz)</li>
+              <li>Performanta grafica inferioara unor competitori</li>
+              <li>Camera ultrawide si macro medii ca performanta</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g84-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Editorului</span>
+              <h3>Motorola Moto G84 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 695 5G
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.55 inch P-OLED, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP principal (OIS) + 8MP ultrawide
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G84 5G se distinge ca o optiune puternica in clasa sa, adesea gasit in jurul pragului de 900-1000 lei, concurand serios pentru titlul de <strong>cel mai bun telefon sub 1000 lei</strong>. Unul dintre punctele sale forte este ecranul P-OLED de 6.55 inci cu 120Hz, care ofera o experienta vizuala superioara, cu culori bogate si negru perfect. In plus, are o cantitate generoasa de RAM (12 GB) si stocare (256 GB), ceea ce il face sa se simta rapid si fluid in utilizare zilnica.</p><p>Cum se descurca camera de 50MP cu stabilizare optica (OIS)? In conditii bune de lumina, fotografiile sunt clare, cu o buna reproducere a culorilor si detalii surprinzatoare. Stabilizarea optica ajuta la reducerea tremurului in poze si clipuri video, fiind un avantaj in fata multor competitori.</p><p>Procesorul Snapdragon 695 5G ofera o conectivitate 5G rapida si performante decente pentru sarcini zilnice si jocuri. Nu va fi un campion la gaming pe setari maxime, dar se descurca onorabil in majoritatea scenariilor.</p><p>Autonomia bateriei de 5000 mAh este suficienta pentru o zi intreaga de utilizare intensa. Pentru cine este potrivit? Pentru cei care cauta un ecran exceptional, mult RAM si stocare, plus conectivitate 5G, la un pret sub 1000 lei. Este un candidat serios pentru <strong>cel mai bun telefon sub 1000 lei</strong>.</p><p>Recomandare pentru Motorola Moto G84 5G: daca vrei un telefon cu un ecran superb, performanta fluida datorita RAM-ului mare si o camera principala cu OIS, acesta este o alegere excelenta. Il gasesti la preturi incepand cu 950 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran P-OLED 120Hz de calitate superioara</li>
+              <li>12 GB RAM si 256 GB stocare</li>
+              <li>Camera principala cu OIS</li>
+              <li>Conectivitate 5G</li>
+              <li>Experienta software apropiata de Android stock</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Lipsa incarcatorului in cutie (in unele pachete)</li>
+              <li>Camera ultrawide mediocre</li>
+              <li>Procesorul nu este cel mai puternic pentru gaming avansat</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="realme-11">
+            <div class="product-review__header">
+              <span class="section-tag">Buget Optimizat</span>
+              <h3>Realme 11</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Helio G99
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.4 inch AMOLED, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB / 256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>108MP principal + 2MP macro + 2MP adancime
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Realme 11, adesea disponibil in jurul sumei de 700-800 lei, este o optiune de luat in calcul pentru oricine cauta <strong>cel mai bun telefon sub 1000 lei</strong> axat pe un raport calitate-pret bun. Dispune de un ecran AMOLED de 6.4 inci cu o rata de refresh de 90Hz, care ofera culori vii si contrast bun pentru navigare si consum media.</p><p>Ce performante ofera chipsetul MediaTek Helio G99? Este un procesor eficient pentru sarcinile zilnice. Se descurca bine cu aplicatiile uzuale, social media si browsing. Pentru jocuri, poate rula titluri populare la setari medii, oferind o experienta satisfacatoare.</p><p>Camera principala de 108MP promite detalii impresionante, iar in conditii bune de lumina, pozele ies bine. Totusi, lentilele auxiliare (macro si adancime) sunt slabe si mai mult de decor. Autonomia bateriei de 5000 mAh este, ca la majoritatea competitorilor, un punct forte, asigurand o zi plina de utilizare.</p><p>Ce il recomanda pentru segmentul de buget? Cantitatea generoasa de RAM (8 GB) si stocarea de 128 GB sau 256 GB la un pret sub 800 lei sunt avantaje clare. Pentru cine este potrivit? Pentru utilizatorii care au un buget strict, dar doresc un ecran AMOLED decent, performanta buna pentru uz zilnic si o camera principala cu multi megapixeli.</p><p>Recomandare pentru Realme 11: daca cauti <strong>cel mai bun telefon sub 1000 lei</strong> cu un accent pe un ecran AMOLED si multa memorie RAM la un pret foarte bun, Realme 11 merita o atentie speciala. Disponibil in oferta magazinelor online la preturi incepand cu 700 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran AMOLED 90Hz</li>
+              <li>8 GB RAM standard</li>
+              <li>Camera principala de 108MP</li>
+              <li>Autonomie buna a bateriei</li>
+              <li>Pret foarte atractiv</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Camera ultrawide si macro slabe</li>
+              <li>Procesorul nu exceleaza in gaming</li>
+              <li>Designul poate fi considerat generic</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="infinix-note-40-pro-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Infinix Note 40 Pro 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Helio G99 Ultimate
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.78 inch AMOLED, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>108MP principal + 2MP macro + 2MP adancime
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Infinix Note 40 Pro 5G, un telefon lansat recent si adesea gasit in jurul sumei de 900-1000 lei, isi doreste sa fie <strong>cel mai bun telefon sub 1000 lei</strong> prin oferirea unor specificatii premium la un pret accesibil. Dispune de un ecran AMOLED generos de 6.78 inci cu 120Hz, care ofera o experienta vizuala fluida si captivanta. In plus, vine cu 8 GB RAM si 256 GB stocare, oferind mult spatiu si fluiditate.</p><p>Cum se descurca chipsetul MediaTek Helio G99 Ultimate? Este o varianta imbunatatita a lui G99, oferind performante decente pentru utilizare zilnica, navigare si jocuri nu foarte solicitante. Nu te astepta la miracole in titluri AAA, dar pentru uz general este mai mult decat suficient.</p><p>Camera principala de 108MP este punctul de atractie, promitand fotografii cu detalii fine. In conditii optime de lumina, rezultatele sunt bune, dar lentilele secundare sunt, ca de obicei in acest segment, destul de slabe.</p><p>Autonomia bateriei de 5000 mAh este o constanta in aceasta categorie si Note 40 Pro nu face exceptie, oferind o zi completa de utilizare. Pentru cine este potrivit acest telefon? Pentru utilizatorii care cauta un ecran mare, rapid, multa stocare si performante decente, fara a depasi bugetul de 1000 lei.</p><p>Recomandarea pentru Infinix Note 40 Pro 5G: daca vrei un ecran mare, luminos, cu 120Hz, si mult spatiu de stocare, acest model este o optiune solida. Il poti achizitiona la preturi incepand cu 900 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran AMOLED 120Hz mare</li>
+              <li>256 GB stocare standard</li>
+              <li>Camera principala de 108MP</li>
+              <li>Design distinctiv</li>
+              <li>Baterie cu autonomie buna</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Camera ultrawide si macro slabe</li>
+              <li>Performanta in gaming limitata</li>
+              <li>Software-ul poate contine bloatware</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g54-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Buget</span>
+              <h3>Motorola Moto G54 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Dimensity 7020
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch IPS LCD, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP principal (OIS) + 8MP ultrawide
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G54 5G este adesea gasit la preturi in jur de 600-750 lei, fiind o optiune excelenta pentru cei care cauta <strong>cel mai bun telefon sub 1000 lei</strong>, cu un accent pe autonomie si performanta generala la un buget redus. Ecranul sau IPS LCD de 6.5 inci cu 120Hz este luminos si fluid, oferind o experienta buna pentru navigare si consum multimedia.</p><p>Ce autonomie ofera bateria de 5000 mAh? Este un punct forte al acestui model, asigurand doua zile de utilizare moderata sau o zi completa de utilizare intensa, ceea ce il face un partener de nadejde.</p><p>Performanta este asigurata de chipsetul MediaTek Dimensity 7020, care ofera viteza 5G si se descurca excelent in sarcinile zilnice. Jocurile precum Call of Duty Mobile ruleaza fluent la setari medii, facandu-l o optiune buna pentru gaming casual in acest segment de pret.</p><p>Camera principala de 50MP cu OIS este o surpriza placuta in acest buget, captand imagini clare si stabile in conditii bune de lumina. Camera ultrawide de 8MP este decenta, dar nu impresioneaza.</p><p>Pentru cine este potrivit? Pentru utilizatorii care prioritizeaza autonomia, performanta fluida pentru sarcini zilnice si gaming ocazional, la un pret foarte accesibil. Este o alegere inteligenta pentru <strong>cel mai bun telefon sub 1000 lei</strong>, in special pentru cei cu buget restrans.</p><p>Recomandare pentru Motorola Moto G54 5G: daca cauti autonomie excelenta, performanta 5G si o camera principala cu OIS la un pret foarte bun, acest model este greu de batut. Il gasesti la preturi incepand cu 650 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie impresionanta a bateriei</li>
+              <li>Performanta fluida pentru sarcini zilnice si gaming</li>
+              <li>Ecran 120Hz</li>
+              <li>Camera principala cu OIS</li>
+              <li>Pret foarte accesibil</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Ecranul este IPS LCD, nu AMOLED</li>
+              <li>Camera ultrawide medie</li>
+              <li>Designul este mai putin premium</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <section id="comparatie">
+            <h2>Comparatie Rapida</h2>
+            <p>Pentru a te ajuta sa vizualizezi rapid diferentele dintre optiunile de top, iata un tabel comparativ cu specificatiile cheie ale telefoanelor analizate.</p>
+            <div class="comparison-outer">
+              <div class="comparison-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                Gliseaza pentru a vedea tot tabelul
+              </div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Procesor</th>
+                      <th>Display</th>
+                      <th>Baterie</th>
+                      <th>Camera</th>
+                      <th>Potrivit pentru</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+              <tr>
+                <td><strong>Xiaomi Redmi Note 13</strong></td>
+                <td>Snapdragon 685</td>
+                <td>6.67" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>108MP</td>
+                <td>Ecran, Autonomie, Uz zilnic</td>
+              </tr>
+
+              <tr>
+                <td><strong>Samsung Galaxy A15</strong></td>
+                <td>Dimensity 6100+</td>
+                <td>6.5" Super AMOLED 90Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Autonomie, Ecosistem Samsung</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G84 5G</strong></td>
+                <td>Snapdragon 695 5G</td>
+                <td>6.55" P-OLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP (OIS)</td>
+                <td>Ecran, Memorie RAM, Conectivitate 5G</td>
+              </tr>
+
+              <tr>
+                <td><strong>Realme 11</strong></td>
+                <td>Helio G99</td>
+                <td>6.4" AMOLED 90Hz</td>
+                <td>5000 mAh</td>
+                <td>108MP</td>
+                <td>Buget, Ecran AMOLED, RAM</td>
+              </tr>
+
+              <tr>
+                <td><strong>Infinix Note 40 Pro 5G</strong></td>
+                <td>Helio G99 Ultimate</td>
+                <td>6.78" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>108MP</td>
+                <td>Ecran mare, Stocare, Pret</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G54 5G</strong></td>
+                <td>Dimensity 7020</td>
+                <td>6.5" IPS LCD 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP (OIS)</td>
+                <td>Autonomie, Buget, Gaming ocazional</td>
+              </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="sfaturi">
+            <h2>Cum alegi cel mai bun telefon sub 1000 lei pentru nevoile tale?</h2>
+            <div class="guide">
+              <p>Alegerea <strong>cel mai bun telefon sub 1000 lei</strong> poate fi o provocare, dar concentrandu-te pe prioritatile tale, procesul devine mai simplu.</p><h4>Ce anume conteaza cel mai mult pentru tine?</h4><p>Daca vrei un ecran care sa iti ofere o experienta vizuala de top, cauta modele cu display-uri AMOLED si rate de refresh de 120Hz. Acestea sunt prezente pe modele precum <strong>Xiaomi Redmi Note 13</strong> sau <strong>Motorola Moto G84 5G</strong>, oferind culori vibrante si o fluiditate excelenta.</p><h4>Cat de importanta este autonomia bateriei?</h4><p>Pentru majoritatea utilizatorilor, o baterie care tine cel putin o zi intreaga este esentiala. Modelele cu 5000 mAh, precum <strong>Samsung Galaxy A15</strong> sau <strong>Motorola Moto G54 5G</strong>, sunt cele mai potrivite in acest sens, oferind libertate de miscare fara grija incarcarii.</p><h4>Performanta pentru jocuri vs. sarcini zilnice</h4><p>Daca folosesti telefonul preponderent pentru browsing, social media si aplicatii uzuale, majoritatea telefoanelor din acest segment vor fi mai mult decat suficiente. Daca insa joci jocuri, cauta chipseturi mai performante precum cele din seria Snapdragon 6xx sau MediaTek Dimensity. <strong>Motorola Moto G54 5G</strong> se descurca bine la gaming ocazional datorita Dimensity 7020.</p><h4>Calitatea camerei foto</h4><p>Pentru fotografii decente, cauta telefoane cu camere principale de peste 50MP, ideal cu stabilizare optica (OIS), cum este cazul la <strong>Motorola Moto G84 5G</strong> si <strong>Motorola Moto G54 5G</strong>. Modelele cu 108MP, precum <strong>Xiaomi Redmi Note 13</strong> sau <strong>Realme 11</strong>, pot oferi, de asemenea, rezultate bune in conditii optime de lumina.</p>
+            </div>
+          </section>
+
+          <section class="faq-section" id="faq">
+            <h2 class="faq-title">Intrebari Frecvente</h2>
+
+            <details class="faq-item" id="faq-0">
+              <summary>
+                Care este cel mai bun telefon sub 1000 lei pentru jocuri?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Pentru gaming ocazional, Motorola Moto G54 5G cu chipset Dimensity 7020 si 120Hz refresh rate este o alegere buna. Nu astepta performante de top in jocuri complexe, dar se descurca decent la pretul sau.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-1">
+              <summary>
+                Ce autonomie are un telefon sub 1000 lei cu baterie de 5000 mAh?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Un telefon cu baterie de 5000 mAh, precum Xiaomi Redmi Note 13 sau Samsung Galaxy A15, va oferi o zi completa de utilizare intensa. Utilizatorii moderati pot obtine chiar doua zile de autonomie.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-2">
+              <summary>
+                Merita sa cumperi un telefon cu camera de 108MP sub 1000 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Da, daca prioritizarea este fotografia in lumina buna. Modele precum Xiaomi Redmi Note 13 sau Realme 11 ofera senzori de 108MP. Totusi, performanta poate varia in conditii de lumina slaba, iar lentilele auxiliare sunt adesea slabe.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-3">
+              <summary>
+                Ce diferenta este intre un ecran AMOLED si IPS LCD la telefoanele sub 1000 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Ecranele AMOLED (ex: Xiaomi Redmi Note 13, Samsung Galaxy A15) ofera culori mai vii, negru perfect si un contrast superior fata de ecranele IPS LCD (ex: Motorola Moto G54 5G), care sunt totusi decente in aceasta categorie de pret.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-4">
+              <summary>
+                Cum pot gasi cel mai bun pret pentru un telefon sub 1000 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Compara ofertele magazinelor online din Romania (eMAG, Altex, Flanco, PC Garage). Pretul pentru cel mai bun telefon sub 1000 lei poate varia, asa ca urmareste perioadele de reduceri. Modelele precum Realme 11 sunt adesea disponibile la preturi excelente.
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="author-line">
+          <div class="author-avatar">AI</div>
+          <div>
+            <div class="author-name">Andrei Ionescu</div>
+            <div class="author-role">Expert Telefoane Mobile</div>
+          </div>
+        </div>
+
+        <SimilarArticles
+          currentSlug="cel-mai-bun-telefon-sub-1000-lei"
+          currentCategory="telefoane"
+          articles={allArticles}
+        />
+      </div>
+
+      <aside class="toc-sidebar">
+        <p class="toc-sidebar-title">Cuprins</p>
+        <ol class="toc-sidebar-list" id="toc-desktop-list">
+          {toc.map(item => (
+            <li><a href={`#${item.id}`} data-toc-id={item.id}>{item.title}</a></li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <script>
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocMobile = document.getElementById('toc-mobile');
+    tocToggle?.addEventListener('click', () => {
+      const isOpen = tocMobile?.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    // IO for active section tracking
+    const tocLinks = document.querySelectorAll('#toc-desktop-list a[data-toc-id]');
+    if (tocLinks.length > 0) {
+      const ids = Array.from(tocLinks).map(a => a.dataset.tocId);
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const match = Array.from(tocLinks).find(a => a.dataset.tocId === entry.target.id);
+              match?.classList.add('active');
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // Comparison table scroll fade
+    document.querySelectorAll('.comparison-outer').forEach(outer => {
+      const wrap = outer.querySelector('.comparison-wrap');
+      if (!wrap) return;
+      function checkScroll() {
+        const canScroll = wrap.scrollWidth > wrap.clientWidth;
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+        outer.classList.toggle('can-scroll', canScroll && !atEnd);
+      }
+      checkScroll();
+      wrap.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll, { passive: true });
+    });
+  </script>
+</Layout>

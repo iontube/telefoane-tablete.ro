@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import keywordsData from '../../../keywords.json';
+
+const categories = [
+  { name: 'Telefoane', slug: 'telefoane' },
+  { name: 'Tablete', slug: 'tablete' },
+  { name: 'Accesorii', slug: 'accesorii' },
+  { name: 'Sfaturi', slug: 'sfaturi' },
+  { name: 'Comparatii', slug: 'comparatii' },
+  { name: 'Oferte', slug: 'oferte' }
+];
+
+export async function getStaticPaths() {
+  const ARTICLES_PER_PAGE = 15;
+  const allArticles = keywordsData.completed.map(item => ({
+    title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+    slug: item.keyword.toLowerCase()
+      .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+      .replace(/ș/g, 's').replace(/ț/g, 't')
+      .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+    excerpt: item.excerpt || '',
+    image: `/images/articles/${item.keyword.toLowerCase()
+      .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+      .replace(/ș/g, 's').replace(/ț/g, 't')
+      .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+    category: item.category,
+    categorySlug: item.categorySlug,
+    date: item.date || new Date().toISOString(),
+    modifiedDate: item.modifiedDate || item.date || new Date().toISOString()
+  })).sort((a, b) => new Date(b.modifiedDate).getTime() - new Date(a.modifiedDate).getTime());
+
+  const totalPages = Math.max(1, Math.ceil(allArticles.length / ARTICLES_PER_PAGE));
+  const paths = [];
+
+  for (let i = 1; i <= totalPages; i++) {
+    const start = (i - 1) * ARTICLES_PER_PAGE;
+    const end = start + ARTICLES_PER_PAGE;
+    const pageArticles = allArticles.slice(start, end);
+
+    paths.push({
+      params: {
+        page: i === 1 ? undefined : String(i)
+      },
+      props: {
+        articles: pageArticles,
+        currentPage: i,
+        totalPages: totalPages
+      }
+    });
+  }
+
+  return paths;
+}
+
+const { articles, currentPage, totalPages } = Astro.props;
+const featuredArticle = currentPage === 1 ? articles[0] : null;
+const restArticles = currentPage === 1 ? articles.slice(1) : articles;
+---
+
+<Layout
+  title={currentPage === 1 ? "Blog - Telefoane-Tablete.ro" : `Blog - Pagina ${currentPage} - Telefoane-Tablete.ro`}
+  description="Toate recenziile, comparatiile si recomandarile de pe Telefoane-Tablete.ro. Telefoane, tablete si accesorii analizate in detaliu."
+>
+  <div class="container" style="padding-top: var(--sp-xl); padding-bottom: var(--sp-3xl);">
+    <div class="blog-header">
+      <h1>Blog</h1>
+      <p>Toate recenziile, comparatiile si recomandarile noastre, intr-un singur loc</p>
+    </div>
+
+    <!-- Category filter pills -->
+    <div class="category-pills">
+      {categories.map(cat => (
+        <a href={`/${cat.slug}/`} class="category-pill">{cat.name}</a>
+      ))}
+    </div>
+
+    {articles.length > 0 ? (
+      <>
+        {/* Featured article (only on first page) */}
+        {featuredArticle && (
+          <div style="margin-bottom: var(--sp-2xl);">
+            <ArticleCard {...featuredArticle} variant="featured" />
+          </div>
+        )}
+
+        {/* Rest as grid cards */}
+        {restArticles.length > 0 && (
+          <div class="article-grid">
+            {restArticles.map(article => (
+              <ArticleCard {...article} variant="grid" />
+            ))}
+          </div>
+        )}
+
+        {totalPages > 1 && (
+          <nav class="pagination" aria-label="Paginare">
+            {currentPage > 1 && (
+              <a
+                href={currentPage === 2 ? `/blog/` : `/blog/${currentPage - 1}/`}
+                class="pagination-link"
+                aria-label="Pagina anterioara"
+              >
+                &larr;
+              </a>
+            )}
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <a
+                href={page === 1 ? `/blog/` : `/blog/${page}/`}
+                class={`pagination-link ${page === currentPage ? 'active' : ''}`}
+                aria-current={page === currentPage ? 'page' : undefined}
+              >
+                {page}
+              </a>
+            ))}
+
+            {currentPage < totalPages && (
+              <a href={`/blog/${currentPage + 1}/`} class="pagination-link" aria-label="Pagina urmatoare">
+                &rarr;
+              </a>
+            )}
+          </nav>
+        )}
+      </>
+    ) : (
+      <p style="text-align: center; color: var(--c-muted); padding: var(--sp-2xl);">
+        Articolele sunt in curs de pregatire. Revino curand!
+      </p>
+    )}
+  </div>
+</Layout>

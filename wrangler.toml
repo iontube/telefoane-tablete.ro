@@ -1,0 +1,3 @@
+name = "telefoane-tablete-ro"
+account_id = "5e503b369b8f43d6722ef7e644969bcb"
+pages_build_output_dir = "dist"

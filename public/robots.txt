@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://telefoane-tablete.ro/sitemap_index.xml
