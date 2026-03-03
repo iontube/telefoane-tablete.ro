@@ -205,7 +205,7 @@ async function main() {
   for (let attempt = 1; attempt <= MAX_DEPLOY_RETRIES; attempt++) {
     await log(`Deploying to Cloudflare (project: ${projectName})... attempt ${attempt}/${MAX_DEPLOY_RETRIES}`);
     try {
-      await runCommand('npx', ['wrangler', 'pages', 'deploy', 'dist', '--project-name', projectName], projectDir);
+      await runCommand('npx', ['wrangler', 'pages', 'deploy', 'dist', '--project-name', projectName, '--branch', 'main'], projectDir);
       await log('Deploy completed');
       deploySuccess = true;
       break;
