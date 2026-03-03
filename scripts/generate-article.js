@@ -414,7 +414,8 @@ CONVERSIE:
 - Concluzia fiecarui review sa fie actionabila
 
 === ANTI-AI ===
-- CUVINTE INTERZISE: "Asadar", "De asemenea", "Cu toate acestea", "Este important de mentionat", "Nu in ultimul rand", "in era actuala", "descopera", "fara indoiala", "in concluzie", "este esential", "este crucial", "o alegere excelenta", "ghid", "ghiduri", "exploreaza", "aprofundam", "remarcabil", "exceptional", "revolutionar", "inovativ", "vom detalia", "vom analiza", "vom explora", "vom prezenta", "in cele ce urmeaza", "in continuare vom", "sa aruncam o privire"
+- CUVINTE INTERZISE: "Asadar", "De asemenea", "Cu toate acestea", "Este important de mentionat", "Nu in ultimul rand", "in era actuala", "descopera", "fara indoiala", "in concluzie", "este esential", "este crucial", "o alegere excelenta", "ghid", "ghiduri", "exploreaza", "aprofundam", "remarcabil", "exceptional", "revolutionar", "inovativ", "vom detalia", "vom analiza", "vom explora", "vom prezenta", "in cele ce urmeaza", "in continuare vom", "sa aruncam o privire", "buget optimizat", "alegerea editorului", "editor's choice"
+- TAG-URI INTERZISE IN PRODUSE: "Buget Optimizat", "Alegerea Editorului" - suna a cliseu. Foloseste in schimb: "Alegerea Noastra", "Pentru Buget Mic", "Best Buy 2026", "Raport Calitate-Pret", "Premium"
 - Amesteca paragrafe scurte (1-2 prop) cu medii (3-4 prop)
 - Critici oneste: fiecare produs minim 3-4 dezavantaje reale
 - Limbaj natural dar nu excesiv informal
@@ -483,7 +484,8 @@ In valorile string din JSON, foloseste \\n pentru newline si escaped quotes \\".
 - Preturi realiste in lei, Romania 2026
 - Review minim 200 cuvinte per produs
 - Avantaje: 4-6 | Dezavantaje: 3-5 (oneste, nu cosmetice)
-- Tag-uri: "Best Buy 2026", "Raport Calitate-Pret", "Premium", "Buget", "Alegerea Editorului"
+- Tag-uri: "Best Buy 2026", "Raport Calitate-Pret", "Premium", "Pentru Buget Mic", "Alegerea Noastra"
+- INTERZIS in tag-uri: "Alegerea Editorului", "Buget Optimizat", "Editor's Choice" - suna a cliseu AI
 
 === CERINTE SECTIUNE SFATURI ===
 - Titlul sectiunii sa fie o intrebare: "Cum alegi...?", "Ce conteaza cand...?"
@@ -634,7 +636,7 @@ ${dezavantajeHtml}
 
     comparisonHtml = `
           <section id="comparatie">
-            <h2>Comparatie Rapida</h2>
+            <h2>Comparatie</h2>
             ${compIntro}
             <div class="comparison-outer">
               <div class="comparison-hint">
@@ -697,7 +699,7 @@ ${compRows}
   (content.products || []).forEach(p => {
     tocEntries.push({ title: p.name, id: slugify(p.name) });
   });
-  if (comparisonHtml) tocEntries.push({ title: 'Comparatie Rapida', id: 'comparatie' });
+  if (comparisonHtml) tocEntries.push({ title: 'Comparatie', id: 'comparatie' });
   if (guideHtml) tocEntries.push({ title: content.guide?.title || 'Sfaturi de cumparare', id: 'sfaturi' });
   tocEntries.push({ title: 'Intrebari Frecvente', id: 'faq' });
 

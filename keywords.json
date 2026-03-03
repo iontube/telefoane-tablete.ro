@@ -509,8 +509,8 @@
   "authors": [
     {
       "name": "Andrei Ionescu",
-      "role": "Expert Telefoane Mobile",
-      "bio": "Pasionat de tehnologie mobila cu peste 8 ani de experienta in recenzii si comparatii de smartphone-uri.",
+      "role": "Iubitor de telefoane, impatimit in tehnologie",
+      "bio": "De cand tin minte am fost obsedat de telefoane. Am trecut prin zeci de modele si imi place sa le compar si sa le testez pe bune.",
       "categories": [
         "telefoane",
         "comparatii"
@@ -518,8 +518,8 @@
     },
     {
       "name": "Cristina Marin",
-      "role": "Specialist Tablete si Accesorii",
-      "bio": "Testeaza si compara tablete si accesorii tech de peste 5 ani, cu accent pe productivitate si educatie.",
+      "role": "Pasionata de tablete si gadgeturi",
+      "bio": "Imi petrec timpul testand tablete si accesorii de tot felul. Daca se poate conecta la ceva, probabil l-am incercat deja.",
       "categories": [
         "tablete",
         "accesorii"
@@ -527,8 +527,8 @@
     },
     {
       "name": "Mihai Popescu",
-      "role": "Redactor Sfaturi Tech",
-      "bio": "Ajuta cititorii sa faca alegeri informate in materie de gadgeturi, cu sfaturi practice si recomandari testate.",
+      "role": "Scrie despre tech pe intelesul tuturor",
+      "bio": "Imi place sa explic lucrurile simplu, fara jargon. Daca ma intrebi ce sa-ti iei, iti zic direct ce merita si ce nu.",
       "categories": [
         "sfaturi",
         "oferte"
