@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: () => false })],
   vite: {
     plugins: [tailwindcss()]
   }
