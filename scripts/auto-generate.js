@@ -92,7 +92,8 @@ async function shouldRunToday() {
       .reduce((a, b) => Math.max(a, b), 0);
 
     const daysSinceLast = (Date.now() - lastDate) / (1000 * 60 * 60 * 24);
-    if (daysSinceLast < 1) return false;
+    // Skip only if already posted today (use 0.5 days to avoid timing issues with daily cron)
+    if (daysSinceLast < 0.5) return false;
     return true;
   } catch {
     return true;
@@ -123,7 +124,7 @@ async function generateStats() {
 // Main
 async function main() {
   if (!await shouldRunToday()) {
-    console.log(`[${new Date().toISOString()}] Skipping - last article was less than 1 day ago`);
+    console.log(`[${new Date().toISOString()}] Skipping - last article was less than 12 hours ago`);
     process.exit(0);
   }
 
