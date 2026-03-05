@@ -1,0 +1,695 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+export const frontmatter = {
+  title: "Top telefoane 2026 raport calitate pret",
+  excerpt: "Cautati un top telefoane 2026 raport calitate pret si vreti sa stiti exact ce merita cumparat fara sa cheltuiti o avere? In 2026, piata de smartphone-uri ofera optiuni impresionante chiar si in segmentul accesibil.",
+  image: "/images/articles/top-telefoane-2026-raport-calitate-pret.webp",
+  category: "Telefoane",
+  categorySlug: "telefoane",
+  date: "2026-03-05T08:33:21.509Z",
+  modifiedDate: "2026-03-05T08:33:21.509Z",
+  author: "Andrei Ionescu",
+  authorRole: "Iubitor de telefoane, impatimit in tehnologie",
+  authorBio: "De cand tin minte am fost obsedat de telefoane. Am trecut prin zeci de modele si imi place sa le compar si sa le testez pe bune."
+};
+
+const breadcrumbs = [
+  { name: "Acasa", url: "/" },
+  { name: "Telefoane", url: "/telefoane/" },
+  { name: "Top telefoane 2026 raport calitate pret", url: "/top-telefoane-2026-raport-calitate-pret/" }
+];
+
+const faq = [
+  { question: "Care este cel mai bun telefon pentru fotografie în 2026 sub 1500 lei?", answer: "Pentru fotografie sub 1500 lei, Google Pixel 8a se impune datorită procesării software excepționale, oferind imagini de top cu senzorul său de 64MP. Realme 12 Pro+ este o alternativă bună dacă prioritar este zoom-ul optic 3x." },
+  { question: "Ce telefon are cea mai bună autonomie a bateriei în 2026 în segmentul accesibil?", answer: "Modelele cu baterii de 5000 mAh sau mai mult excelează la autonomie. Xiaomi Redmi Note 14 Pro (5100 mAh) și Samsung Galaxy A35 5G (5000 mAh) oferă utilizare pe parcursul unei zile intense și chiar mai mult." },
+  { question: "Merită să cumpăr un telefon cu 12GB RAM în 2026?", answer: "Dacă folosești intensiv multitasking, rulezi aplicații complexe sau joci jocuri solicitante, 12GB RAM (precum la OnePlus Nord 4 sau Motorola Moto G84 5G) asigură o fluiditate sporită și o experiență mai bună pe termen lung." },
+  { question: "Ce diferență este între AMOLED și pOLED pe telefoanele din 2026?", answer: "Ambele tehnologii oferă culori vibrante și negru pur. AMOLED este standardul, în timp ce pOLED (precum la Motorola Moto G84 5G) poate oferi designuri mai subțiri și uneori un contrast ușor îmbunătățit. Diferența în utilizarea zilnică este minimă pentru majoritatea utilizatorilor." },
+  { question: "Cât costă în medie un telefon bun cu raport calitate-preț în 2026?", answer: "Un telefon cu un raport calitate-preț excelent în 2026 se încadrează, în general, între 1000 și 1500 lei. Modelele sub 1000 lei oferă compromisuri mai mari, în timp ce cele peste 1500 lei încep să se apropie de segmentul premium." }
+];
+
+const toc = [
+  { title: "Xiaomi Redmi Note 14 Pro", id: "xiaomi-redmi-note-14-pro" },
+  { title: "Samsung Galaxy A35 5G", id: "samsung-galaxy-a35-5g" },
+  { title: "OnePlus Nord 4", id: "oneplus-nord-4" },
+  { title: "Realme 12 Pro+", id: "realme-12-pro" },
+  { title: "Motorola Moto G84 5G", id: "motorola-moto-g84-5g" },
+  { title: "Google Pixel 8a", id: "google-pixel-8a" },
+  { title: "Comparatie", id: "comparatie" },
+  { title: "Cum alegi cel mai bun telefon cu raport calitate-pret in 2026?", id: "sfaturi" },
+  { title: "Intrebari Frecvente", id: "faq" }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title="Top telefoane 2026 raport calitate pret - Telefoane-Tablete.ro"
+  description="Cautati un top telefoane 2026 raport calitate pret si vreti sa stiti exact ce merita cumparat fara sa cheltuiti o avere? In 2026, piata de smartphone-uri ofera optiuni impresionante chiar si in segmentul accesibil."
+  image="/images/articles/top-telefoane-2026-raport-calitate-pret.webp"
+  type="article"
+  publishedTime="2026-03-05T08:33:21.509Z"
+  modifiedTime="2026-03-05T08:33:21.509Z"
+  author="Andrei Ionescu"
+  faq={faq}
+  breadcrumbs={breadcrumbs}
+>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <ol>
+        <li><a href="/">Acasa</a></li>
+        <li><a href="/telefoane/">Telefoane</a></li>
+        <li><span>Top telefoane 2026 raport calitate pret</span></li>
+      </ol>
+    </nav>
+
+    <a href="/telefoane/" class="article-page-category">Telefoane</a>
+    <h1 class="article-page-title">Top telefoane 2026 raport calitate pret</h1>
+
+    <div class="article-page-meta">
+      <span>Andrei Ionescu</span>
+      <span>&middot;</span>
+      <span>Publicat: 5 martie 2026</span>
+      <span>&middot;</span>
+      <span>Actualizat: 5 martie 2026</span>
+    </div>
+
+    <div class="article-hero">
+      <img src="/images/articles/top-telefoane-2026-raport-calitate-pret.webp" alt="Top telefoane 2026 raport calitate pret" width="800" height="600" decoding="async" fetchpriority="high" />
+    </div>
+
+    <div class="article-layout">
+      <div>
+        <div class="toc-mobile" id="toc-mobile">
+          <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+            Cuprins
+            <span class="toc-chevron">&#9660;</span>
+          </button>
+          <ol class="toc-mobile-list" id="toc-mobile-list">
+            {toc.map(item => (
+              <li><a href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="article-content">
+          <section id="intro">
+            <p>Cautati un <strong>top telefoane 2026 raport calitate pret</strong> si vreti sa stiti exact ce merita cumparat fara sa cheltuiti o avere? In 2026, piata de smartphone-uri ofera optiuni impresionante chiar si in segmentul accesibil. Daca ar fi sa alegem un singur model care defineste <strong>top telefoane 2026 raport calitate pret</strong>, acesta ar fi Xiaomi Redmi Note 14 Pro. Cu un ecran AMOLED de 120Hz, un procesor performant pentru sarcini zilnice si o camera principala de 108MP, el ofera o experienta greu de egalat in clasa sa, la un pret estimat in jur de 1200 lei. Totusi, alegerea finala depinde de prioritatile tale: ai nevoie de cea mai buna camera, de o autonomie exceptionala sau de performanta bruta pentru jocuri?</p>
+<p>Ce conteaza cu adevarat cand vorbim despre <strong>top telefoane 2026 raport calitate pret</strong>? Nu doar cifrele din specificatii, ci cum se traduc acestea in utilizare zilnica. Un ecran luminos si fluid face navigarea pe internet mai placuta, un procesor rapid elimina frustrarea legata de aplicatiile lente, iar o baterie mare inseamna mai putine griji legate de incarcare. Vom analiza modele care exceleaza in diferite capitole, pentru a va oferi o imagine completa si a va ajuta sa luati cea mai buna decizie pentru buzunarul si nevoile dumneavoastra.</p>
+<p>Piata smartphone-urilor in 2026 este din ce in ce mai competitiva, iar producatorii se lupta sa ofere cat mai mult la preturi cat mai mici. Asta inseamna vesti bune pentru consumatori, deoarece gasirea unui dispozitiv care bifeaza multe căsuțe importante, fără a fi nevoie de un buget astronomic, este mai realizabilă ca niciodată. Indiferent daca sunteti in cautarea unui telefon pentru social media, gaming ocazional sau pentru a captura momente importante, acest <strong>top telefoane 2026 raport calitate pret</strong> va va oferi optiunile cele mai potrivite.</p>
+          </section>
+
+
+          <article class="product-review" id="xiaomi-redmi-note-14-pro">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Xiaomi Redmi Note 14 Pro</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 7s Gen 3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch AMOLED, 120Hz, 1300 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5100 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>108MP (principal) + 8MP (ultrawide) + 2MP (macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Xiaomi Redmi Note 14 Pro se poziționează ca un candidat serios în categoria <strong>top telefoane 2026 raport calitate pret</strong>, oferind un pachet echilibrat pentru majoritatea utilizatorilor. Ecranul AMOLED de 6.7 inch cu o rată de refresh de 120Hz este un punct forte major, asigurând culori vibrante și o fluiditate excelentă în navigare și jocuri. Luminozitatea de 1300 nits îl face lizibil chiar și în condiții de lumină solară puternică.</p>
+<p>Ce performanță oferă procesorul Snapdragon 7s Gen 3 în utilizarea de zi cu zi? Acesta se descurcă fără probleme cu aplicațiile uzuale precum Facebook, Instagram, YouTube sau browser-ul web. De asemenea, jocuri mai puțin solicitante rulează fluid, iar titlurile mai complexe pot fi jucate la setări grafice medii. Memoria RAM de 8 GB ajută la multitasking, permițând comutarea rapidă între aplicații fără întârzieri.</p>
+<p>Cât de bună este camera principală de 108MP? În condiții bune de lumină, fotografiile sunt detaliate și au culori plăcute. Senzorul macro de 2MP este mai mult un plus decorativ, iar ultrawide-ul de 8MP oferă o perspectivă mai largă, însă cu o calitate a imaginii inferioară celei principale. Pentru poze ocazionale, este mai mult decât suficient.</p>
+<p>Autonomia este un alt aspect unde Redmi Note 14 Pro strălucește. Bateria de 5100 mAh, combinată cu optimizarea software a Xiaomi, asigură o zi întreagă de utilizare intensă, iar utilizatorii mai moderati pot ajunge chiar la două zile. Încărcarea rapidă la 67W aduce bateria de la 0 la 100% în aproximativ 45 de minute, un timp impresionant pentru acest segment de preț.</p>
+<p>Există și dezavantaje de luat în considerare? Da. Lipsa unui senzor telefoto dedicat limitează capacitatea de zoom optic, iar performanța în jocuri foarte solicitante nu se compară cu flagship-urile. De asemenea, calitatea video la rezoluții înalte ar putea fi îmbunătățită. Totuși, la un preț estimat în jur de 1200 lei, aceste compromisuri sunt de așteptat.</p>
+<p>Xiaomi Redmi Note 14 Pro este o alegere excelentă pentru oricine caută un smartphone echilibrat, cu un ecran de calitate, autonomie bună și performanță solidă pentru sarcinile zilnice, la un preț accesibil. Recomandarea noastră este să îl considerați dacă prioritizați experiența media și o baterie care ține pasul cu zilele voastre aglomerate.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran AMOLED 120Hz luminos si fluid</li>
+              <li>Autonomie excelenta a bateriei (5100 mAh)</li>
+              <li>Încărcare rapidă 67W</li>
+              <li>Performanta bună pentru utilizare zilnică și jocuri medii</li>
+              <li>Camera principală de 108MP oferă detalii bune în lumină optimă</li>
+              <li>Preț foarte competitiv</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Lipsa senzorului telefoto pentru zoom optic</li>
+              <li>Camera ultrawide și macro de calitate inferioară</li>
+              <li>Performanța în jocuri foarte solicitante este limitată</li>
+              <li>Calitatea video ar putea fi mai bună</li>
+              <li>Designul este destul de generic</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="samsung-galaxy-a35-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Samsung Galaxy A35 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Exynos 1380
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.6 inch Super AMOLED, 120Hz, 1000 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>6 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 8MP (ultrawide) + 5MP (macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung Galaxy A35 5G continuă tradiția seriei A de a oferi o experiență premium la un preț accesibil, fiind un candidat puternic în căutarea <strong>top telefoane 2026 raport calitate pret</strong>. Designul este elegant, amintind de modelele de top Samsung, iar ecranul Super AMOLED de 6.6 inch cu 120Hz oferă culori vii și negru profund, ideal pentru consumul de conținut.</p>
+<p>Ce experiență de utilizare oferă Exynos 1380? Procesorul Samsung este capabil să gestioneze sarcinile zilnice fără probleme. Navigarea prin meniuri, utilizarea aplicațiilor de social media și browsing-ul sunt fluide. Jocuri precum Call of Duty Mobile pot rula la setări grafice medii spre înalte, oferind o experiență de joc satisfăcătoare pentru majoritatea utilizatorilor.</p>
+<p>Cât de performantă este camera de 50MP? Senzorul principal de 50MP produce fotografii cu o bună reproducere a culorilor și un nivel decent de detalii în condiții de lumină favorabile. Camera ultrawide de 8MP este utilă pentru peisaje, dar calitatea scade în lumină slabă. Senzorul macro de 5MP este o îmbunătățire față de modelele anterioare și poate capta detalii de aproape interesante.</p>
+<p>Autonomia bateriei de 5000 mAh este un punct forte al Galaxy A35 5G. Cu o utilizare mixtă, telefonul ajunge lejer la finalul zilei, iar utilizatorii mai puțin activi se pot bucura de el timp de două zile. Încărcarea la 25W este decentă, deși nu cea mai rapidă de pe piață, încărcând telefonul complet în aproximativ 80-90 de minute.</p>
+<p>Ce îl diferențiază de concurență? Suportul software extins oferit de Samsung, cu actualizări garantate pe termen lung, este un avantaj semnificativ. De asemenea, interfața One UI este intuitivă și bogată în funcționalități. Totuși, lipsa unui încărcător în cutie și faptul că memoria de stocare de 128 GB ar putea fi insuficientă pentru unii utilizatori reprezintă minusuri.</p>
+<p>Samsung Galaxy A35 5G este o alegere solidă pentru cei care doresc un telefon fiabil, cu un ecran superb, o cameră decentă și suport software pe termen lung. Dacă prețuiți experiența de utilizare Samsung și nu aveți nevoie de cea mai rapidă încărcare sau cea mai performantă cameră, acesta merită cu siguranță luat în considerare în <strong>top telefoane 2026 raport calitate pret</strong>, la un preț estimat în jur de 1300 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran Super AMOLED 120Hz vibrant și fluid</li>
+              <li>Autonomie bună a bateriei</li>
+              <li>Suport software pe termen lung de la Samsung</li>
+              <li>Design premium</li>
+              <li>Performanță solidă pentru utilizare zilnică și gaming</li>
+              <li>Camera principală de 50MP oferă poze bune în condiții optime</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Încărcare relativ lentă (25W)</li>
+              <li>Nu include încărcător în cutie</li>
+              <li>Stocarea internă de 128 GB ar putea fi limitativă</li>
+              <li>Camera ultrawide și macro sunt medii</li>
+              <li>Procesorul Exynos poate fi mai puțin eficient energetic comparativ cu Snapdragon</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="oneplus-nord-4">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>OnePlus Nord 4</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 7+ Gen 3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch AMOLED, 120Hz, 1400 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>64MP (principal) + 8MP (ultrawide) + 2MP (macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>OnePlus Nord 4 se anunță a fi un competitor de temut în segmentul de <strong>top telefoane 2026 raport calitate pret</strong>, aducând sub capota un procesor puternic și un ecran de excepție. Cu un display AMOLED de 6.7 inch, rată de refresh de 120Hz și o luminozitate de 1400 nits, experiența vizuală este una de top, oferind culori intense și o fluiditate remarcabilă în orice scenariu.</p>
+<p>Ce performanță oferă Snapdragon 7+ Gen 3? Acesta este un procesor de performanță înaltă, capabil să ruleze fără probleme cele mai solicitante aplicații și jocuri. Multitasking-ul este un vis, cu 12 GB de RAM care permit deschiderea a zeci de aplicații simultan fără a resimți încetiniri. Jocurile grele precum Genshin Impact sau Apex Legends pot fi jucate la setări grafice ridicate, oferind o experiență similară cu cea a telefoanelor flagship.</p>
+<p>Cât de capabilă este camera de 64MP? Deși nu are un număr uriaș de megapixeli, senzorul principal de 64MP produce fotografii cu detalii bune și culori naturale în condiții optime de lumină. Camera ultrawide de 8MP este decentă, dar nu excelează în scenarii cu lumină slabă. Senzorul macro de 2MP, ca de obicei, este mai mult un bonus.</p>
+<p>Autonomia bateriei de 5000 mAh este suficientă pentru o zi întreagă de utilizare intensă. Un mare plus este viteza de încărcare de 80W (sau chiar 100W, în funcție de regiune), care aduce telefonul de la 0 la 100% în aproximativ 30-35 de minute. Această viteză este un factor decisiv pentru mulți utilizatori și îl plasează în fruntea clasamentului pentru acest aspect.</p>
+<p>Ce face OnePlus Nord 4 să iasă în evidență? Combinația dintre procesorul de top, cantitatea generoasă de RAM, viteza de încărcare fulger și un display excelent îl recomandă pentru utilizatorii care caută performanță fără compromisuri. Dezavantajele sunt minime: camera principală ar putea fi mai bună pentru cei cu pretenții foarte mari, iar lipsa unui zoom optic dedicat este un minus pentru fotografia de peisaj la distanță.</p>
+<p>OnePlus Nord 4 este o alegere ideală dacă prioritizați performanța brută, viteza de încărcare și o experiență media de excepție. La un preț estimat în jur de 1500 lei, el oferă un pachet greu de învins, fiind un candidat de top în orice discuție despre <strong>top telefoane 2026 raport calitate pret</strong> pentru pasionații de performanță.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Procesor Snapdragon 7+ Gen 3 extrem de performant</li>
+              <li>12 GB RAM pentru multitasking fără cusur</li>
+              <li>Ecran AMOLED 120Hz luminos și fluid</li>
+              <li>Încărcare extrem de rapidă (80W/100W)</li>
+              <li>Autonomie bună a bateriei</li>
+              <li>Performanță de top pentru gaming</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Camera principală, deși bună, nu concurează cu flagship-urile de top</li>
+              <li>Lipsa senzorului telefoto pentru zoom optic</li>
+              <li>Camera ultrawide și macro sunt mediocre</li>
+              <li>Experiența software (OxygenOS) nu este pe gustul tuturor</li>
+              <li>Prețul poate fi puțin peste bugetul unora</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="realme-12-pro">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Realme 12 Pro+</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 6 Gen 1
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch AMOLED, 120Hz, 950 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 8MP (ultrawide) + 64MP (telephoto periscop 3x)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Realme 12 Pro+ se remarcă prin accentul pus pe fotografie, în special pe zoom, oferind o alternativă interesantă în <strong>top telefoane 2026 raport calitate pret</strong> pentru pasionații de imagistică. Designul său inspirat de ceasurile de lux îi conferă un aer premium, iar ecranul AMOLED de 6.7 inch cu 120Hz este plăcut la utilizare, deși luminozitatea maximă de 950 nits este ușor sub concurența directă.</p>
+<p>Ce performanță oferă Snapdragon 6 Gen 1? Acesta este un chipset de gamă medie, capabil să gestioneze fără probleme aplicațiile zilnice, social media și browsing-ul. Jocurile pot rula, dar pentru experiențe grafice intense, va trebui să scădeți setările. Memoria RAM de 8 GB ajută la fluiditatea generală și la multitasking.</p>
+<p>Cum se descurcă camera principală și cea telefoto? Camera principală de 50MP surprinde imagini clare și cu o bună reproducere a culorilor în lumină bună. Adevărata vedetă este senzorul telefoto periscop de 64MP cu zoom optic 3x, care permite captarea unor imagini detaliate de la distanță, o caracteristică rară în acest segment de preț. Camera ultrawide de 8MP este standard, dar utilă.</p>
+<p>Autonomia bateriei de 5000 mAh este un alt punct forte, asigurând o zi completă de utilizare fără probleme. Încărcarea rapidă la 67W este un beneficiu major, permițând reîncărcarea rapidă a telefonului atunci când aveți nevoie. Această combinație de autonomie și viteză de încărcare îl face un companion de încredere.</p>
+<p>Ce îl face special? Senzorul telefoto periscop este un diferențiator clar, oferind posibilități de zoom pe care majoritatea concurenților nu le pot egala. De asemenea, designul premium și calitatea construcției sunt apreciate. Pe partea negativă, performanța procesorului în jocuri este limitată comparativ cu alte opțiuni, iar software-ul (realme UI) poate părea puțin încărcat pentru unii utilizatori.</p>
+<p>Realme 12 Pro+ este o alegere excelentă pentru cei care pun accent pe fotografie, în special pe zoom, și doresc un telefon cu un design unic și premium. Dacă performanța în jocuri nu este prioritatea numărul unu, iar bugetul permite (aprox. 1400 lei), acest model merită cu siguranță un loc în <strong>top telefoane 2026 raport calitate pret</strong>.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Senzor telefoto periscop cu zoom optic 3x, unic în segment</li>
+              <li>Design premium, inspirat de ceasuri de lux</li>
+              <li>Autonomie bună a bateriei</li>
+              <li>Încărcare rapidă 67W</li>
+              <li>Ecran AMOLED 120Hz plăcut</li>
+              <li>Performanță decentă pentru utilizare zilnică</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Procesorul este mai puțin performant în jocuri solicitante</li>
+              <li>Luminozitatea ecranului ar putea fi mai mare</li>
+              <li>Camera ultrawide este mediocră</li>
+              <li>Software-ul poate fi încărcat cu bloatware</li>
+              <li>Prețul este în partea superioară a segmentului accesibil</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g84-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Motorola Moto G84 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 695 5G
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.55 inch pOLED, 120Hz, 1300 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal, OIS) + 8MP (ultrawide)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G84 5G se poziționează ca un concurent puternic în categoria <strong>top telefoane 2026 raport calitate pret</strong> pentru cei cu un buget mai restrâns, oferind specificații surprinzătoare pentru prețul său. Display-ul pOLED de 6.55 inch cu 120Hz și 1300 nits de luminozitate este un atu major, oferind culori vibrante și o experiență fluidă la un nivel greu de găsit în această gamă de preț.</p>
+<p>Ce performanță oferă Snapdragon 695 5G? Acest chipset este un motor fiabil pentru sarcinile zilnice. Aplicațiile de socializare, navigarea pe web și streamingul video funcționează fără probleme. Deși nu este un procesor pentru gaming de ultimă generație, poate rula jocuri populare la setări grafice medii. Memoria RAM generoasă de 12 GB ajută la multitasking și la menținerea aplicațiilor deschise în fundal.</p>
+<p>Cât de bună este camera principală de 50MP cu OIS? Camera principală oferă fotografii surprinzător de bune pentru prețul său, beneficiind de stabilizarea optică a imaginii (OIS) care ajută la captarea unor imagini mai clare, mai ales în condiții de lumină slabă sau la filmare. Camera ultrawide de 8MP este decentă pentru peisaje sau grupuri.</p>
+<p>Autonomia bateriei de 5000 mAh este solidă, permițând utilizarea pe parcursul unei zile întregi, iar uneori chiar mai mult. Încărcarea la 30W este decentă și ajunge să încarce telefonul complet în aproximativ o oră și jumătate. Prezența unui software curat, apropiat de Android stock, este un alt plus apreciat de mulți utilizatori.</p>
+<p>Ce îl face o alegere bună pentru buget mic? Combinarea unui ecran pOLED excelent, a 12 GB RAM și a unei camere principale cu OIS la un preț sub 1000 lei este greu de egalat. Dezavantajele includ lipsa unui încărcător în cutie în unele regiuni și faptul că Snapdragon 695 5G nu este cel mai performant chipset de pe piață, fiind depășit de alternative mai noi în segmentul superior.</p>
+<p>Motorola Moto G84 5G este recomandarea noastră principală pentru cei care caută un telefon cu un ecran fantastic și performanță fluidă pentru utilizare zilnică, la un buget strict. La un preț estimat în jur de 900 lei, el bifează multe căsuțe importante și se impune ca un lider în categoria <strong>top telefoane 2026 raport calitate pret</strong> pentru buget redus.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran pOLED 120Hz excelent pentru preț</li>
+              <li>12 GB RAM pentru multitasking fluid</li>
+              <li>Cameră principală de 50MP cu OIS</li>
+              <li>Autonomie bună a bateriei</li>
+              <li>Software curat, apropiat de Android stock</li>
+              <li>Preț extrem de competitiv</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Performanța procesorului este medie, nu pentru gaming intens</li>
+              <li>Lipsa unui încărcător în cutie (în unele pachete)</li>
+              <li>Camera ultrawide este doar decentă</li>
+              <li>Designul este funcțional, dar nu foarte premium</li>
+              <li>Nu oferă funcții avansate precum zoom optic</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="google-pixel-8a">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Google Pixel 8a</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Google Tensor G3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.1 inch OLED, 120Hz, 1400 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>4942 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>64MP (principal, OIS) + 13MP (ultrawide)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Google Pixel 8a aduce experiența Pixel la un preț mai accesibil, fiind o opțiune de luat în seamă pentru <strong>top telefoane 2026 raport calitate pret</strong>, mai ales pentru cei interesați de fotografie mobilă și un software inteligent. Ecranul OLED de 6.1 inch cu 120Hz este luminos și oferă culori precise, ideal pentru navigare și vizionarea fotografiilor.</p>
+<p>Ce performanță oferă Google Tensor G3? Acest procesor se concentrează pe inteligența artificială și machine learning, oferind funcționalități avansate precum editare foto inteligentă, traducere în timp real și transcriere vocală. Pentru sarcinile zilnice și majoritatea jocurilor, performanța este bună, dar nu la nivelul celor mai noi chipset-uri Snapdragon destinate flagship-urilor.</p>
+<p>Cum se descurcă camera Pixel 8a? Fotografiile realizate cu camera principală de 64MP sunt excepționale, beneficiind de procesarea software legendară de la Google. Detaliile, culorile și gama dinamică sunt de top. Camera ultrawide de 13MP este de asemenea capabilă, oferind o perspectivă bună pentru peisaje.</p>
+<p>Autonomia bateriei de 4942 mAh este suficientă pentru o zi de utilizare moderată. Încărcarea la 18W (cu fir) și 7.5W (wireless) este destul de lentă comparativ cu alte telefoane din această gamă, fiind un minus notabil. Experiența software pură Android și actualizările rapide sunt puncte forte majore.</p>
+<p>Ce îl face special? Camera și funcționalitățile AI sunt principalele atuuri. Google oferă o experiență software curată, cu funcții unice pe care nu le găsiți altundeva. Dezavantajele includ viteza de încărcare lentă, lipsa unui slot pentru card microSD și stocarea de 128 GB care poate fi limitativă pentru unii. De asemenea, designul este destul de simplu.</p>
+<p>Google Pixel 8a este alegerea ideală dacă prioritatea ta este fotografia mobilă de excepție și o experiență software inteligentă și curată. La un preț estimat în jur de 1350 lei, el oferă un pachet unic, plasându-se ca un competitor serios în <strong>top telefoane 2026 raport calitate pret</strong> pentru utilizatorii orientați spre fotografie și AI.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Fotografii excelente datorită procesării Google</li>
+              <li>Funcționalități AI avansate și software curat</li>
+              <li>Ecran OLED 120Hz luminos</li>
+              <li>Actualizări rapide de software</li>
+              <li>Design compact și ușor de utilizat cu o singură mână</li>
+              <li>Preț accesibil pentru un Pixel</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Încărcare lentă (cu fir și wireless)</li>
+              <li>Stocare internă de 128 GB, fără slot microSD</li>
+              <li>Performanța procesorului nu este de top pentru gaming intens</li>
+              <li>Designul este destul de simplu, fără elemente premium</li>
+              <li>Autonomia bateriei este doar decentă</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <section id="comparatie">
+            <h2>Comparatie</h2>
+            <p>Comparație rapidă între modelele selectate din top telefoane 2026 raport calitate pret, pentru a vă ajuta să vizualizați diferențele cheie:</p>
+            <div class="comparison-outer">
+              <div class="comparison-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                Gliseaza pentru a vedea tot tabelul
+              </div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Procesor</th>
+                      <th>Display</th>
+                      <th>Baterie</th>
+                      <th>Camera</th>
+                      <th>Potrivit pentru</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+              <tr>
+                <td><strong>Xiaomi Redmi Note 14 Pro</strong></td>
+                <td>Snapdragon 7s Gen 3</td>
+                <td>6.7" AMOLED 120Hz</td>
+                <td>5100 mAh</td>
+                <td>108MP</td>
+                <td>Echilibru, Media</td>
+              </tr>
+
+              <tr>
+                <td><strong>Samsung Galaxy A35 5G</strong></td>
+                <td>Exynos 1380</td>
+                <td>6.6" Super AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Suport Software, Experiență Samsung</td>
+              </tr>
+
+              <tr>
+                <td><strong>OnePlus Nord 4</strong></td>
+                <td>Snapdragon 7+ Gen 3</td>
+                <td>6.7" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>64MP</td>
+                <td>Performanță, Gaming, Încărcare Rapidă</td>
+              </tr>
+
+              <tr>
+                <td><strong>Realme 12 Pro+</strong></td>
+                <td>Snapdragon 6 Gen 1</td>
+                <td>6.7" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>64MP (Telephoto 3x)</td>
+                <td>Fotografie Zoom, Design Premium</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G84 5G</strong></td>
+                <td>Snapdragon 695 5G</td>
+                <td>6.55" pOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP (OIS)</td>
+                <td>Buget Redus, Ecran de Calitate</td>
+              </tr>
+
+              <tr>
+                <td><strong>Google Pixel 8a</strong></td>
+                <td>Tensor G3</td>
+                <td>6.1" OLED 120Hz</td>
+                <td>4942 mAh</td>
+                <td>64MP</td>
+                <td>Fotografie AI, Software Pur</td>
+              </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="sfaturi">
+            <h2>Cum alegi cel mai bun telefon cu raport calitate-pret in 2026?</h2>
+            <div class="guide">
+              <p>Care sunt criteriile esentiale cand cauti un telefon cu <strong>top telefoane 2026 raport calitate pret</strong>?</p>
+<h4>Ce specificații contează cel mai mult pentru mine?</h4>
+<p>Prioritizarea este cheia. Daca esti un gamer pasionat, cauta un procesor puternic (ex: Snapdragon 7+ Gen 3) si o memorie RAM generoasa (12 GB). Pentru cei care folosesc telefonul predominant pentru social media, browsing si filme, un ecran AMOLED de 120Hz si o baterie mare (peste 5000 mAh) sunt mai importante decat cel mai nou chipset. Fotografia mobila cere senzori de calitate (ex: 50MP+ cu OIS sau senzori telefoto), iar procesarea software joaca un rol major, cum e cazul telefoanelor Pixel.</p>
+<h4>Cât de importantă este autonomia bateriei?</h4>
+<p>Daca vrei sa uiti de incarcator pe parcursul zilei, cauta telefoane cu baterii de minim 5000 mAh si un procesor eficient energetic. In combinatie cu o optimizare buna a sistemului de operare, poti ajunge la doua zile de utilizare moderata. Viteza de incarcare devine si ea cruciala; 67W sau mai mult inseamna incarcarea telefonului in sub o ora.</p>
+<h4>Ce cameră să aleg pentru fotografii bune?</h4>
+<p>Nu te lăsa păcălit doar de numărul de megapixeli. Un senzor principal de 50MP sau 64MP cu stabilizare optică (OIS) oferă rezultate mult mai bune decât un senzor de 108MP fără OIS, mai ales în condiții de lumină slabă. Pentru cei pasionați de zoom, un senzor telefoto periscop (ca la Realme 12 Pro+) este esențial. Procesarea software a imaginii, oferită de companii precum Google (Pixel) sau Samsung, face o diferență uriașă în calitatea finală a pozei.</p>
+<h4>Ce buget am și ce îmi pot permite?</h4>
+<p>Stabilește un buget clar înainte de a începe căutarea. În 2026, telefoanele sub 1000 lei (ex: Motorola Moto G84 5G) pot oferi ecrane excelente și performanță decentă. Pentru un echilibru mai bun și camere mai avansate, bugetul se poate extinde spre 1200-1500 lei (ex: Xiaomi Redmi Note 14 Pro, Google Pixel 8a, OnePlus Nord 4). Nu uita să verifici prețurile la diferiți retaileri, deoarece pot varia.</p>
+            </div>
+          </section>
+
+          <section class="faq-section" id="faq">
+            <h2 class="faq-title">Intrebari Frecvente</h2>
+
+            <details class="faq-item" id="faq-0">
+              <summary>
+                Care este cel mai bun telefon pentru fotografie în 2026 sub 1500 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Pentru fotografie sub 1500 lei, Google Pixel 8a se impune datorită procesării software excepționale, oferind imagini de top cu senzorul său de 64MP. Realme 12 Pro+ este o alternativă bună dacă prioritar este zoom-ul optic 3x.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-1">
+              <summary>
+                Ce telefon are cea mai bună autonomie a bateriei în 2026 în segmentul accesibil?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Modelele cu baterii de 5000 mAh sau mai mult excelează la autonomie. Xiaomi Redmi Note 14 Pro (5100 mAh) și Samsung Galaxy A35 5G (5000 mAh) oferă utilizare pe parcursul unei zile intense și chiar mai mult.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-2">
+              <summary>
+                Merită să cumpăr un telefon cu 12GB RAM în 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Dacă folosești intensiv multitasking, rulezi aplicații complexe sau joci jocuri solicitante, 12GB RAM (precum la OnePlus Nord 4 sau Motorola Moto G84 5G) asigură o fluiditate sporită și o experiență mai bună pe termen lung.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-3">
+              <summary>
+                Ce diferență este între AMOLED și pOLED pe telefoanele din 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Ambele tehnologii oferă culori vibrante și negru pur. AMOLED este standardul, în timp ce pOLED (precum la Motorola Moto G84 5G) poate oferi designuri mai subțiri și uneori un contrast ușor îmbunătățit. Diferența în utilizarea zilnică este minimă pentru majoritatea utilizatorilor.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-4">
+              <summary>
+                Cât costă în medie un telefon bun cu raport calitate-preț în 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Un telefon cu un raport calitate-preț excelent în 2026 se încadrează, în general, între 1000 și 1500 lei. Modelele sub 1000 lei oferă compromisuri mai mari, în timp ce cele peste 1500 lei încep să se apropie de segmentul premium.
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="author-line">
+          <div class="author-avatar">AI</div>
+          <div>
+            <div class="author-name">Andrei Ionescu</div>
+            <div class="author-role">Iubitor de telefoane, impatimit in tehnologie</div>
+          </div>
+        </div>
+
+        <SimilarArticles
+          currentSlug="top-telefoane-2026-raport-calitate-pret"
+          currentCategory="telefoane"
+          articles={allArticles}
+        />
+      </div>
+
+      <aside class="toc-sidebar">
+        <p class="toc-sidebar-title">Cuprins</p>
+        <ol class="toc-sidebar-list" id="toc-desktop-list">
+          {toc.map(item => (
+            <li><a href={`#${item.id}`} data-toc-id={item.id}>{item.title}</a></li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <script>
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocMobile = document.getElementById('toc-mobile');
+    tocToggle?.addEventListener('click', () => {
+      const isOpen = tocMobile?.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    // IO for active section tracking
+    const tocLinks = document.querySelectorAll('#toc-desktop-list a[data-toc-id]');
+    if (tocLinks.length > 0) {
+      const ids = Array.from(tocLinks).map(a => a.dataset.tocId);
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const match = Array.from(tocLinks).find(a => a.dataset.tocId === entry.target.id);
+              match?.classList.add('active');
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // Comparison table scroll fade
+    document.querySelectorAll('.comparison-outer').forEach(outer => {
+      const wrap = outer.querySelector('.comparison-wrap');
+      if (!wrap) return;
+      function checkScroll() {
+        const canScroll = wrap.scrollWidth > wrap.clientWidth;
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+        outer.classList.toggle('can-scroll', canScroll && !atEnd);
+      }
+      checkScroll();
+      wrap.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll, { passive: true });
+    });
+  </script>
+</Layout>
