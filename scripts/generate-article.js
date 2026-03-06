@@ -162,6 +162,15 @@ function stripStrong(str) {
   return str.replace(/<\/?strong>/g, '');
 }
 
+function stripFakeLinks(html, pagesDir) {
+  return html.replace(/<a\s+href="\/([^"#][^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (match, linkPath, text) => {
+    const slug = linkPath.replace(/\/$/, '');
+    if (fs.existsSync(path.join(pagesDir, `${slug}.astro`))) return match;
+    if (fs.existsSync(path.join(pagesDir, slug))) return match;
+    return text;
+  });
+}
+
 function markdownToHtml(text) {
   if (!text) return text;
   text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
@@ -941,6 +950,7 @@ ${faqHtml}
 `;
 
   const outputPath = path.join(rootDir, 'src', 'pages', `${slug}.astro`);
+  pageContent = stripFakeLinks(pageContent, path.join(rootDir, 'src', 'pages'));
   fs.writeFileSync(outputPath, pageContent);
   console.log(`  Article page created: ${outputPath}`);
 
