@@ -80,7 +80,7 @@ async function callGemini(prompt, maxRetries = 5) {
 
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     const ks = await acquireKey();
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
 
     try {
       const response = await fetch(url, {
@@ -90,9 +90,10 @@ async function callGemini(prompt, maxRetries = 5) {
           contents: [{ parts: [{ text: prompt }] }],
           generationConfig: {
             temperature: 0.85,
-            maxOutputTokens: 20000,
+            maxOutputTokens: 40000,
             topP: 0.95,
-            topK: 40
+            topK: 40,
+            responseMimeType: "application/json"
           }
         })
       });
@@ -186,7 +187,7 @@ const CF_API_TOKEN = 'JFNsPaoJGHzDhSO6uuvlXyiVdU0lAgcvUO_hSuTD';
 async function translateToEnglish(text) {
   for (let attempt = 0; attempt < 3; attempt++) {
     const ks = await acquireKey();
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
     try {
       ks.lastUsed = Date.now();
       const response = await fetch(url, {
@@ -222,7 +223,7 @@ function stripBrands(text) {
 async function rephraseWithoutBrands(text) {
   for (let attempt = 0; attempt < 3; attempt++) {
     const ks = await acquireKey();
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
     try {
       ks.lastUsed = Date.now();
       const response = await fetch(url, {
@@ -258,7 +259,7 @@ async function generateSafePrompt(text, categorySlug) {
   };
   for (let attempt = 0; attempt < 3; attempt++) {
     const ks = await acquireKey();
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${ks.key}`;
     try {
       ks.lastUsed = Date.now();
       const response = await fetch(url, {
@@ -560,9 +561,7 @@ In valorile string din JSON, foloseste \\n pentru newline si escaped quotes \\".
   while (retries > 0) {
     try {
       let text = await callGemini(prompt);
-
-      // Repair JSON
-      text = repairJSON(text);
+      text = text.trim();
 
       try {
         const parsed = JSON.parse(text);
@@ -571,14 +570,7 @@ In valorile string din JSON, foloseste \\n pentru newline si escaped quotes \\".
         }
         console.error('  Invalid JSON structure (missing fields), retrying...');
       } catch (parseError) {
-        // Log position context for debugging
-        const pos = parseError.message.match(/position (\d+)/);
-        if (pos) {
-          const p = parseInt(pos[1]);
-          console.error(`  JSON parse error at pos ${p}: ...${text.substring(Math.max(0, p-30), p)}>>>HERE>>>${text.substring(p, p+30)}...`);
-        } else {
-          console.error(`  JSON parse error: ${parseError.message.substring(0, 100)}`);
-        }
+        console.error(`  JSON parse error: ${parseError.message.substring(0, 100)}`);
       }
 
       retries--;
