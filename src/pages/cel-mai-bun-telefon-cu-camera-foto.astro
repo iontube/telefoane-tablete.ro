@@ -1,0 +1,648 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+export const frontmatter = {
+  title: "Cel mai bun telefon cu camera foto",
+  excerpt: "Cand vine vorba de cel mai bun telefon cu camera foto, piata din 2026 ofera optiuni care te pot face sa renunti la un aparat dedicat. Daca prioritatea ta principala este calitatea fotografiilor si filmarilor, Samsung Galaxy S24 Ultra ramane un reper de neclintit, datorita senzorului principal de 200MP si zoom-ului optic impresionant de 5x, la un pret care incepe de la aproximativ 6000 lei.",
+  image: "/images/articles/cel-mai-bun-telefon-cu-camera-foto.webp",
+  category: "Telefoane",
+  categorySlug: "telefoane",
+  date: "2026-03-08T08:23:08.858Z",
+  modifiedDate: "2026-03-08T08:23:08.859Z",
+  author: "Andrei Ionescu",
+  authorRole: "Iubitor de telefoane, impatimit in tehnologie",
+  authorBio: "De cand tin minte am fost obsedat de telefoane. Am trecut prin zeci de modele si imi place sa le compar si sa le testez pe bune."
+};
+
+const breadcrumbs = [
+  { name: "Acasa", url: "/" },
+  { name: "Telefoane", url: "/telefoane/" },
+  { name: "Cel mai bun telefon cu camera foto", url: "/cel-mai-bun-telefon-cu-camera-foto/" }
+];
+
+const faq = [
+  { question: "Care este cel mai bun telefon cu camera foto sub 2000 lei in 2026?", answer: "Sub 2000 lei, Xiaomi Redmi Note 13 Pro+ 5G este o alegere puternica. Oferă un senzor principal de 200MP, ecran AMOLED 120Hz si incarcare rapida de 120W, facandu-l excelent pentru pret." },
+  { question: "Ce inseamna senzorul de 200MP la telefoane?", answer: "Un senzor de 200MP capteaza mult mai multe detalii decat un senzor de 12MP sau 50MP. Permite fotografii mai clare, posibilitatea de a face zoom digital fara pierderi mari si optiuni extinse de editare sau printare mare." },
+  { question: "Merita sa cumperi un telefon doar pentru camera foto?", answer: "Da, daca fotografia mobila este prioritatea ta principala. Telefoanele de top, precum Samsung S24 Ultra, iPhone 15 Pro Max sau Xiaomi 14 Ultra, ofera sisteme de camere capabile sa rivalizeze cu aparate foto dedicate in anumite scenarii." },
+  { question: "Cum influenteaza procesorul calitatea pozei?", answer: "Procesorul (ISP - Image Signal Processor) este crucial. El preia datele brute de la senzor si le proceseaza pentru a crea imaginea finala. Un procesor bun imbunatateste culorile, gama dinamica, reduce zgomotul si permite functii avansate precum HDR, Night Mode si AI enhancements." },
+  { question: "Care este diferenta dintre zoom optic si zoom digital?", answer: "Zoom-ul optic foloseste lentile pentru a apropia subiectul, pastrand calitatea imaginii. Zoom-ul digital taie pur si simplu imaginea, marind pixelii, ceea ce duce la pierderi de calitate. Telefoanele cu zoom optic (ex: 3x, 5x, 10x) sunt superioare pentru fotografii de la distanta." }
+];
+
+const toc = [
+  { title: "Samsung Galaxy S24 Ultra", id: "samsung-galaxy-s24-ultra" },
+  { title: "Apple iPhone 15 Pro Max", id: "apple-iphone-15-pro-max" },
+  { title: "Google Pixel 8 Pro", id: "google-pixel-8-pro" },
+  { title: "Xiaomi 14 Ultra", id: "xiaomi-14-ultra" },
+  { title: "OnePlus 12", id: "oneplus-12" },
+  { title: "Xiaomi Redmi Note 13 Pro+ 5G", id: "xiaomi-redmi-note-13-pro-5g" },
+  { title: "Comparatie", id: "comparatie" },
+  { title: "Cum alegi cel mai bun telefon cu camera foto pentru tine?", id: "sfaturi" },
+  { title: "Intrebari Frecvente", id: "faq" }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title="Cel mai bun telefon cu camera foto - Telefoane-Tablete.ro"
+  description="Cand vine vorba de cel mai bun telefon cu camera foto, piata din 2026 ofera optiuni care te pot face sa renunti la un aparat dedicat. Daca prioritatea ta principala este calitatea fotografiilor si filmarilor, Samsung Galaxy S24 Ultra ramane un reper de neclintit, datorita senzorului principal de 200MP si zoom-ului optic impresionant de 5x, la un pret care incepe de la aproximativ 6000 lei."
+  image="/images/articles/cel-mai-bun-telefon-cu-camera-foto.webp"
+  type="article"
+  publishedTime="2026-03-08T08:23:08.858Z"
+  modifiedTime="2026-03-08T08:23:08.859Z"
+  author="Andrei Ionescu"
+  faq={faq}
+  breadcrumbs={breadcrumbs}
+>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <ol>
+        <li><a href="/">Acasa</a></li>
+        <li>Telefoane</li>
+        <li><span>Cel mai bun telefon cu camera foto</span></li>
+      </ol>
+    </nav>
+
+    Telefoane
+    <h1 class="article-page-title">Cel mai bun telefon cu camera foto</h1>
+
+    <div class="article-page-meta">
+      <span>Andrei Ionescu</span>
+      <span>&middot;</span>
+      <span>Publicat: 8 martie 2026</span>
+      <span>&middot;</span>
+      <span>Actualizat: 8 martie 2026</span>
+    </div>
+
+    <div class="article-hero">
+      <img src="/images/articles/cel-mai-bun-telefon-cu-camera-foto.webp" alt="Cel mai bun telefon cu camera foto" width="800" height="600" decoding="async" fetchpriority="high" />
+    </div>
+
+    <div class="article-layout">
+      <div>
+        <div class="toc-mobile" id="toc-mobile">
+          <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+            Cuprins
+            <span class="toc-chevron">&#9660;</span>
+          </button>
+          <ol class="toc-mobile-list" id="toc-mobile-list">
+            {toc.map(item => (
+              <li><a href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="article-content">
+          <section id="intro">
+            <p>Cand vine vorba de <strong>cel mai bun telefon cu camera foto</strong>, piata din 2026 ofera optiuni care te pot face sa renunti la un aparat dedicat. Daca prioritatea ta principala este calitatea fotografiilor si filmarilor, Samsung Galaxy S24 Ultra ramane un reper de neclintit, datorita senzorului principal de 200MP si zoom-ului optic impresionant de 5x, la un pret care incepe de la aproximativ 6000 lei. Totusi, alegerea optima depinde de nevoile specifice: buget, functii suplimentare sau preferinte de ecosistem.</p><p>Ce inseamna de fapt <strong>cel mai bun telefon cu camera foto</strong> pentru tine? Este vorba despre claritatea detaliilor in lumina slaba, despre posibilitatea de a fotografia subiecti aflati la distanta mare, despre culori fidele sau despre functii avansate de editare direct pe telefon? Raspunsurile la aceste intrebari te vor ghida spre alegerea corecta.</p><p>Analizam in continuare optiunile de top, de la flagship-uri scumpe la alternative mai accesibile, dar surprinzator de capabile, pentru a te ajuta sa faci cea mai buna investitie in materie de fotografie mobila.</p>
+          </section>
+
+
+          <article class="product-review" id="samsung-galaxy-s24-ultra">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Samsung Galaxy S24 Ultra</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 8 Gen 3 for Galaxy
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.8 inch Dynamic AMOLED 2X, 120Hz, HDR10+
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB / 512 GB / 1 TB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>200MP wide (OIS, PDAF) + 12MP ultrawide + 10MP telephoto (3x optical zoom, OIS) + 50MP telephoto (5x optical zoom, OIS)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung Galaxy S24 Ultra este, fara dubiu, un concurent serios pentru titlul de <strong>cel mai bun telefon cu camera foto</strong> din 2026. Senzorul principal de 200MP capteaza o cantitate incredibila de detalii, oferind flexibilitate mare in post-procesare sau la decupare. Performanta in conditii de lumina slaba este excelenta, cu un zgomot minim si o reproducere naturala a culorilor.</p><p>Ce face cu adevarat diferenta sunt sistemele de zoom. Ai un teleobiectiv de 3x si un altul de 5x, ambele cu stabilizare optica, capabile sa livreze imagini clare chiar si la distante considerabile. Zoom-ul digital, ajutat de AI, ajunge pana la 100x, util in anumite situatii, dar calitatea scade vizibil peste 10x. Modul portret este, de asemenea, foarte bine implementat, cu un bokeh natural si un control precis al focalizarii.</p><p>Merita camera de 200MP dincolo de specificatiile brute? Pentru majoritatea utilizatorilor, pozele standard (12MP, prin pixel binning) sunt mai mult decat suficiente, oferind un echilibru excelent intre detaliu si dimensiunea fisierului. Daca insa vrei cea mai mare flexibilitate pentru a edita ulterior sau pentru a imprima fotografii mari, modul de rezolutie completa este un avantaj. Filmarea 8K la 30fps este impresionanta, dar 4K la 60fps este mai practic pentru majoritatea scenariilor, oferind o stabilizare de top si o calitate video excelenta.</p><p>Pe langa camera, performanta generala este de varf, gratie procesorului Snapdragon 8 Gen 3 for Galaxy, ecranul de 6.8 inch este superb, iar bateria de 5000 mAh ofera autonomie pentru o zi grea de utilizare. S Pen-ul integrat adauga un plus de functionalitate, fiind util pentru notite rapide sau editari precise.</p><p>Pentru cine este potrivit acest telefon? Pentru pasionatii de fotografie mobila care doresc cea mai buna calitate, versatilitate maxima la zoom si functii avansate, si care sunt dispusi sa plateasca un pret premium. Daca bugetul nu este o problema si vrei performanta foto de top, Galaxy S24 Ultra este alegerea fireasca.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Sistem de camere extrem de versatil, cu zoom optic puternic</li>
+              <li>Senzor principal de 200MP pentru detalii exceptionale</li>
+              <li>Performanta excelenta in conditii de lumina slaba</li>
+              <li>Calitate video de top, inclusiv 8K</li>
+              <li>Display superb si performanta generala de varf</li>
+              <li>S Pen integrat pentru functionalitate sporita</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Pret foarte ridicat</li>
+              <li>Dimensiuni mari si greu de manevrat cu o singura mana</li>
+              <li>Zoom-ul digital peste 10x este utilizabil, dar nu de top</li>
+              <li>Fotografiile in modul 200MP ocupa mult spatiu</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="apple-iphone-15-pro-max">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Apple iPhone 15 Pro Max</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>A17 Bionic
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch Super Retina XDR OLED, 120Hz ProMotion, HDR10
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB / 512 GB / 1 TB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>4422 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>48MP wide (OIS, sensor-shift) + 12MP ultrawide + 12MP telephoto (5x optical zoom, OIS)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>iPhone 15 Pro Max continua traditia Apple de a oferi un pachet foto-video excelent, fiind un competitor de temut in segmentul <strong>cel mai bun telefon cu camera foto</strong>. Senzorul principal de 48MP, desi numeric mai mic decat la concurenta Android, livreaza imagini cu o rezolutie excelenta (implicit 24MP, dar si 48MP ProRAW), o gama dinamica impresionanta si culori naturale, usor de recunoscut ca fiind specifice iPhone. Procesarea de imagine este subtila, dar eficienta.</p><p>Ce avantaje aduce modelul Pro Max fata de cel Pro? In principal, un zoom optic mai bun. Noul teleobiectiv de 5x permite apropierea de subiect fara pierderi semnificative de calitate, ceea ce il face ideal pentru portrete sau detalii arhitecturale. Modul portret pe iPhone este recunoscut pentru precizia detectarii subiectului si calitatea blur-ului, iar pe acest model este si mai bun. Filmarea este punctul forte absolut al iPhone-ului, iar 15 Pro Max nu face exceptie. Video-ul 4K la 60fps este de o calitate cinematografica, cu o stabilizare de invidiat si posibilitatea de a inregistra in format ProRes, util pentru cei ce editeaza profesional.</p><p>Cum se descurca in lumina slaba? Foarte bine. Senzorul mare si procesarea eficienta minimizeaza zgomotul, pastrand detaliile si culorile. Nu este la fel de agresiv in a lumina scena ca unele telefoane Android, preferand o abordare mai naturala, ceea ce multi fotografi apreciaza. Merita sa alegi varianta Pro Max doar pentru camera? Daca zoom-ul optic de 5x este un factor decisiv pentru tine, atunci da. Altfel, iPhone 15 Pro ofera o experienta foto similara, dar cu zoom 3x.</p><p>In afara de camera, telefonul beneficiaza de ecranul ProMotion de 120Hz, extrem de fluid, performanta de top gratie cipului A17 Bionic si o autonomie buna, de obicei, o zi completa de utilizare moderata. Designul din titan este mai usor si mai rezistent.</p><p>Pentru cine este recomandat iPhone 15 Pro Max? Pentru creatorii de continut, vloggeri, fotografi amatori sau profesionisti care cauta cea mai buna experienta de filmare pe mobil, o camera principala excelenta si un zoom optic bun, totul integrat intr-un ecosistem iOS robust. Este o investitie serioasa, dar raspunsul la intrebarea <strong>cel mai bun telefon cu camera foto</strong> in ecosistemul Apple este clar.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Calitate video de referinta in industrie</li>
+              <li>Sistem de camere consistent si usor de utilizat</li>
+              <li>Zoom optic 5x de calitate superioara</li>
+              <li>Mod portret excelent si filmare ProRes</li>
+              <li>Performanta de top si ecran fluid</li>
+              <li>Design nou din titan, mai usor</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Pretul este premium</li>
+              <li>Lipsa unui senzor principal cu rezolutie mult mai mare (ex: 108MP, 200MP)</li>
+              <li>Interfata de camera mai putin personalizabila fata de Android</li>
+              <li>Autonomia, desi buna, nu egaleaza unii competitori Android cu baterii mai mari</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="google-pixel-8-pro">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Google Pixel 8 Pro</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Google Tensor G3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch LTPO OLED, 120Hz, HDR10+
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB / 256 GB / 512 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5050 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP wide (OIS, PDAF) + 48MP ultrawide + 48MP telephoto (5x optical zoom, OIS)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Google Pixel 8 Pro se impune ca un candidat redutabil la titlul de <strong>cel mai bun telefon cu camera foto</strong>, mai ales pentru cei care pun accent pe fotografie computationala si procesare AI. Senzorul principal de 50MP, combinat cu algoritmii Google, produce imagini uimitoare, cu detalii bogate, o gama dinamica excelenta si culori naturale, dar vibrante. Ce il diferentiaza cu adevarat sunt functiile AI.</p><p>Ce poti face cu functiile AI pe Pixel 8 Pro? Poti folosi Magic Eraser pentru a elimina obiecte sau persoane nedorite din fotografii, Best Take pentru a alege cea mai buna expresie dintr-o serie de poze si Audio Magic Eraser pentru a reduce zgomotele de fond din clipurile video. Aceste instrumente, integrate nativ, fac editarea mult mai usoara si rezultatele profesionale, chiar si pentru un utilizator neexperimentat. Camera ultrawide de 48MP este excelenta, iar teleobiectivul de 48MP cu zoom optic 5x completeaza un pachet foto foarte echilibrat.</p><p>Cum se descurca in conditii de lumina slaba? La fel ca generatiile anterioare, Pixel 8 Pro exceleaza in Night Sight, capturand imagini luminoase si detaliate din intuneric. Procesarea este rapida si eficienta, oferind rezultate impresionante fara prea mult efort din partea utilizatorului. Filmarea 4K la 60fps este de buna calitate, dar nu atinge nivelul de referinta al iPhone-ului, insa functiile AI dedicate video-ului sunt un plus.</p><p>Merita sa alegi Pixel 8 Pro daca vrei <strong>cel mai bun telefon cu camera foto</strong>? Daca apreciati simplitatea, inteligenta artificiala si rezultatele consistente fara prea multa bataie de cap, raspunsul este un mare DA. Performanta generala este buna, gratie cipului Tensor G3, ecranul este luminos si fluid, iar bateria de 5050 mAh ar trebui sa tina o zi intreaga.</p><p>Pentru cine este recomandat Pixel 8 Pro? Pentru utilizatorii care isi doresc fotografii de calitate exceptionala cu efort minim, cei interesati de functiile AI avansate pentru editare si pentru fanii experientei Android pure, cu update-uri garantate pe termen lung. La un pret mai accesibil decat flagship-urile Samsung si Apple, ofera o valoare formidabila.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Procesare AI de top pentru fotografii si video</li>
+              <li>Sunet si imagine excelente in conditii de lumina slaba</li>
+              <li>Set de camere versatil cu zoom optic 5x</li>
+              <li>Actualizari software garantate pe 7 ani</li>
+              <li>Experienta Android pura si fluida</li>
+              <li>Pret mai accesibil decat concurenta directa din segmentul premium</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Performanta procesorului Tensor G3 nu egaleaza Snapdragon sau A-series in sarcini intensive</li>
+              <li>Autonomia bateriei este buna, dar nu exceptionala</li>
+              <li>Calitatea video, desi buna, nu este la nivelul iPhone</li>
+              <li>Designul, desi elegant, este mai putin distinctiv</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="xiaomi-14-ultra">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Xiaomi 14 Ultra</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 8 Gen 3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.73 inch AMOLED, 120Hz, Dolby Vision
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB / 16 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB / 512 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP wide (OIS, PDAF, 1-inch type sensor) + 50MP ultrawide + 50MP telephoto (3.2x optical zoom, OIS) + 50MP periscope telephoto (5x optical zoom, OIS)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Xiaomi 14 Ultra este o forta in domeniul fotografiei mobile, propunandu-se ca <strong>cel mai bun telefon cu camera foto</strong> pentru entuziastii care cauta hardware de top si flexibilitate maximă. Senzorul principal masiv de tip 1 inch, cu o rezoluție de 50MP, capteaza o cantitate enormă de lumină, oferind o profunzime de câmp impresionantă și o calitate a imaginii care se apropie de camerele dedicate. Diafragma variabilă pe senzorul principal adaugă un control suplimentar asupra expunerii.</p><p>Ce face ca acest telefon sa iasa in evidenta? Sistemul cu patru camere de 50MP. Ai o cameră ultrawide, două teleobiective (unul cu zoom 3.2x, celălalt periscopic cu zoom 5x) și senzorul principal de 1 inch. Această configurație oferă o versatilitate incredibilă, permițând fotografierea de la prim-planuri macro până la subiecte aflate la distanță, totul cu o calitate excepțională. Colaborarea cu Leica se vede în culorile bogate și în modurile de fotografiere specifice, care adaugă un caracter unic imaginilor.</p><p>Cum se descurcă in lumina slaba? Datorita senzorului de 1 inch si a diafragmei f/1.6, performanta este fenomenala. Pozele sunt clare, detaliate, cu zgomot minim si un bokeh natural, plăcut. Filmarea 8K la 30fps este bine realizata, dar la fel ca la majoritatea telefoanelor Android, nu atinge nivelul iPhone-ului din punct de vedere al stabilizarii si fluiditatii.</p><p>Merita sa investesti in Xiaomi 14 Ultra? Daca prioritizezi hardware-ul foto de ultimă generație, un senzor principal imens și flexibilitatea oferită de cele patru camere de 50MP, răspunsul este da. Performanța generală este excelentă, cu procesorul Snapdragon 8 Gen 3 și ecranul AMOLED superb. Bateria de 5000 mAh se încarcă extrem de rapid, atât prin fir, cât și wireless.</p><p>Pentru cine este recomandat acest model? Pentru fotografi pasionați care caută un telefon capabil să înlocuiască un aparat foto compact, pentru cei care apreciază calitatea construcției premium și performanța de top, și pentru utilizatorii care doresc cele mai noi tehnologii de pe piață. Este o alegere excelentă pentru cine caută <strong>cel mai bun telefon cu camera foto</strong> pe partea de hardware pur.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Senzor principal de 1 inch pentru fotografie de top</li>
+              <li>Sistem cvadruplu de camere de 50MP extrem de versatil</li>
+              <li>Performanță excelentă în lumina slabă</li>
+              <li>Încărcare rapidă prin fir și wireless</li>
+              <li>Display de înaltă calitate cu culori vibrante</li>
+              <li>Colaborare cu Leica pentru moduri și culori unice</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Prețul este ridicat, apropiat de cel al flagship-urilor</li>
+              <li>Dimensiunile sunt generoase, mai greu de manevrat</li>
+              <li>Software-ul camerei, deși puternic, poate fi complex pentru începători</li>
+              <li>Calitatea video nu egalează liderii din industrie</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="oneplus-12">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>OnePlus 12</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 8 Gen 3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.82 inch LTPO AMOLED, 120Hz, Dolby Vision
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB / 16 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB / 512 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5400 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP wide (OIS, PDAF, senzor Sony LYT-808) + 48MP ultrawide + 64MP periscope telephoto (3x optical zoom, OIS)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>OnePlus 12 se poziționează ca un telefon premium cu un pachet foto impresionant, fiind o opțiune serioasă pentru cei care caută <strong>cel mai bun telefon cu camera foto</strong>, dar într-un pachet mai echilibrat din punct de vedere al prețului. Camera principală de 50MP, cu senzorul Sony LYT-808, oferă performanțe solide în diverse condiții de iluminare. Colaborarea cu Hasselblad continuă să aducă un plus de rafinament în reproducerea culorilor, rezultând imagini naturale și plăcute.</p><p>Ce face diferența la OnePlus 12? Versatilitatea sistemului de camere. Pe lângă senzorul principal, ai o cameră ultrawide excelentă și un teleobiectiv periscopic cu zoom optic 3x, suficient pentru majoritatea scenariilor de zi cu zi. Deși nu are zoom-ul pe distanțe foarte mari al altor flagship-uri, calitatea imaginilor la 3x este foarte bună, iar zoom-ul digital ajunge până la 120x, util ocazional. Modul portret beneficiază de procesarea Hasselblad, oferind un bokeh plăcut și natural.</p><p>Cum se descurcă în lumina slabă? Camera principală, ajutată de senzorul mare și stabilizarea optică, face o treabă bună. Imaginile sunt clare, cu un nivel de zgomot controlat. Nu egalează performanța de top a lui Pixel sau S24 Ultra în întuneric total, dar este cu siguranță în liga premium. Filmarea 4K la 60fps este de calitate, cu o stabilizare bună.</p><p>Merita OnePlus 12 pentru camera sa? Dacă nu ai nevoie de cel mai avansat zoom optic sau de rezoluții de 200MP, atunci da. Oferă fotografii și video-uri excelente pentru majoritatea utilizatorilor, la un preț mai competitiv. Performanța generală este de top, datorită procesorului Snapdragon 8 Gen 3. Ecranul este unul dintre cele mai bune de pe piață, iar bateria masivă de 5400 mAh, combinată cu încărcarea rapidă de 100W (și 50W wireless), asigură o autonomie excelentă.</p><p>Pentru cine este acest telefon? Pentru utilizatorii care caută un pachet complet premium, cu o cameră foto foarte capabilă, performanță de top, ecran superb și autonomie excelentă, dar nu vor să cheltuie la fel de mult ca pe un Galaxy S24 Ultra sau iPhone 15 Pro Max. Este o alternativă inteligentă și performantă.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Sistem de camere versatil cu zoom optic 3x de calitate</li>
+              <li>Performanță generală de top, ecran excelent</li>
+              <li>Autonomie fantastică a bateriei</li>
+              <li>Încărcare extrem de rapidă (100W cu fir, 50W wireless)</li>
+              <li>Raport calitate-preț foarte bun pentru un flagship</li>
+              <li>Reproducere naturală a culorilor datorită Hasselblad</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Zoom-ul optic este limitat la 3x</li>
+              <li>Performanța în lumina slabă nu egalează liderii absoluți</li>
+              <li>Software-ul camerei poate fi uneori mai puțin intuitiv</li>
+              <li>Lipsa unui senzor dedicat macro, deși ultrawide-ul compensează parțial</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="xiaomi-redmi-note-13-pro-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Xiaomi Redmi Note 13 Pro+ 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Dimensity 7200 Ultra
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.67 inch AMOLED, 120Hz, Dolby Vision
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB / 12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128 GB / 256 GB / 512 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>200MP wide (OIS, PDAF) + 8MP ultrawide + 2MP macro
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Pentru cine caută <strong>cel mai bun telefon cu camera foto</strong> în segmentul mid-range, Xiaomi Redmi Note 13 Pro+ 5G oferă un pachet surprinzător de performant, mai ales având în vedere prețul său. Senzorul principal de 200MP este punctul forte, capabil să producă fotografii detaliate în condiții bune de lumină, depășind multe alte telefoane din categoria sa de preț. Modul de rezoluție completă scoate în evidență detaliile, dar pentru utilizare zilnică, modul pixel-binning (implicit 12MP) oferă un echilibru mai bun între calitate și dimensiunea fișierului.</p><p>Cum se descurcă camera de 200MP în practică? În lumina naturală, rezultatele sunt excelente pentru prețul plătit, cu culori vii și detalii suficiente. Totuși, nu te aștepta la performanțe de flagship. În condiții de lumină slabă, zgomotul apare mai repede, iar procesarea AI încearcă să compenseze, uneori cu artefacte. Camera ultrawide de 8MP este decentă pentru peisaje, dar nu excelează, iar senzorul macro de 2MP este, ca de obicei, mai mult un bonus cosmetic.</p><p>Merită acest telefon pentru camera sa? Dacă principalul tău criteriu este un senzor principal cu rezoluție mare, capabil de fotografii bune în zi, atunci Redmi Note 13 Pro+ 5G este o alegere solidă. Filmarea 4K la 30fps este acceptabilă, dar nu impresionează. Dincolo de cameră, telefonul oferă un ecran AMOLED luminos și fluid, performanță decentă pentru sarcini zilnice datorită procesorului Dimensity 7200 Ultra, și o autonomie bună cu bateria de 5000 mAh, plus încărcare rapidă de 120W.</p><p>Pentru cine este acest telefon? Pentru utilizatorii cu un buget limitat care își doresc totuși un telefon cu o cameră principală cu rezoluție mare și capabilă de fotografii bune în condiții optime. Este ideal pentru social media, fotografii de zi cu zi și pentru cei care apreciază un design modern și un ecran de calitate la un preț accesibil.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Senzor principal de 200MP pentru detalii bune în lumină naturală</li>
+              <li>Ecran AMOLED 120Hz de calitate</li>
+              <li>Încărcare rapidă de 120W</li>
+              <li>Design modern și rezistent la apă (IP54)</li>
+              <li>Preț foarte competitiv pentru specificații</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Performanța în lumina slabă este mediocră</li>
+              <li>Camerele ultrawide și macro sunt slabe</li>
+              <li>Procesorul este bun, dar nu de nivel flagship</li>
+              <li>Calitatea video este doar decentă, nu excepțională</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <section id="comparatie">
+            <h2>Comparatie</h2>
+            <p>Comparația rapidă te ajută să vezi principalele diferențe între modelele de top, pentru a te orienta mai ușor spre alegerea ta.</p>
+            <div class="comparison-outer">
+              <div class="comparison-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                Gliseaza pentru a vedea tot tabelul
+              </div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Procesor</th>
+                      <th>Display</th>
+                      <th>Baterie</th>
+                      <th>Camera</th>
+                      <th>Potrivit pentru</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+              <tr>
+                <td><strong>Samsung Galaxy S24 Ultra</strong></td>
+                <td>Snapdragon 8 Gen 3</td>
+                <td>6.8" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>200MP principal</td>
+                <td>Fotografie versatilă, zoom</td>
+              </tr>
+
+              <tr>
+                <td><strong>Apple iPhone 15 Pro Max</strong></td>
+                <td>A17 Bionic</td>
+                <td>6.7" OLED 120Hz</td>
+                <td>4422 mAh</td>
+                <td>48MP principal</td>
+                <td>Filmări de top, ecosistem iOS</td>
+              </tr>
+
+              <tr>
+                <td><strong>Google Pixel 8 Pro</strong></td>
+                <td>Tensor G3</td>
+                <td>6.7" OLED 120Hz</td>
+                <td>5050 mAh</td>
+                <td>50MP principal</td>
+                <td>Fotografie AI, simplitate</td>
+              </tr>
+
+              <tr>
+                <td><strong>Xiaomi 14 Ultra</strong></td>
+                <td>Snapdragon 8 Gen 3</td>
+                <td>6.73" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP (senzor 1 inch)</td>
+                <td>Hardware foto avansat</td>
+              </tr>
+
+              <tr>
+                <td><strong>OnePlus 12</strong></td>
+                <td>Snapdragon 8 Gen 3</td>
+                <td>6.82" AMOLED 120Hz</td>
+                <td>5400 mAh</td>
+                <td>50MP principal</td>
+                <td>Echilibru, autonomie</td>
+              </tr>
+
+              <tr>
+                <td><strong>Xiaomi Redmi Note 13 Pro+</strong></td>
+                <td>Dimensity 7200 Ultra</td>
+                <td>6.67" AMOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>200MP principal</td>
+                <td>Buget redus, cameră principală</td>
+              </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="sfaturi">
+            <h2>Cum alegi cel mai bun telefon cu camera foto pentru tine?</h2>
+            <div class="guide">
+              <p>Alegerea <strong>cel mai bun telefon cu camera foto</strong> depinde de prioritățile tale. Nu există un singur model perfect pentru toată lumea. Iată câțiva factori cheie de luat în considerare:</p><h4>Ce tip de fotografii faci cel mai des?</h4><p>Dacă preferi peisaje și arhitectură, vei aprecia un senzor ultrawide de calitate. Pentru portrete cu fundal blurat, caută un telefon cu mod portret bine implementat și, ideal, un zoom optic decent. Pentru detalii de la distanță, zoom-ul optic este esențial. Dacă vrei flexibilitate maximă, un sistem cu mai multe camere (ultrawide, principal, teleobiectiv) este recomandat.</p><h4>Cât de importantă este fotografia în condiții de lumină slabă?</h4><p>Pentru performanță excelentă pe timp de noapte, caută telefoane cu senzori mari (ideal tip 1 inch), diafragme deschise (f/1.6, f/1.7) și procesare AI avansată (cum este cazul la Google Pixel). Flagship-urile high-end excelează aici, dar și modelele mid-range cu senzori buni pot oferi rezultate decente.</p><h4>Prioritizezi calitatea video sau fotografia?</h4><p>iPhone-urile sunt, în general, considerate lideri la capitolul filmare video, oferind o stabilizare excelentă și o calitate cinematică. Dacă filmarea este prioritară, un iPhone 15 Pro Max ar fi alegerea potrivită. Pentru fotografie pură, opțiunile Android precum Samsung, Xiaomi 14 Ultra sau Pixel 8 Pro oferă uneori mai multă versatilitate și funcții.</p><h4>Ce buget ai alocat?</h4><p>Prețul este un factor determinant. Flagship-urile precum Samsung Galaxy S24 Ultra sau iPhone 15 Pro Max pot costa peste 1000-1200 euro. Modele precum Google Pixel 8 Pro sau OnePlus 12 oferă performanțe premium la un preț ceva mai accesibil. Pentru un buget redus, Xiaomi Redmi Note 13 Pro+ 5G este o opțiune foarte bună, oferind un senzor principal de 200MP la un preț de aproximativ 400-500 euro.</p>
+            </div>
+          </section>
+
+          <section class="faq-section" id="faq">
+            <h2 class="faq-title">Intrebari Frecvente</h2>
+
+            <details class="faq-item" id="faq-0">
+              <summary>
+                Care este cel mai bun telefon cu camera foto sub 2000 lei in 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Sub 2000 lei, Xiaomi Redmi Note 13 Pro+ 5G este o alegere puternica. Oferă un senzor principal de 200MP, ecran AMOLED 120Hz si incarcare rapida de 120W, facandu-l excelent pentru pret.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-1">
+              <summary>
+                Ce inseamna senzorul de 200MP la telefoane?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Un senzor de 200MP capteaza mult mai multe detalii decat un senzor de 12MP sau 50MP. Permite fotografii mai clare, posibilitatea de a face zoom digital fara pierderi mari si optiuni extinse de editare sau printare mare.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-2">
+              <summary>
+                Merita sa cumperi un telefon doar pentru camera foto?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Da, daca fotografia mobila este prioritatea ta principala. Telefoanele de top, precum Samsung S24 Ultra, iPhone 15 Pro Max sau Xiaomi 14 Ultra, ofera sisteme de camere capabile sa rivalizeze cu aparate foto dedicate in anumite scenarii.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-3">
+              <summary>
+                Cum influenteaza procesorul calitatea pozei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Procesorul (ISP - Image Signal Processor) este crucial. El preia datele brute de la senzor si le proceseaza pentru a crea imaginea finala. Un procesor bun imbunatateste culorile, gama dinamica, reduce zgomotul si permite functii avansate precum HDR, Night Mode si AI enhancements.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-4">
+              <summary>
+                Care este diferenta dintre zoom optic si zoom digital?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Zoom-ul optic foloseste lentile pentru a apropia subiectul, pastrand calitatea imaginii. Zoom-ul digital taie pur si simplu imaginea, marind pixelii, ceea ce duce la pierderi de calitate. Telefoanele cu zoom optic (ex: 3x, 5x, 10x) sunt superioare pentru fotografii de la distanta.
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="author-line">
+          <div class="author-avatar">AI</div>
+          <div>
+            <div class="author-name">Andrei Ionescu</div>
+            <div class="author-role">Iubitor de telefoane, impatimit in tehnologie</div>
+          </div>
+        </div>
+
+        <SimilarArticles
+          currentSlug="cel-mai-bun-telefon-cu-camera-foto"
+          currentCategory="telefoane"
+          articles={allArticles}
+        />
+      </div>
+
+      <aside class="toc-sidebar">
+        <p class="toc-sidebar-title">Cuprins</p>
+        <ol class="toc-sidebar-list" id="toc-desktop-list">
+          {toc.map(item => (
+            <li><a href={`#${item.id}`} data-toc-id={item.id}>{item.title}</a></li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <script>
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocMobile = document.getElementById('toc-mobile');
+    tocToggle?.addEventListener('click', () => {
+      const isOpen = tocMobile?.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    // IO for active section tracking
+    const tocLinks = document.querySelectorAll('#toc-desktop-list a[data-toc-id]');
+    if (tocLinks.length > 0) {
+      const ids = Array.from(tocLinks).map(a => a.dataset.tocId);
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const match = Array.from(tocLinks).find(a => a.dataset.tocId === entry.target.id);
+              match?.classList.add('active');
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // Comparison table scroll fade
+    document.querySelectorAll('.comparison-outer').forEach(outer => {
+      const wrap = outer.querySelector('.comparison-wrap');
+      if (!wrap) return;
+      function checkScroll() {
+        const canScroll = wrap.scrollWidth > wrap.clientWidth;
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+        outer.classList.toggle('can-scroll', canScroll && !atEnd);
+      }
+      checkScroll();
+      wrap.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll, { passive: true });
+    });
+  </script>
+</Layout>
