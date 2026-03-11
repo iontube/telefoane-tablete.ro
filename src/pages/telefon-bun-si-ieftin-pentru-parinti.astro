@@ -1,0 +1,650 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+export const frontmatter = {
+  title: "Telefon bun si ieftin pentru parinti",
+  excerpt: "Cel mai bun telefon bun si ieftin pentru parinti in 2026 este Xiaomi Redmi 13C, oferind un echilibru excelent intre performanta, autonomie si pret, situandu-se in jurul valorii de 700 lei. Daca prioritatile se schimba, Samsung Galaxy A15 se remarca prin ecranul luminos, in timp ce Motorola Moto G34 5G aduce conectivitate de ultima generatie la un pret accesibil.",
+  image: "/images/articles/telefon-bun-si-ieftin-pentru-parinti.webp",
+  category: "Telefoane",
+  categorySlug: "telefoane",
+  date: "2026-03-11T08:37:43.281Z",
+  modifiedDate: "2026-03-11T08:37:43.281Z",
+  author: "Andrei Ionescu",
+  authorRole: "Iubitor de telefoane, impatimit in tehnologie",
+  authorBio: "De cand tin minte am fost obsedat de telefoane. Am trecut prin zeci de modele si imi place sa le compar si sa le testez pe bune."
+};
+
+const breadcrumbs = [
+  { name: "Acasa", url: "/" },
+  { name: "Telefoane", url: "/telefoane/" },
+  { name: "Telefon bun si ieftin pentru parinti", url: "/telefon-bun-si-ieftin-pentru-parinti/" }
+];
+
+const faq = [
+  { question: "Care este cel mai bun telefon sub 700 lei pentru parinti?", answer: "Cel mai bun telefon sub 700 lei pentru parinti este Xiaomi Redmi 13C. Acesta ofera un ecran mare de 6.74 inch, o baterie masiva de 5000 mAh ce tine usor doua zile, camera principala de 50MP si performanta suficienta pentru utilizare zilnica, facandu-l o alegere echilibrata." },
+  { question: "Ce autonomie au telefoanele recomandate?", answer: "Majoritatea telefoanelor recomandate, precum Xiaomi Redmi 13C, Samsung Galaxy A15, Motorola Moto G34 5G, Nokia G42 5G si Motorola Moto G22, dispun de baterii de 5000 mAh. Acestea ofera o autonomie de cel putin o zi si jumatate, adesea chiar doua zile de utilizare moderata, fiind ideale pentru parinti." },
+  { question: "Merita sa iau un telefon 5G pentru parinti?", answer: "Daca bugetul permite si vrei sa asiguri o tehnologie pe termen lung, un telefon 5G (precum Moto G34 5G sau Nokia G42 5G) poate fi o alegere buna. Totusi, pentru navigare, apeluri si mesaje, un telefon 4G performant este la fel de capabil, iar reteaua 5G nu este inca disponibila peste tot. Prioritizeaza un ecran si o baterie bune daca 5G nu este o necesitate imediata." },
+  { question: "Cat de bune sunt camerele telefoanelor ieftine pentru parinti?", answer: "Telefoanele ieftine recomandate (sub 1000 lei) dispun de obicei de camere principale de 50MP sau chiar 108MP (Realme C53). In conditii bune de lumina, acestea produc fotografii decente, potrivite pentru amintiri cotidiene. Performanta scade in lumina slaba, iar camerele secundare (ultrawide, macro) sunt adesea modeste. Nu te astepta la performante de top, dar sunt suficiente pentru uz ocazional." },
+  { question: "Ce inseamna un ecran de 120Hz pe un telefon pentru parinti?", answer: "Un ecran cu rata de refresh de 120Hz (precum pe Motorola Moto G34 5G) face ca derularea textului, navigarea prin meniuri si animatiile din aplicatii sa fie mult mai fluide si mai placute vizual decat pe un ecran standard de 60Hz sau 90Hz. Pentru parintii care petrec mult timp navigand, acest aspect poate imbunatati semnificativ experienta de utilizare." }
+];
+
+const toc = [
+  { title: "Xiaomi Redmi 13C", id: "xiaomi-redmi-13c" },
+  { title: "Samsung Galaxy A15 4G", id: "samsung-galaxy-a15-4g" },
+  { title: "Motorola Moto G34 5G", id: "motorola-moto-g34-5g" },
+  { title: "Nokia G42 5G", id: "nokia-g42-5g" },
+  { title: "Motorola Moto G22", id: "motorola-moto-g22" },
+  { title: "Realme C53", id: "realme-c53" },
+  { title: "Comparatie", id: "comparatie" },
+  { title: "Cum alegi un telefon bun si ieftin pentru parinti in 2026?", id: "sfaturi" },
+  { title: "Intrebari Frecvente", id: "faq" }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title="Telefon bun si ieftin pentru parinti - Telefoane-Tablete.ro"
+  description="Cel mai bun telefon bun si ieftin pentru parinti in 2026 este Xiaomi Redmi 13C, oferind un echilibru excelent intre performanta, autonomie si pret, situandu-se in jurul valorii de 700 lei. Daca prioritatile se schimba, Samsung Galaxy A15 se remarca prin ecranul luminos, in timp ce Motorola Moto G34 5G aduce conectivitate de ultima generatie la un pret accesibil."
+  image="/images/articles/telefon-bun-si-ieftin-pentru-parinti.webp"
+  type="article"
+  publishedTime="2026-03-11T08:37:43.281Z"
+  modifiedTime="2026-03-11T08:37:43.281Z"
+  author="Andrei Ionescu"
+  faq={faq}
+  breadcrumbs={breadcrumbs}
+>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <ol>
+        <li><a href="/">Acasa</a></li>
+        <li>Telefoane</li>
+        <li><span>Telefon bun si ieftin pentru parinti</span></li>
+      </ol>
+    </nav>
+
+    Telefoane
+    <h1 class="article-page-title">Telefon bun si ieftin pentru parinti</h1>
+
+    <div class="article-page-meta">
+      <span>Andrei Ionescu</span>
+      <span>&middot;</span>
+      <span>Publicat: 11 martie 2026</span>
+      <span>&middot;</span>
+      <span>Actualizat: 11 martie 2026</span>
+    </div>
+
+    <div class="article-hero">
+      <img src="/images/articles/telefon-bun-si-ieftin-pentru-parinti.webp" alt="Telefon bun si ieftin pentru parinti" width="800" height="600" decoding="async" fetchpriority="high" />
+    </div>
+
+    <div class="article-layout">
+      <div>
+        <div class="toc-mobile" id="toc-mobile">
+          <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+            Cuprins
+            <span class="toc-chevron">&#9660;</span>
+          </button>
+          <ol class="toc-mobile-list" id="toc-mobile-list">
+            {toc.map(item => (
+              <li><a href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="article-content">
+          <section id="intro">
+            <p>Cel mai bun telefon bun si ieftin pentru parinti in 2026 este Xiaomi Redmi 13C, oferind un echilibru excelent intre performanta, autonomie si pret, situandu-se in jurul valorii de 700 lei. Daca prioritatile se schimba, Samsung Galaxy A15 se remarca prin ecranul luminos, in timp ce Motorola Moto G34 5G aduce conectivitate de ultima generatie la un pret accesibil. Alegerea finala depinde de ce aspecte sunt cele mai importante pentru seniori: usurinta in utilizare, durata de viata a bateriei, calitatea camerei sau conectivitatea.</p><p>Navigarea pe piata de telefoane pentru parinti poate fi o provocare, intrucat nevoile difera. Unii cauta simplitate si butoane mari, altii au nevoie de o baterie care sa reziste zile intregi, iar altii doresc o camera decenta pentru a pastra amintiri. Piata actuala ofera optiuni variate, de la modele ultra-ieftine la cele care se apropie de mid-range, insa noi ne concentram pe cele care ofera cel mai bun raport calitate-pret, raspunzand specific cautarii de <strong>telefon bun si ieftin pentru parinti</strong>.</p><p>Ce inteleg parintii prin «telefon bun si ieftin»? De obicei, se refera la un dispozitiv fiabil, usor de utilizat, cu o autonomie buna, un ecran vizibil si un pret sub 1000 lei, ideal chiar sub 700 lei. Nu sunt interesati de ultimele tehnologii de gaming sau de camere foto profesionale, ci de functionalitate pura: apeluri clare, mesaje rapide, acces la aplicatii de baza precum WhatsApp sau Facebook si, eventual, o camera decenta pentru poze de familie. Aceasta cautare de <strong>telefon bun si ieftin pentru parinti</strong> ne-a ghidat spre selectia de mai jos.</p>
+          </section>
+
+
+          <article class="product-review" id="xiaomi-redmi-13c">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Xiaomi Redmi 13C</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Helio G85
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.74 inch IPS LCD, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4GB / 6GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128GB / 256GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 2MP (macro) + 0.08MP (depth)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Xiaomi Redmi 13C se pozitioneaza ca o optiune de top pentru cei care cauta un <strong>telefon bun si ieftin pentru parinti</strong>, combinand specificatii solide cu un pret foarte atractiv, undeva in jur de 700 lei. Procesorul MediaTek Helio G85, desi nu este un campion al performantei, este suficient pentru sarcinile zilnice ale unui parinte: navigare pe internet, apeluri video pe WhatsApp, citirea stirilor si utilizarea aplicatiilor de socializare. Ecranul de 6.74 inch este generos, oferind suficient spatiu pentru vizualizarea continutului, iar rata de refresh de 90Hz face scrolling-ul mai fluid decat pe multe alte telefoane din aceasta gama de pret.</p><p>Ce autonomie ofera bateria de 5000 mAh in utilizare reala? Cu un utilizator moderat, care foloseste telefonul pentru apeluri, mesaje si navigare ocazionala, Redmi 13C poate ajunge fara probleme la doua zile de utilizare. Chiar si cu un uz mai intens, incluzand vizionarea de clipuri video sau utilizarea intensa a aplicatiilor de socializare, bateria va rezista cu siguranta o zi intreaga, eliminand grija incarcarii constante. Acest aspect este crucial pentru parinti, care nu doresc sa fie nevoiti sa caute o priza in permanenta.</p><p>Camera principala de 50MP promite poze clare in conditii bune de lumina. Desigur, nu ne asteptam la performante de varf, comparabile cu telefoanele premium, dar pentru capturarea momentelor cotidiene sau a pozelor de familie, este mai mult decat suficienta. Camera macro si senzorul de profunzime sunt mai mult prezente de dragul specificatiilor, rezultatele lor fiind modeste. Pentru apelurile video, camera frontala de 8MP face o treaba decenta.</p><p>Ce optiuni de stocare si memorie RAM sunt disponibile? Redmi 13C vine in configuratii de 4GB RAM cu 128GB stocare sau 6GB RAM cu 256GB stocare. Pentru un parinte, 4GB RAM si 128GB stocare sunt de obicei suficiente. Stocarea poate fi extinsa ulterior cu un card microSD, un plus de flexibilitate. Interfata MIUI, bazata pe Android, este relativ intuitiva, dar poate necesita o scurta perioada de acomodare daca se vine de la un alt ecosistem.</p><p>In comparatie cu alte optiuni, cum ar fi Samsung Galaxy A15, Redmi 13C ofera un procesor usor mai performant in anumite scenarii si, adesea, un pret mai mic. Totusi, ecranul Samsungului este de tip AMOLED, oferind culori mai vii si contrast mai bun, ceea ce poate fi un avantaj pentru unii utilizatori. Xiaomi compenseaza prin oferirea unei optiuni de 6GB RAM si 256GB stocare la un pret care ramane competitiv.</p><p>Recomandarea clara pentru Xiaomi Redmi 13C este pentru parintii care cauta un <strong>telefon bun si ieftin pentru parinti</strong>, punand accent pe autonomie si un ecran mare, la un buget strict controlat. Este un telefon solid, fara pretentii de top, dar care isi face treaba excelent pentru sarcinile de zi cu zi. Il gasiti la preturi in jur de 700 lei, fiind o achizitie inteligenta pentru cei pragmati.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Ecran mare de 6.74 inch cu 90Hz</li>
+              <li>Pret foarte accesibil</li>
+              <li>Camera principala de 50MP decenta in lumina buna</li>
+              <li>Posibilitate de extindere a stocarii</li>
+              <li>Performanta suficienta pentru utilizare zilnica</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Calitatea materialelor nu este premium</li>
+              <li>Camera macro si senzorul de profunzime sunt slabe</li>
+              <li>Performanta grafica limitata pentru jocuri complexe</li>
+              <li>Software-ul MIUI poate veni cu bloatware</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="samsung-galaxy-a15-4g">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Samsung Galaxy A15 4G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Helio G99
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch Super AMOLED, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4GB / 6GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 5MP (ultrawide) + 2MP (macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung Galaxy A15 4G aduce in prim plan un ecran Super AMOLED de 6.5 inch cu o rata de refresh de 90Hz, oferind o experienta vizuala superioara multor telefoane din clasa sa de pret, situat in jur de 850 lei. Culorile vii si negrul profund fac din navigarea pe internet, vizionarea clipurilor video sau chiar citirea textelor pe ecran o placere, un aspect important pentru parintii care petrec timp pe telefon. Procesorul MediaTek Helio G99 este o unitate capabila, oferind o performanta fluida pentru majoritatea aplicatiilor uzuale, inclusiv WhatsApp, Facebook sau browser-ul web.</p><p>Ce autonomie se poate obtine de la bateria de 5000 mAh? Samsung A15 4G exceleaza la acest capitol, oferind o rezistenta de cel putin o zi si jumatate pentru un utilizator obisnuit. Parintii care il folosesc pentru apeluri, mesaje, browsing si retele sociale vor ajunge cu usurinta la finalul zilei cu un procentaj confortabil in baterie, eliminand anxietatea legata de incarcare. Viteza de incarcare este de 15W, acceptabila pentru clasa sa.</p><p>Fotografiile realizate cu camera principala de 50MP sunt de buna calitate in conditii de lumina naturala. Detaliile sunt clare, iar culorile sunt redate corect. Camera ultrawide de 5MP este utila pentru a surprinde mai mult din peisaj, dar calitatea scade considerabil in comparatie cu senzorul principal. Camera macro este, ca de obicei la acest nivel de pret, mai mult un bonus, cu rezultate decente doar in conditii ideale. Camera frontala de 13MP este potrivita pentru selfie-uri si apeluri video.</p><p>Cum se descurca in comparatie cu alte telefoane pentru parinti? Fata de Xiaomi Redmi 13C, A15 are un ecran AMOLED superior, ceea ce poate fi un factor decisiv pentru unii utilizatori. Procesorul Helio G99 este, de asemenea, o unitate mai moderna decat Helio G85. Totusi, Redmi 13C ofera adesea optiuni de stocare mai mari la preturi similare sau chiar mai mici, iar unii prefera interfata MIUI. Pentru un parinte care apreciaza calitatea display-ului si un brand de renume, A15 este o alegere excelenta.</p><p>Ce inseamna stocarea de 128GB pentru un parinte? Aceasta cantitate este de obicei suficienta pentru a stoca mii de fotografii, sute de clipuri video scurte si toate aplicatiile uzuale. Desi nu exista suport pentru card microSD, 128GB reprezinta un punct de pornire solid. Interfata One UI Core de la Samsung este prietenoasa si usor de navigat, oferind o experienta familiara multor utilizatori.</p><p>Samsung Galaxy A15 4G este recomandat pentru parintii care doresc un ecran de calitate superioara, o autonomie excelenta si un sistem de camere decent, totul sub umbrela unui brand de incredere. Pretul sau, in jur de 850 lei, il plaseaza in categoria "<em>telefon bun si ieftin pentru parinti</em>" care oferă plusul de calitate vizuala. Este o investiție sigură pentru utilizare pe termen lung.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran Super AMOLED luminos si vibrant</li>
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Camera principala de 50MP de calitate</li>
+              <li>Design placut si constructie solida</li>
+              <li>Interfata One UI Core intuitiva</li>
+              <li>Procesor capabil pentru sarcini uzuale</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Nu are incarcare rapida (maxim 15W)</li>
+              <li>Camera ultrawide si macro sunt modeste</li>
+              <li>Nu are difuzoare stereo</li>
+              <li>Nu are suport pentru card microSD</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g34-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>Motorola Moto G34 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Qualcomm Snapdragon 695 5G
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch IPS LCD, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4GB / 8GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>64GB / 128GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 8MP (ultrawide/macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G34 5G se distinge ca o optiune interesanta pentru cei in cautarea unui <strong>telefon bun si ieftin pentru parinti</strong>, mai ales daca se doreste conectivitate 5G la un pret promotional, adesea gasit in jur de 750 lei. Procesorul Snapdragon 695 5G ofera performante solide pentru activitatile zilnice si, cel mai important, permite accesul la retelele 5G, anticipand viitorul. Ecranul de 6.5 inch cu o rata de refresh de 120Hz este un punct forte, oferind o fluiditate remarcabila in navigare si scrolling, mult peste ce ofera majoritatea telefoanelor din aceasta clasa.</p><p>Cat de performanta este camera de 50MP? Camera principala de 50MP cu tehnologie Quad Pixel capteaza imagini bune in conditii de lumina favorabile. Detaliile sunt clare, iar culorile naturale. Senzorul secundar de 8MP, folosit atat ca ultrawide, cat si ca macro, este mai versatil decat camerele dedicate de pe alte modele, dar calitatea imaginilor, in special in conditii de lumina slaba sau la functia macro, nu este impresionanta. Pentru apelurile video, camera frontala de 16MP este decenta.</p><p>Cum se descurca bateria de 5000 mAh in utilizare zilnica? Moto G34 5G promite o autonomie de peste o zi, chiar si cu utilizare moderata spre intensa. Pentru un parinte, asta inseamna fara griji legate de incarcare pe parcursul zilei. Telefonul suporta incarcare rapida de 20W, ceea ce inseamna ca o repriza scurta la priza poate adauga ore bune de functionare.</p><p>Ce avantaje aduce conectivitatea 5G pentru un parinte? In momentul de fata, 5G nu este neaparat un factor decisiv pentru toti parintii, insa achizitionarea unui telefon 5G la un pret bun inseamna o investitie pe termen lung, asigurandu-i accesul la viteze de internet mobile mult mai mari pe masura ce retelele se extind. De asemenea, performanta generala a procesorului Snapdragon 695 este un plus pentru fluiditatea experientei.</p><p>Ce diferente apar fata de un telefon standard 4G? Pe langa viteza de internet, procesorul Snapdragon 695 ofera, in general, o performanta mai buna in aplicatii si un management mai eficient al energiei. Ecranul de 120Hz face o diferenta vizibila in comparatie cu ecranele de 90Hz sau 60Hz, oferind o experienta mult mai placuta in utilizare. Stocarea de 64GB poate fi mica pentru unii, dar exista si varianta de 128GB, iar stocarea poate fi extinsa cu un card microSD.</p><p>Motorola Moto G34 5G este recomandat parintilor care cauta un <strong>telefon bun si ieftin pentru parinti</strong>, punand accent pe viteza de conectare (5G) si un ecran foarte fluid la 120Hz. Este o optiune echilibrata, cu o camera buna pentru pretul sau si o autonomie pe masura. Pretul in jur de 750 lei il face un competitor puternic pe piata.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran IPS LCD de 6.5 inch cu 120Hz, foarte fluid</li>
+              <li>Suport pentru conectivitate 5G</li>
+              <li>Procesor Snapdragon 695 5G performant</li>
+              <li>Autonomie buna a bateriei (5000 mAh)</li>
+              <li>Camera principala de 50MP decenta</li>
+              <li>Incarcare rapida de 20W</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Calitatea camerei ultrawide/macro este modesta</li>
+              <li>Stocarea de 64GB poate fi limitata</li>
+              <li>Lipsa difuzoarelor stereo</li>
+              <li>Designul poate fi considerat simplist de unii</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="nokia-g42-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Nokia G42 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Qualcomm Snapdragon 480+ 5G
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.56 inch IPS LCD, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4GB / 6GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>64GB / 128GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 5MP (ultrawide) + 2MP (macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Nokia G42 5G se inscrie in lista de optiuni pentru un <strong>telefon bun si ieftin pentru parinti</strong>, oferind o experienta curata Android, suport 5G si o promisiune interesanta de reparabilitate, la un pret in jur de 800 lei. Procesorul Snapdragon 480+ 5G este un chipset entry-level cu capabilitati 5G, suficient pentru sarcinile de baza ale unui parinte: apeluri, mesaje, browsing, social media. Ecranul de 6.56 inch cu 90Hz este un compromis bun intre dimensiune si fluiditate.</p><p>Ce ne ofera camera principala de 50MP? Camera de 50MP de pe Nokia G42 5G produce fotografii decente in conditii de lumina buna. Pozele sunt clare, cu culori rezonabile, fiind potrivite pentru a documenta momentele cotidiene. Camera ultrawide de 5MP adauga o oarecare versatilitate, dar nu va asteptati la minuni. Camera macro de 2MP este mai mult decorativa. Camera frontala de 8MP este adecvata pentru apeluri video ocazionale.</p><p>Cat despre autonomie, bateria de 5000 mAh este un atu major. Combinata cu un procesor eficient energetic si un ecran IPS, telefonul ajunge cu usurinta la finalul celei de-a doua zile de utilizare cu un parinte obisnuit. Aceasta autonomie extinsa este un avantaj clar pentru persoanele mai in varsta, care nu doresc sa fie nevoite sa incarce telefonul des.</p><p>Un aspect distinctiv al Nokia G42 5G este promisiunea de reparabilitate. Cu tutoriale disponibile online si piese de schimb ce pot fi achizitionate separat, utilizatorii pot schimba singuri ecranul, bateria sau portul de incarcare. Acest lucru poate fi un factor important pentru parintii care doresc un telefon durabil si usor de intretinut pe termen lung, fara a apela la service-uri scumpe.</p><p>Comparativ cu alte telefoane din aceeasi zona de pret, cum ar fi Xiaomi Redmi 13C sau Motorola Moto G34 5G, Nokia G42 5G ofera o experienta Android mai curata, fara bloatware. Totusi, performanta procesorului este inferioara celor doua, iar ecranul de 90Hz nu este la fel de fluid ca cel de 120Hz de pe Moto G34. Pretul sau, in jur de 800 lei, il plaseaza intr-o pozitie de mijloc.</p><p>Nokia G42 5G este recomandat parintilor care apreciaza un Android curat, conectivitatea 5G si un concept de reparabilitate pe termen lung. Este un <strong>telefon bun si ieftin pentru parinti</strong> care pune accent pe fiabilitate si o experienta de utilizare simpla, cu o baterie care nu te lasa la greu. Pretul in jur de 800 lei il face o alegere inteleapta.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Experienta Android curata (stock Android)</li>
+              <li>Suport pentru conectivitate 5G</li>
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Concept de reparabilitate (DIY)</li>
+              <li>Camera principala de 50MP decenta in lumina buna</li>
+              <li>Ecran mare de 6.56 inch</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Procesorul Snapdragon 480+ 5G este mai lent decat concurenta</li>
+              <li>Calitatea camerelor secundare este slabuta</li>
+              <li>Stocare de 64GB poate fi mica</li>
+              <li>Lipsa difuzoarelor stereo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g22">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Motorola Moto G22</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>MediaTek Helio G37
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch IPS LCD, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>64GB / 128GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal) + 8MP (ultrawide) + 2MP (macro) + 2MP (depth)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G22 este o optiune de luat in calcul pentru un <strong>telefon bun si ieftin pentru parinti</strong>, mai ales ca pretul sau a scazut semnificativ si se gaseste adesea in jurul valorii de 600 lei. Acest model se concentreaza pe oferirea unei experiente de baza solide, cu un ecran generos si o baterie de lunga durata, fara a compromite functionabilitatea esentiala.</p><p>Ce performanta ofera procesorul MediaTek Helio G37? Acesta este un chipset entry-level, potrivit pentru sarcini simple precum efectuarea de apeluri, trimiterea de mesaje, navigarea pe internet si utilizarea aplicatiilor de socializare mai putin solicitante. Nu este recomandat pentru jocuri complexe sau sarcini intensive, dar pentru utilizarea medie a unui parinte, este suficient.</p><p>Ecranul de 6.5 inch IPS LCD cu rata de refresh de 90Hz ofera o imagine clara si o derulare fluida. Culorile sunt redate natural, iar dimensiunea ecranului este ideala pentru a vizualiza continut sau pentru a tasta mesaje fara dificultate. Luminozitatea ecranului este adecvata pentru utilizare in interior, dar poate fi o provocare in lumina directa a soarelui.</p><p>Cum se descurca bateria de 5000 mAh? Autonomia este, fara indoiala, unul dintre cele mai mari avantaje ale Moto G22. Cu o utilizare moderata, telefonul poate rezista confortabil doua zile, ceea ce inseamna mai putine griji pentru parinti in ceea ce priveste incarcarea frecventa. Incarcarea se face la 15W, ceea ce este rezonabil pentru clasa sa de pret.</p><p>Camera principala de 50MP poate produce fotografii acceptabile in conditii bune de lumina. Detaliile sunt prezente, iar culorile sunt realiste. Totusi, performanta scade rapid pe masura ce lumina dispare. Camera ultrawide de 8MP este utila, dar calitatea imaginii este inferioara celei principale. Senzorii macro si de profunzime sunt mai mult pentru statistica.</p><p>Ce diferente are fata de alte modele din gama Moto G? Moto G22 se pozitioneaza ca un model mai accesibil, sacrificand performanta procesorului si calitatea camerei ultrawide fata de modele superioare precum G34 sau G42. Totusi, ofera in continuare un ecran mare, o baterie excelenta si o experienta Android simpla, ceea ce il face o optiune viabila daca bugetul este prioritar.</p><p>Motorola Moto G22 este recomandat parintilor care cauta un <strong>telefon bun si ieftin pentru parinti</strong>, cu un buget foarte restrans, punand accent pe o autonomie excelenta si un ecran mare pentru navigare. Este o alegere simpla si eficienta pentru nevoile de baza, oferind un raport calitate-pret imbatabil in segmentul sub 600 lei.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Ecran mare de 6.5 inch cu 90Hz</li>
+              <li>Pret foarte scazut</li>
+              <li>Camera principala de 50MP decenta in lumina buna</li>
+              <li>Experienta Android curata</li>
+              <li>Dual SIM si slot microSD</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Procesorul Helio G37 este lent pentru sarcini intensive</li>
+              <li>Camera ultrawide si senzorii secundari sunt slabi</li>
+              <li>Lipsa conectivitatii 5G</li>
+              <li>Designul poate fi considerat generic</li>
+              <li>Incarcare nu foarte rapida</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="realme-c53">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Realme C53</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Unisoc Tiger T612
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.74 inch IPS LCD, 90Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>6GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>128GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>108MP (principal) + 2MP (macro) + 2MP (depth)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Realme C53 este o alta optiune demna de luat in considerare pentru un <strong>telefon bun si ieftin pentru parinti</strong>, oferind un design atractiv si o camera principala impresionanta pe hartie, la un pret in jur de 750 lei. Camera de 108MP promite detalii excelente in poze, un atu pentru cei care doresc sa captureze amintiri clare. Ecranul de 6.74 inch cu 90Hz este generos si fluid, oferind o experienta placuta in utilizare.</p><p>Ce performante ofera procesorul Unisoc Tiger T612? Acesta este un chipset entry-level spre mid-range, care se descurca bine in sarcinile zilnice. Ruleaza aplicatii ca WhatsApp, Facebook, browser-ul web si chiar cateva jocuri mai lejere fara probleme. Pentru un parinte, performanta este mai mult decat suficienta, asigurand o experienta fluida in majoritatea scenariilor de utilizare.</p><p>Cum se comporta bateria de 5000 mAh? Autonomia este un punct forte, ca la majoritatea telefoanelor din aceasta gama. Realme C53 poate rezista cu usurinta o zi intreaga, uneori chiar doua, in functie de intensitatea utilizarii. Telefonul suporta si incarcare rapida SuperVOOC de 33W, ceea ce este un avantaj major, permitand incarcarea completa intr-un timp scurt.</p><p>Merita camera de 108MP? In conditii optime de lumina, camera principala de 108MP de pe Realme C53 poate produce fotografii remarcabile, cu un nivel ridicat de detalii. Totusi, calitatea scade in lumina slaba, iar procesarea imaginii nu este intotdeauna perfecta. Cele doua camere secundare (macro si profunzime) sunt, ca de obicei, modeste si mai mult pentru statistica.</p><p>Ce avantaje are fata de concurenta? Realme C53 se remarca prin designul sau modern, camera principala cu rezolutie mare si viteza de incarcare de 33W, care este una dintre cele mai rapide din clasa sa de pret. Fata de Xiaomi Redmi 13C, ofera o camera principala superioara si incarcare mai rapida, dar procesorul Unisoc poate fi uneori mai putin performant decat MediaTek Helio G85 in anumite scenarii. Configuratia de 6GB RAM si 128GB stocare este standard pentru acest pret.</p><p>Realme C53 este recomandat parintilor care cauta un <strong>telefon bun si ieftin pentru parinti</strong>, punand accent pe o camera principala de inalta rezolutie si o incarcare foarte rapida, alaturi de un design placut. Este o optiune echilibrata, care ofera functionalitate si stil la un pret competitiv.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Camera principala impresionanta de 108MP (in lumina buna)</li>
+              <li>Incarcare rapida SuperVOOC de 33W</li>
+              <li>Ecran mare de 6.74 inch cu 90Hz</li>
+              <li>Autonomie buna a bateriei (5000 mAh)</li>
+              <li>Design modern si atractiv</li>
+              <li>Configuratie generoasa (6GB RAM / 128GB stocare)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Performanta procesorului Unisoc Tiger T612 este decenta, dar nu de top</li>
+              <li>Calitatea camerelor secundare este slaba</li>
+              <li>Lipsa conectivitatii 5G</li>
+              <li>Nu are difuzoare stereo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <section id="comparatie">
+            <h2>Comparatie</h2>
+            <p>Pentru a te ajuta sa alegi cel mai potrivit <strong>telefon bun si ieftin pentru parinti</strong>, am pregatit un tabel comparativ cu specificatiile cheie ale modelelor recomandate. Vom analiza rapid procesorul, ecranul, bateria, camera principala si pentru cine este cel mai potrivit fiecare model.</p>
+            <div class="comparison-outer">
+              <div class="comparison-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                Gliseaza pentru a vedea tot tabelul
+              </div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Procesor</th>
+                      <th>Display</th>
+                      <th>Baterie</th>
+                      <th>Camera</th>
+                      <th>Potrivit pentru</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+              <tr>
+                <td><strong>Xiaomi Redmi 13C</strong></td>
+                <td>Helio G85</td>
+                <td>6.74" IPS 90Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Buget strict, autonomie mare</td>
+              </tr>
+
+              <tr>
+                <td><strong>Samsung Galaxy A15 4G</strong></td>
+                <td>Helio G99</td>
+                <td>6.5" AMOLED 90Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Ecran de calitate, brand recunoscut</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G34 5G</strong></td>
+                <td>Snapdragon 695 5G</td>
+                <td>6.5" IPS 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Ecran fluid, 5G, performanta</td>
+              </tr>
+
+              <tr>
+                <td><strong>Nokia G42 5G</strong></td>
+                <td>Snapdragon 480+ 5G</td>
+                <td>6.56" IPS 90Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Android curat, reparabilitate</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G22</strong></td>
+                <td>Helio G37</td>
+                <td>6.5" IPS 90Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Buget minim, autonomie mare</td>
+              </tr>
+
+              <tr>
+                <td><strong>Realme C53</strong></td>
+                <td>Unisoc T612</td>
+                <td>6.74" IPS 90Hz</td>
+                <td>5000 mAh</td>
+                <td>108MP</td>
+                <td>Camera buna, incarcare rapida</td>
+              </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="sfaturi">
+            <h2>Cum alegi un telefon bun si ieftin pentru parinti in 2026?</h2>
+            <div class="guide">
+              <p>Alegerea unui <strong>telefon bun si ieftin pentru parinti</strong> nu trebuie sa fie complicata. Concentreaza-te pe nevoile specifice ale persoanei care va folosi telefonul si pe criteriile esentiale. Mai jos, iti oferim cateva indicii pentru a lua cea mai buna decizie.</p><h4>Ce inseamna «ieftin» in contextul actual?</h4><p>Pentru un <strong>telefon bun si ieftin pentru parinti</strong>, «ieftin» se traduce de obicei printr-un pret sub 1000 lei, ideal in zona 600-800 lei. Nu cauta cele mai noi tehnologii, ci un echilibru intre pret si functionalitate. Modelele de mai sus se incadreaza in acest segment, oferind performante decente pentru sarcinile cotidiene, la costuri accesibile.</p><h4>Ce este mai important: ecranul sau autonomia bateriei?</h4><p>Pentru majoritatea parintilor, autonomia bateriei este prioritara. Un telefon care tine doua zile fara incarcare ofera libertate si elimina stresul. Totusi, un ecran mare si luminos (peste 6.5 inch) cu o rata de refresh decenta (90Hz sau 120Hz) imbunatateste considerabil experienta vizuala, facand textul mai usor de citit si navigarea mai placuta. Daca parintele petrece mult timp pe internet sau vizionand clipuri, un ecran bun este esential. Daca accentul cade pe apeluri si mesaje, autonomia devine rege.</p><h4>Ce performanta este suficienta?</h4><p>Nu ai nevoie de un procesor de top pentru utilizarea unui parinte. Un chipset din gama MediaTek Helio G sau Snapdragon 4xx/6xx este mai mult decat suficient pentru aplicatii precum WhatsApp, Facebook, browser web, YouTube sau aplicatii de stiri. Daca telefonul se va misca sacadat in aplicatii de baza, atunci performanta este prea slaba. Verifica teste sintetice sau review-uri dedicate pentru a te asigura ca procesorul ales nu va crea frustrari.</p><h4>Camera foto: conteaza rezolutia mare?</h4><p>Multi parinti doresc o camera decenta pentru a surprinde momentele cu nepotii sau ocaziile speciale. O camera principala de 50MP este, in general, un punct de plecare bun, oferind poze clare in conditii bune de lumina. Rezolutii de 108MP pot fi un plus, dar nu garanteaza automat poze mai bune daca procesarea imaginii nu este la nivel. Nu te lasa pacalit de multiplele camere (macro, profunzime); acestea sunt rareori performante la acest nivel de pret. Concentreaza-te pe calitatea camerei principale si, daca este posibil, pe cea ultrawide.</p><h4>Conectivitate: 4G vs 5G</h4><p>In 2026, 5G devine din ce in ce mai raspandit. Daca bugetul permite si vrei sa te asiguri ca telefonul este pregatit pentru viitor, un model 5G este o alegere buna. Totusi, pentru nevoile de baza ale multor parinti, un telefon 4G performant si fiabil este la fel de capabil. Viteza de internet mobil 4G este inca suficienta pentru majoritatea activitatilor, iar telefoanele 4G pot fi adesea mai ieftine sau oferi specificatii mai bune la camera sau procesor pentru aceiasi bani.</p>
+            </div>
+          </section>
+
+          <section class="faq-section" id="faq">
+            <h2 class="faq-title">Intrebari Frecvente</h2>
+
+            <details class="faq-item" id="faq-0">
+              <summary>
+                Care este cel mai bun telefon sub 700 lei pentru parinti?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Cel mai bun telefon sub 700 lei pentru parinti este Xiaomi Redmi 13C. Acesta ofera un ecran mare de 6.74 inch, o baterie masiva de 5000 mAh ce tine usor doua zile, camera principala de 50MP si performanta suficienta pentru utilizare zilnica, facandu-l o alegere echilibrata.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-1">
+              <summary>
+                Ce autonomie au telefoanele recomandate?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Majoritatea telefoanelor recomandate, precum Xiaomi Redmi 13C, Samsung Galaxy A15, Motorola Moto G34 5G, Nokia G42 5G si Motorola Moto G22, dispun de baterii de 5000 mAh. Acestea ofera o autonomie de cel putin o zi si jumatate, adesea chiar doua zile de utilizare moderata, fiind ideale pentru parinti.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-2">
+              <summary>
+                Merita sa iau un telefon 5G pentru parinti?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Daca bugetul permite si vrei sa asiguri o tehnologie pe termen lung, un telefon 5G (precum Moto G34 5G sau Nokia G42 5G) poate fi o alegere buna. Totusi, pentru navigare, apeluri si mesaje, un telefon 4G performant este la fel de capabil, iar reteaua 5G nu este inca disponibila peste tot. Prioritizeaza un ecran si o baterie bune daca 5G nu este o necesitate imediata.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-3">
+              <summary>
+                Cat de bune sunt camerele telefoanelor ieftine pentru parinti?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Telefoanele ieftine recomandate (sub 1000 lei) dispun de obicei de camere principale de 50MP sau chiar 108MP (Realme C53). In conditii bune de lumina, acestea produc fotografii decente, potrivite pentru amintiri cotidiene. Performanta scade in lumina slaba, iar camerele secundare (ultrawide, macro) sunt adesea modeste. Nu te astepta la performante de top, dar sunt suficiente pentru uz ocazional.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-4">
+              <summary>
+                Ce inseamna un ecran de 120Hz pe un telefon pentru parinti?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Un ecran cu rata de refresh de 120Hz (precum pe Motorola Moto G34 5G) face ca derularea textului, navigarea prin meniuri si animatiile din aplicatii sa fie mult mai fluide si mai placute vizual decat pe un ecran standard de 60Hz sau 90Hz. Pentru parintii care petrec mult timp navigand, acest aspect poate imbunatati semnificativ experienta de utilizare.
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="author-line">
+          <div class="author-avatar">AI</div>
+          <div>
+            <div class="author-name">Andrei Ionescu</div>
+            <div class="author-role">Iubitor de telefoane, impatimit in tehnologie</div>
+          </div>
+        </div>
+
+        <SimilarArticles
+          currentSlug="telefon-bun-si-ieftin-pentru-parinti"
+          currentCategory="telefoane"
+          articles={allArticles}
+        />
+      </div>
+
+      <aside class="toc-sidebar">
+        <p class="toc-sidebar-title">Cuprins</p>
+        <ol class="toc-sidebar-list" id="toc-desktop-list">
+          {toc.map(item => (
+            <li><a href={`#${item.id}`} data-toc-id={item.id}>{item.title}</a></li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <script>
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocMobile = document.getElementById('toc-mobile');
+    tocToggle?.addEventListener('click', () => {
+      const isOpen = tocMobile?.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    // IO for active section tracking
+    const tocLinks = document.querySelectorAll('#toc-desktop-list a[data-toc-id]');
+    if (tocLinks.length > 0) {
+      const ids = Array.from(tocLinks).map(a => a.dataset.tocId);
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const match = Array.from(tocLinks).find(a => a.dataset.tocId === entry.target.id);
+              match?.classList.add('active');
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // Comparison table scroll fade
+    document.querySelectorAll('.comparison-outer').forEach(outer => {
+      const wrap = outer.querySelector('.comparison-wrap');
+      if (!wrap) return;
+      function checkScroll() {
+        const canScroll = wrap.scrollWidth > wrap.clientWidth;
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+        outer.classList.toggle('can-scroll', canScroll && !atEnd);
+      }
+      checkScroll();
+      wrap.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll, { passive: true });
+    });
+  </script>
+</Layout>
