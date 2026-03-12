@@ -1,0 +1,643 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+export const frontmatter = {
+  title: "Top telefoane sub 500 lei",
+  excerpt: "Daca cauti top telefoane sub 500 lei, probabil vrei un dispozitiv functional pentru sarcini de baza, fara costuri mari. In 2026, piata ofera cateva optiuni decente in acest segment, focusul fiind pe autonomie si functionalitate esentiala.",
+  image: "/images/articles/top-telefoane-sub-500-lei.webp",
+  category: "Telefoane",
+  categorySlug: "telefoane",
+  date: "2026-03-12T08:40:36.174Z",
+  modifiedDate: "2026-03-12T08:40:36.175Z",
+  author: "Andrei Ionescu",
+  authorRole: "Iubitor de telefoane, impatimit in tehnologie",
+  authorBio: "De cand tin minte am fost obsedat de telefoane. Am trecut prin zeci de modele si imi place sa le compar si sa le testez pe bune."
+};
+
+const breadcrumbs = [
+  { name: "Acasa", url: "/" },
+  { name: "Telefoane", url: "/telefoane/" },
+  { name: "Top telefoane sub 500 lei", url: "/top-telefoane-sub-500-lei/" }
+];
+
+const faq = [
+  { question: "Care este cel mai bun telefon sub 500 lei in 2026?", answer: "In 2026, Xiaomi Redmi 12C este considerat unul dintre cele mai bune telefoane sub 500 lei datorita procesorului Helio G85, 4GB RAM, camerei de 50MP si bateriei de 5000 mAh." },
+  { question: "Ce autonomie am de la un telefon sub 500 lei?", answer: "Telefoanele din aceasta categorie, cu baterii de 4500-5000 mAh, ofera de obicei o zi intreaga de utilizare moderata, ajungand chiar la doua zile pentru utilizatori ocazionali." },
+  { question: "Pot juca jocuri pe un telefon sub 500 lei?", answer: "Da, dar cu limitari. Modelele cu minim 3GB RAM si procesoare octa-core decente, precum Xiaomi Redmi 12C, pot rula jocuri mai putin solicitante. Nu te astepta la performante de top in jocuri complexe." },
+  { question: "Sunt bune camerele foto la telefoanele sub 500 lei?", answer: "Camerele sunt in general modeste. Modelele cu camere de 13MP sau 50MP pot face poze bune in lumina naturala, dar performanta scade semnificativ in conditii de lumina slaba. Nu sunt potrivite pentru fotografia profesionala." },
+  { question: "Unde gasesc cele mai bune oferte pentru telefoane sub 500 lei?", answer: "Cele mai bune oferte se gasesc in magazinele online mari din Romania, precum eMAG, Altex, Flanco sau PC Garage, unde poti compara preturile si verifica stocurile disponibile." }
+];
+
+const toc = [
+  { title: "Allview A50 Lite", id: "allview-a50-lite" },
+  { title: "Allview P9 Lite 2017 (reconditionat)", id: "allview-p9-lite-2017-reconditionat" },
+  { title: "Nokia C21 Plus", id: "nokia-c21-plus" },
+  { title: "Samsung Galaxy A04e", id: "samsung-galaxy-a04e" },
+  { title: "Xiaomi Redmi 12C", id: "xiaomi-redmi-12c" },
+  { title: "Motorola Moto E13", id: "motorola-moto-e13" },
+  { title: "Comparatie", id: "comparatie" },
+  { title: "Cum alegi telefonul potrivit sub 500 lei in 2026?", id: "sfaturi" },
+  { title: "Intrebari Frecvente", id: "faq" }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title="Top telefoane sub 500 lei - Telefoane-Tablete.ro"
+  description="Daca cauti top telefoane sub 500 lei, probabil vrei un dispozitiv functional pentru sarcini de baza, fara costuri mari. In 2026, piata ofera cateva optiuni decente in acest segment, focusul fiind pe autonomie si functionalitate esentiala."
+  image="/images/articles/top-telefoane-sub-500-lei.webp"
+  type="article"
+  publishedTime="2026-03-12T08:40:36.174Z"
+  modifiedTime="2026-03-12T08:40:36.175Z"
+  author="Andrei Ionescu"
+  faq={faq}
+  breadcrumbs={breadcrumbs}
+>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <ol>
+        <li><a href="/">Acasa</a></li>
+        <li>Telefoane</li>
+        <li><span>Top telefoane sub 500 lei</span></li>
+      </ol>
+    </nav>
+
+    Telefoane
+    <h1 class="article-page-title">Top telefoane sub 500 lei</h1>
+
+    <div class="article-page-meta">
+      <span>Andrei Ionescu</span>
+      <span>&middot;</span>
+      <span>Publicat: 12 martie 2026</span>
+      <span>&middot;</span>
+      <span>Actualizat: 12 martie 2026</span>
+    </div>
+
+    <div class="article-hero">
+      <img src="/images/articles/top-telefoane-sub-500-lei.webp" alt="Top telefoane sub 500 lei" width="800" height="600" decoding="async" fetchpriority="high" />
+    </div>
+
+    <div class="article-layout">
+      <div>
+        <div class="toc-mobile" id="toc-mobile">
+          <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+            Cuprins
+            <span class="toc-chevron">&#9660;</span>
+          </button>
+          <ol class="toc-mobile-list" id="toc-mobile-list">
+            {toc.map(item => (
+              <li><a href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="article-content">
+          <section id="intro">
+            <p>Daca cauti <strong>top telefoane sub 500 lei</strong>, probabil vrei un dispozitiv functional pentru sarcini de baza, fara costuri mari. In 2026, piata ofera cateva optiuni decente in acest segment, focusul fiind pe autonomie si functionalitate esentiala. Nu te astepta la performante de gaming sau camere foto de top, dar pentru navigare web, social media, apeluri si mesaje, exista modele care isi fac treaba.</p><p>Ce inseamna de fapt un telefon sub 500 lei in 2026? Inseamna un compromis intre pret si performanta, unde producatorii se concentreaza pe a oferi conectivitate 4G, un ecran decent pentru consum media si o baterie care sa tina macar o zi. Procesarea si calitatea materialelor sunt elemente unde se fac cele mai mari economii.</p><p>Cum alegi cel mai bun telefon sub 500 lei pentru tine? Raspunsul depinde de prioritatile tale: ai nevoie de cea mai mare baterie posibila, un ecran cat mai luminos sau poate spatiu de stocare suficient pentru cateva aplicatii si poze? In acest articol, iti prezentam cele mai bune telefoane sub 500 lei, analizate din perspectiva utilizatorului obisnuit, pentru a te ajuta sa faci cea mai informata alegere.</p>
+          </section>
+
+
+          <article class="product-review" id="allview-a50-lite">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Allview A50 Lite</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Quad-core 1.4 GHz
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>5.45 inch IPS, 18:9
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>2 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>32 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>2500 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>8MP principal + 5MP frontal
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Allview A50 Lite este o optiune clara atunci cand vine vorba de <strong>top telefoane sub 500 lei</strong>, concentrandu-se pe functionalitatea de baza la un pret accesibil. Cu un ecran de 5.45 inch in format 18:9, este compact si usor de manevrat cu o singura mana, ideal pentru utilizatorii care nu doresc un dispozitiv voluminos. Procesorul quad-core de 1.4 GHz, impreuna cu 2 GB RAM, este suficient pentru sarcini simple precum navigarea pe internet, accesarea retelelor sociale si efectuarea de apeluri.</p><p>Cat tine bateria de 2500 mAh in utilizare reala? Avand in vedere consumul redus al componentei hardware si rezolutia ecranului, te poti astepta la o zi de utilizare moderata. Pentru cei care folosesc telefonul intensiv, incarcarea zilnica va fi necesara. Spatiul de stocare de 32 GB poate fi extins cu un card microSD, un aspect important pentru a salva poze si aplicatii.</p><p>Camera principala de 8MP ofera rezultate decente in conditii bune de lumina, potrivita pentru instantanee rapide, dar nu te astepta la minuni in low-light. Camera frontala de 5MP este adecvata pentru apeluri video simple. Este Allview A50 Lite potrivit pentru tine? Daca principalul criteriu este pretul si ai nevoie de un telefon pentru comunicare si navigare ocazionala, atunci da. Cei care cauta performanta sau o camera foto avansata vor trebui sa caute in alta parte. Pentru pretul sau, ofera un pachet echilibrat, dar cu limitari clare.</p><p>In concluzie, Allview A50 Lite se impune ca o alegere solida in segmentul <strong>telefoane sub 500 lei</strong> pentru utilizatorii cu nevoi esentiale. Recomandarea noastra este sa il achizitionezi daca prioritatile tale sunt costul redus, dimensiunea compacta si functionalitatile de baza pentru comunicare. Este un telefon care isi face treaba fara pretentii, ideal ca dispozitiv secundar sau pentru utilizatorii mai putin tehnici.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Pret foarte accesibil</li>
+              <li>Design compact si usor</li>
+              <li>Sistem de operare simplu</li>
+              <li>Suport dual SIM</li>
+              <li>Posibilitate extindere stocare cu microSD</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Autonomie limitata a bateriei</li>
+              <li>Performanta modesta</li>
+              <li>Camera foto slaba in conditii de iluminare redusa</li>
+              <li>Ecran cu rezolutie joasa</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="allview-p9-lite-2017-reconditionat">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Allview P9 Lite 2017 (reconditionat)</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Octa-core 1.5 GHz
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>5.0 inch IPS, HD
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>3 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>16 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>3000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>13MP principal + 5MP frontal
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Cautand <strong>top telefoane sub 500 lei</strong>, este important sa luam in considerare si optiunile reconditionate. Allview P9 Lite 2017, desi un model mai vechi, poate fi gasit in stare reconditionata la un pret sub 500 lei si ofera un pachet interesant. Ecranul sau de 5.0 inch IPS cu rezolutie HD este suficient de clar pentru majoritatea activitatilor zilnice, iar dimensiunea il face foarte ergonomic.</p><p>Ce performante ofera procesorul Octa-core de 1.5 GHz cu 3 GB RAM? Aceasta combinatie este superioara multor telefoane noi din aceeasi gama de pret. Ruleaza fluid aplicatiile uzuale, precum Facebook, WhatsApp, browserul web si chiar unele jocuri mai putin solicitante. Este o alegere buna pentru cei care isi doresc un telefon capabil fara a cheltui mult.</p><p>Merita camera principala de 13MP? In conditii bune de lumina, camera principala de 13MP poate produce fotografii clare si detaliate, surprinzatoare pentru segmentul de pret. Camera frontala de 5MP este potrivita pentru selfie-uri ocazionale. Autonomia bateriei de 3000 mAh ar trebui sa fie suficienta pentru o zi de utilizare moderata, insa depinde mult de utilizare. Stocarea interna de 16 GB este limitata, dar poate fi extinsa cu un card microSD, un aspect esential de luat in calcul.</p><p>Allview P9 Lite 2017 reconditionat este o optiune excelenta daca esti dispus sa cumperi un produs care nu este nou. Recomandarea noastra este sa il iei in considerare daca prioritizezi performanta generala si o camera foto mai capabila fata de telefoanele noi din acelasi buget. Verifica atent starea produsului si garantia oferita de vanzator. Este un exemplu de cum un model mai vechi poate ramane relevant in lista de <strong>telefoane sub 500 lei</strong> datorita raportului calitate-pret.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Performanta buna pentru pret (octa-core, 3GB RAM)</li>
+              <li>Camera principala de 13MP</li>
+              <li>Ecran IPS HD</li>
+              <li>Design compact si usor de utilizat</li>
+              <li>Pret excelent pentru un model reconditionat</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Stocare interna limitata (16GB)</li>
+              <li>Nu este un produs nou, poate avea semne de uzura</li>
+              <li>Autonomie baterie medie</li>
+              <li>Software-ul poate fi mai vechi, fara actualizari garantate</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="nokia-c21-plus">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Nokia C21 Plus</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Octa-core 1.6 GHz
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.52 inch IPS, HD+
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>3 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>32 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>13MP + 2MP macro principal / 5MP frontal
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Nokia C21 Plus se pozitioneaza ca un candidat serios in topul <strong>telefoane sub 500 lei</strong>, aducand in prim plan autonomia impresionanta a bateriei. Cu o capacitate de 5000 mAh, acest telefon este construit pentru a rezista fara probleme o zi intreaga, chiar si doua, in conditii de utilizare moderata. Ecranul sau generos de 6.52 inch cu rezolutie HD+ ofera o experienta vizuala placuta pentru consum media, navigare si social media.</p><p>Ce inseamna procesorul Octa-core de 1.6 GHz si 3 GB RAM pentru utilizarea zilnica? Aceasta configuratie permite o experienta fluida in operatiunile de zi cu zi. Aplicatiile comune se deschid rapid, iar multitasking-ul este gestionat decent. Nu este un telefon pentru gaming intens, dar pentru browsing, email, mesagerie si streaming video, se descurca excelent. Este o alegere potrivita pentru utilizatorii care vor un telefon fiabil pentru activitatile esentiale.</p><p>Merita camera de 13MP? Camera principala de 13MP, ajutata de un senzor macro de 2MP, poate capta fotografii bune in lumina naturala. Este suficienta pentru a documenta momente sau a publica pe retelele sociale. Camera frontala de 5MP este adecvata pentru apeluri video si selfie-uri rapide. Stocarea interna de 32 GB este decenta pentru acest segment, iar posibilitatea de extindere cu un card microSD ofera flexibilitate suplimentara. Nokia C21 Plus se remarca prin bateria sa mare, facandu-l o optiune de top in clasa <strong>telefoane sub 500 lei</strong> pentru cei care cauta autonomie.</p><p>Daca prioritatea ta principala este autonomia bateriei si cauti un ecran mare pentru un pret sub 500 lei, Nokia C21 Plus este o recomandare clara. Este ideal pentru utilizatorii care nu au acces constant la o priza sau pentru cei care vor un telefon "sa tina". Recomandarea noastra este sa il achizitionezi daca autonomia este cruciala si apreciezi si experienta Android simplificata. Este un telefon echilibrat pentru nevoile de baza.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Ecran mare de 6.52 inch HD+</li>
+              <li>Performanta decenta pentru activitati zilnice (Octa-core, 3GB RAM)</li>
+              <li>Stocare interna de 32 GB, extensibila</li>
+              <li>Experienta Android curata</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Camera foto medie in conditii de iluminare slaba</li>
+              <li>Design destul de generic</li>
+              <li>Ecranul nu este cel mai luminos</li>
+              <li>Lipsa conectivitatii 5G (de asteptat in acest segment)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="samsung-galaxy-a04e">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Samsung Galaxy A04e</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Octa-core 2.3 GHz
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch PLS LCD, HD+
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>3 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>32 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>13MP + 2MP macro principal / 5MP frontal
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Samsung Galaxy A04e este o optiune interesanta in segmentul <strong>top telefoane sub 500 lei</strong>, oferind un mix de autonomie mare si un ecran generos. Cu o baterie de 5000 mAh, acest dispozitiv este pregatit sa te insoteasca pe parcursul intregii zile, eliminand grijile legate de incarcare. Ecranul de 6.5 inch PLS LCD ofera culori vii si unghiuri bune de vizualizare, fiind perfect pentru a te bucura de continut multimedia.</p><p>Cat de performant este procesorul Octa-core de 2.3 GHz cu 3 GB RAM? Aceasta configuratie asigura o experienta fluida in navigare, retele sociale si aplicatii de productivitate. Telefonul se misca bine in utilizarea zilnica, fara sacadari majore la sarcinile uzuale. Pentru jocuri, performantele sunt limitate, dar pentru un utilizator mediu, este mai mult decat suficient. Alegerea acestui model inseamna un echilibru bun intre pret si functionalitate.</p><p>Merita camera principala de 13MP? Camera principala de 13MP, impreuna cu senzorul macro de 2MP, poate capta imagini de calitate buna in conditii optime de lumina. Este o camera decenta pentru clasa sa, potrivita pentru amintiri rapide. Camera frontala de 5MP este suficienta pentru apeluri video si selfie-uri. Stocarea interna de 32 GB, cu posibilitate de extindere prin microSD, ofera spatiu pentru aplicatii si fisiere. Samsung Galaxy A04e este un reprezentant puternic al categoriei <strong>telefoane sub 500 lei</strong>.</p><p>Samsung Galaxy A04e este recomandat celor care cauta un telefon cu autonomie excelenta, ecran mare si performante decente pentru pret, plus avantajul unui brand de renume. Daca vrei un telefon pe care sa te bazezi pentru o zi intreaga si sa te bucuri de un ecran bun pentru consum media, acesta este o alegere potrivita. Recomandarea noastra este sa il achizitionezi daca apreciezi experienta Samsung si ai nevoie de un dispozitiv fiabil pentru activitatile zilnice, la un buget redus.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Ecran mare de 6.5 inch cu culori bune</li>
+              <li>Performanta fluida pentru uz zilnic</li>
+              <li>Design atractiv</li>
+              <li>Marca Samsung cu suport si fiabilitate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Camera foto medie, mai ales in low-light</li>
+              <li>Lipsa senzorului ultrawide</li>
+              <li>Performanta limitata in jocuri complexe</li>
+              <li>Incarcare standard, fara fast charging</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="xiaomi-redmi-12c">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>Xiaomi Redmi 12C</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Octa-core 2.0 GHz (Helio G85)
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.71 inch IPS, HD+
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>4 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>64 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP principal / 5MP frontal
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Xiaomi Redmi 12C se impune ca un lider in lista de <strong>top telefoane sub 500 lei</strong>, oferind un raport performanta-pret greu de egalat. Cu un procesor MediaTek Helio G85 si 4 GB RAM, acest telefon se descurca excelent in aproape orice sarcina zilnica, inclusiv gaming casual. Ecranul sau generos de 6.71 inch cu rezolutie HD+ este perfect pentru consum multimedia, oferind o experienta imersiva.</p><p>Cat de performanta este camera principala de 50MP? Camera principala de 50MP capteaza fotografii cu un nivel de detaliu impresionant pentru segmentul de pret, mai ales in conditii bune de lumina. Poate concura cu telefoane din categorii superioare. Camera frontala de 5MP este adecvata pentru apeluri video si selfie-uri. Stocarea interna de 64 GB este un mare plus, oferind spatiu generos pentru aplicatii, poze si video, cu posibilitatea de extindere.</p><p>Autonomia bateriei de 5000 mAh este, asa cum ne-am obisnuit de la Xiaomi, excelenta. Te vei bucura de o zi plina de utilizare fara grija incarcarii. Ce il diferentiaza de alte telefoane sub 500 lei? Configuratia sa hardware, in special procesorul si memoria RAM, plus camera principala de 50MP, il plaseaza deasupra concurentei directe. Pentru cei care cauta performanta si o camera buna la un pret mic, Redmi 12C este greu de batut.</p><p>Xiaomi Redmi 12C este alegerea noastra pentru cei care cauta cel mai bun raport calitate-pret in segmentul <strong>telefoane sub 500 lei</strong>. Recomandarea noastra este sa il achizitionezi daca vrei un telefon capabil pentru sarcini multiple, inclusiv gaming ocazional, si o camera foto principala de top pentru acest buget. Este un pachet complet care ofera mult mai mult decat sugereaza pretul.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Performanta excelenta pentru pret (Helio G85, 4GB RAM)</li>
+              <li>Camera principala de 50MP cu rezultate bune</li>
+              <li>Ecran mare de 6.71 inch</li>
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Stocare interna generoasa (64 GB), extensibila</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Lipsa conectivitatii 5G</li>
+              <li>Designul poate fi considerat simplist de unii utilizatori</li>
+              <li>Camera frontala modesta</li>
+              <li>Nu are incarcare rapida</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-e13">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Motorola Moto E13</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Octa-core 1.6 GHz
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch IPS, HD+
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>2 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>64 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>13MP principal / 5MP frontal
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto E13 se anunta a fi o optiune interesanta in clasa <strong>telefoane sub 500 lei</strong>, mizand pe o baterie mare si un stocaj intern generos. Cu o capacitate de 5000 mAh, telefonul promite o autonomie de peste o zi, chiar si pentru utilizatorii mai exigenti. Ecranul de 6.5 inch ofera spatiu suficient pentru navigare si consum de continut, desi rezolutia HD+ nu impresioneaza prin claritate.</p><p>Ce inseamna procesorul Octa-core de 1.6 GHz si 2 GB RAM in utilizarea de zi cu zi? Aceasta combinatie este suficienta pentru operatiunile de baza: apeluri, mesaje, navigare web si retele sociale. Nu te astepta la performante de top sau la rularea jocurilor complexe. Daca ai nevoie de un telefon pentru sarcini esentiale, Moto E13 se descurca acceptabil. Stocarea interna de 64 GB este un punct forte, oferind spatiu considerabil pentru aplicatii si fisiere, fiind rara in acest segment de pret.</p><p>Merita camera principala de 13MP? Camera principala de 13MP ofera rezultate decente in conditii bune de lumina, fiind potrivita pentru fotografii ocazionale. Camera frontala de 5MP este suficienta pentru apeluri video. Totusi, un dezavantaj notabil este lipsa unei camere ultrawide sau a unui senzor macro dedicat. Comparativ cu alte telefoane din lista de <strong>telefoane sub 500 lei</strong>, Moto E13 se diferentiaza prin stocare, dar este mai slab la capitolul RAM.</p><p>Motorola Moto E13 este o optiune viabila daca ai nevoie de un telefon cu autonomie mare si stocare interna generoasa la un pret mic. Recomandarea noastra este sa il iei in considerare daca prioritizezi aceste doua aspecte si nu ai nevoie de performante de varf sau de multa memorie RAM. Este un telefon bun pentru comunicare si activitati de baza, cu un accent pe stocare. Poate fi o alegere buna ca telefon secundar sau pentru utilizatori mai putin pretentiosi.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie excelenta a bateriei (5000 mAh)</li>
+              <li>Stocare interna generoasa (64 GB)</li>
+              <li>Ecran mare de 6.5 inch</li>
+              <li>Procesor Octa-core</li>
+              <li>Pret accesibil</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Memorie RAM limitata (2 GB)</li>
+              <li>Performanta modesta in multitasking si jocuri</li>
+              <li>Camera frontala de 5MP este slaba</li>
+              <li>Nu are 5G</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <section id="comparatie">
+            <h2>Comparatie</h2>
+            <p>Compara rapid specificatiile cheie ale telefoanelor din topul nostru pentru a te ajuta sa faci alegerea potrivita.</p>
+            <div class="comparison-outer">
+              <div class="comparison-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                Gliseaza pentru a vedea tot tabelul
+              </div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Procesor</th>
+                      <th>Display</th>
+                      <th>Baterie</th>
+                      <th>Camera</th>
+                      <th>Potrivit pentru</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+              <tr>
+                <td><strong>Allview A50 Lite</strong></td>
+                <td>Quad-core 1.4 GHz</td>
+                <td>5.45 inch</td>
+                <td>2500 mAh</td>
+                <td>8MP</td>
+                <td>Navigare ocazionala, comunicare</td>
+              </tr>
+
+              <tr>
+                <td><strong>Allview P9 Lite 2017 (recond.)</strong></td>
+                <td>Octa-core 1.5 GHz</td>
+                <td>5.0 inch HD</td>
+                <td>3000 mAh</td>
+                <td>13MP</td>
+                <td>Performanta si camera (recond.)</td>
+              </tr>
+
+              <tr>
+                <td><strong>Nokia C21 Plus</strong></td>
+                <td>Octa-core 1.6 GHz</td>
+                <td>6.52 inch HD+</td>
+                <td>5000 mAh</td>
+                <td>13MP</td>
+                <td>Autonomie mare, utilizare zilnica</td>
+              </tr>
+
+              <tr>
+                <td><strong>Samsung Galaxy A04e</strong></td>
+                <td>Octa-core 2.3 GHz</td>
+                <td>6.5 inch HD+</td>
+                <td>5000 mAh</td>
+                <td>13MP</td>
+                <td>Autonomie, ecran mare, brand</td>
+              </tr>
+
+              <tr>
+                <td><strong>Xiaomi Redmi 12C</strong></td>
+                <td>Octa-core 2.0 GHz</td>
+                <td>6.71 inch HD+</td>
+                <td>5000 mAh</td>
+                <td>50MP</td>
+                <td>Performanta, camera, gaming usor</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto E13</strong></td>
+                <td>Octa-core 1.6 GHz</td>
+                <td>6.5 inch HD+</td>
+                <td>5000 mAh</td>
+                <td>13MP</td>
+                <td>Stocare mare, autonomie</td>
+              </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="sfaturi">
+            <h2>Cum alegi telefonul potrivit sub 500 lei in 2026?</h2>
+            <div class="guide">
+              <p>Alegerea unui telefon sub 500 lei necesita o intelegere clara a nevoilor tale si a ceea ce piata poate oferi in acest segment de pret. Nu te lasa pacalit de specificatii pe hartie; concentreaza-te pe ce conteaza cu adevarat pentru tine.</p><h4>Ce prioritate ai: autonomie sau performanta?</h4><p>Daca principalul tau criteriu este sa ai un telefon care tine mult la baterie, cauta modele cu minim 4500-5000 mAh. Acestea vor asigura o zi intreaga de utilizare fara grija. Daca insa ai nevoie de un telefon pentru aplicatii mai solicitante sau jocuri, cauta modele cu minim 3GB RAM si un procesor octa-core decent, chiar daca asta inseamna o baterie putin mai mica.</p><h4>Cat de importanta este camera foto?</h4><p>In clasa <strong>telefoane sub 500 lei</strong>, camerele foto sunt in general modeste. Daca ai nevoie de poze decente, cauta modele cu camere principale de minim 13MP, si verifica review-uri despre performanta in conditii de lumina slaba. Nu te astepta la functii avansate sau calitate de DSLR.</p><h4>Ce stocare interna iti este necesara?</h4><p>Majoritatea telefoanelor sub 500 lei vin cu 32 GB stocare. Daca folosesti multe aplicatii sau faci multe poze/video, cel putin 64 GB ar fi ideal. Nu uita ca majoritatea suporta carduri microSD pentru extinderea spatiului, dar viteza de acces va fi mai mica decat la memoria interna.</p><h4>Preferi un brand cunoscut sau un pret mai mic?</h4><p>Branduri precum Samsung, Nokia sau Motorola ofera, in general, o fiabilitate si suport software mai bun, dar pot fi putin mai scumpe pentru aceleasi specificatii. Branduri mai mici pot oferi specificatii mai bune la acelasi pret, dar cu un risc mai mare pe termen lung. Analizeaza ce te avantajeaza cel mai mult.</p>
+            </div>
+          </section>
+
+          <section class="faq-section" id="faq">
+            <h2 class="faq-title">Intrebari Frecvente</h2>
+
+            <details class="faq-item" id="faq-0">
+              <summary>
+                Care este cel mai bun telefon sub 500 lei in 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                In 2026, Xiaomi Redmi 12C este considerat unul dintre cele mai bune telefoane sub 500 lei datorita procesorului Helio G85, 4GB RAM, camerei de 50MP si bateriei de 5000 mAh.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-1">
+              <summary>
+                Ce autonomie am de la un telefon sub 500 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Telefoanele din aceasta categorie, cu baterii de 4500-5000 mAh, ofera de obicei o zi intreaga de utilizare moderata, ajungand chiar la doua zile pentru utilizatori ocazionali.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-2">
+              <summary>
+                Pot juca jocuri pe un telefon sub 500 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Da, dar cu limitari. Modelele cu minim 3GB RAM si procesoare octa-core decente, precum Xiaomi Redmi 12C, pot rula jocuri mai putin solicitante. Nu te astepta la performante de top in jocuri complexe.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-3">
+              <summary>
+                Sunt bune camerele foto la telefoanele sub 500 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Camerele sunt in general modeste. Modelele cu camere de 13MP sau 50MP pot face poze bune in lumina naturala, dar performanta scade semnificativ in conditii de lumina slaba. Nu sunt potrivite pentru fotografia profesionala.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-4">
+              <summary>
+                Unde gasesc cele mai bune oferte pentru telefoane sub 500 lei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Cele mai bune oferte se gasesc in magazinele online mari din Romania, precum eMAG, Altex, Flanco sau PC Garage, unde poti compara preturile si verifica stocurile disponibile.
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="author-line">
+          <div class="author-avatar">AI</div>
+          <div>
+            <div class="author-name">Andrei Ionescu</div>
+            <div class="author-role">Iubitor de telefoane, impatimit in tehnologie</div>
+          </div>
+        </div>
+
+        <SimilarArticles
+          currentSlug="top-telefoane-sub-500-lei"
+          currentCategory="telefoane"
+          articles={allArticles}
+        />
+      </div>
+
+      <aside class="toc-sidebar">
+        <p class="toc-sidebar-title">Cuprins</p>
+        <ol class="toc-sidebar-list" id="toc-desktop-list">
+          {toc.map(item => (
+            <li><a href={`#${item.id}`} data-toc-id={item.id}>{item.title}</a></li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <script>
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocMobile = document.getElementById('toc-mobile');
+    tocToggle?.addEventListener('click', () => {
+      const isOpen = tocMobile?.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    // IO for active section tracking
+    const tocLinks = document.querySelectorAll('#toc-desktop-list a[data-toc-id]');
+    if (tocLinks.length > 0) {
+      const ids = Array.from(tocLinks).map(a => a.dataset.tocId);
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const match = Array.from(tocLinks).find(a => a.dataset.tocId === entry.target.id);
+              match?.classList.add('active');
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // Comparison table scroll fade
+    document.querySelectorAll('.comparison-outer').forEach(outer => {
+      const wrap = outer.querySelector('.comparison-wrap');
+      if (!wrap) return;
+      function checkScroll() {
+        const canScroll = wrap.scrollWidth > wrap.clientWidth;
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+        outer.classList.toggle('can-scroll', canScroll && !atEnd);
+      }
+      checkScroll();
+      wrap.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll, { passive: true });
+    });
+  </script>
+</Layout>

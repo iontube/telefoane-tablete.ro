@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "top telefoane sub 500 lei",
-      "category": "Telefoane",
-      "categorySlug": "telefoane"
-    },
-    {
       "keyword": "cel mai bun telefon Motorola",
       "category": "Telefoane",
       "categorySlug": "telefoane"
@@ -525,6 +520,14 @@
       "excerpt": "Cel mai bun telefon bun si ieftin pentru parinti in 2026 este Xiaomi Redmi 13C, oferind un echilibru excelent intre performanta, autonomie si pret, situandu-se in jurul valorii de 700 lei. Daca prioritatile se schimba, Samsung Galaxy A15 se remarca prin ecranul luminos, in timp ce Motorola Moto G34 5G aduce conectivitate de ultima generatie la un pret accesibil.",
       "date": "2026-03-11T08:37:43.281Z",
       "modifiedDate": "2026-03-11T08:37:43.281Z"
+    },
+    {
+      "keyword": "top telefoane sub 500 lei",
+      "category": "Telefoane",
+      "categorySlug": "telefoane",
+      "excerpt": "Daca cauti top telefoane sub 500 lei, probabil vrei un dispozitiv functional pentru sarcini de baza, fara costuri mari. In 2026, piata ofera cateva optiuni decente in acest segment, focusul fiind pe autonomie si functionalitate esentiala.",
+      "date": "2026-03-12T08:40:36.174Z",
+      "modifiedDate": "2026-03-12T08:40:36.175Z"
     }
   ],
   "authors": [
