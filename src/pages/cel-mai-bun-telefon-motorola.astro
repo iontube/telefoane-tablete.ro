@@ -1,0 +1,686 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+export const frontmatter = {
+  title: "Cel mai bun telefon Motorola",
+  excerpt: "Daca vrei sa stii cel mai bun telefon Motorola in 2026, raspunsul depinde strict de prioritatile tale si buget. Pentru performanta de top si experienta premium, Motorola Edge 50 Ultra se distinge prin procesorul sau puternic si ecranul de inalta calitate.",
+  image: "/images/articles/cel-mai-bun-telefon-motorola.webp",
+  category: "Telefoane",
+  categorySlug: "telefoane",
+  date: "2026-03-13T08:33:01.928Z",
+  modifiedDate: "2026-03-13T08:33:01.928Z",
+  author: "Andrei Ionescu",
+  authorRole: "Iubitor de telefoane, impatimit in tehnologie",
+  authorBio: "De cand tin minte am fost obsedat de telefoane. Am trecut prin zeci de modele si imi place sa le compar si sa le testez pe bune."
+};
+
+const breadcrumbs = [
+  { name: "Acasa", url: "/" },
+  { name: "Telefoane", url: "/telefoane/" },
+  { name: "Cel mai bun telefon Motorola", url: "/cel-mai-bun-telefon-motorola/" }
+];
+
+const faq = [
+  { question: "Care este cel mai bun telefon Motorola pentru fotografie in 2026?", answer: "Cel mai bun telefon Motorola pentru fotografie, oferind versatilitate si calitate, este Motorola Edge 50 Ultra. Dispune de un sistem triplu de camere cu senzori de 50MP (principal cu OIS), 50MP (ultrawide) si 64MP (telephoto 3x optic), capabil sa produca imagini detaliate si clare in diverse conditii de iluminare." },
+  { question: "Ce telefon Motorola ofera cea mai buna autonomie a bateriei?", answer: "Telefoanele Motorola cu cea mai buna autonomie a bateriei sunt cele din seria Moto G si unele modele Edge, echipate cu acumulatori de 5000 mAh. Exemple notabile includ Motorola Moto G84 5G, Moto G54 5G si Edge 40 Neo, care pot rezista cu usurinta o zi intreaga de utilizare intensa, ajungand uneori la doua zile." },
+  { question: "Merita sa cumpar un telefon Motorola pliabil precum Razr 40 Ultra in 2026?", answer: "Achizitionarea unui Motorola Razr 40 Ultra depinde de buget si de dorinta de a avea un dispozitiv pliabil premium. Oferta performanta, ecrane de top si un design spectaculos, dar vine cu o autonomie limitata a bateriei si un pret ridicat. Este o alegere pentru cei care cauta stil si tehnologie de varf, fara a se preocupa excesiv de costuri sau autonomie maxima." },
+  { question: "Cat costa un telefon Motorola mid-range in 2026?", answer: "Telefoanele Motorola mid-range, cum ar fi cele din seria Edge (ex: Edge 40 Neo, Edge 50 Pro) sau unele modele Moto G cu specificatii bune (ex: Moto G84 5G), au preturi cuprinse, in general, intre 1500 si 2500 lei in 2026, in functie de specificatii si ofertele disponibile." },
+  { question: "Care este diferenta principala intre seria Moto G si seria Edge de la Motorola?", answer: "Seria Moto G de la Motorola se concentreaza pe oferirea unui raport calitate-pret excelent, cu accent pe autonomie si functionalitati esentiale la preturi accesibile, fiind potrivite pentru utilizatorii cu buget redus. Seria Edge se adreseaza unui segment superior, oferind performante mai bune, ecrane de calitate superioara (adesea OLED/pOLED 120Hz sau 144Hz), camere mai avansate si design premium." }
+];
+
+const toc = [
+  { title: "Motorola Edge 50 Ultra", id: "motorola-edge-50-ultra" },
+  { title: "Motorola Edge 50 Pro", id: "motorola-edge-50-pro" },
+  { title: "Motorola Moto G84 5G", id: "motorola-moto-g84-5g" },
+  { title: "Motorola Edge 40 Neo", id: "motorola-edge-40-neo" },
+  { title: "Motorola Moto G54 5G", id: "motorola-moto-g54-5g" },
+  { title: "Motorola Razr 40 Ultra", id: "motorola-razr-40-ultra" },
+  { title: "Comparatie", id: "comparatie" },
+  { title: "Cum alegi cel mai bun telefon Motorola pentru tine?", id: "sfaturi" },
+  { title: "Intrebari Frecvente", id: "faq" }
+];
+
+const allArticles = keywordsData.completed.map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title="Cel mai bun telefon Motorola - Telefoane-Tablete.ro"
+  description="Daca vrei sa stii cel mai bun telefon Motorola in 2026, raspunsul depinde strict de prioritatile tale si buget. Pentru performanta de top si experienta premium, Motorola Edge 50 Ultra se distinge prin procesorul sau puternic si ecranul de inalta calitate."
+  image="/images/articles/cel-mai-bun-telefon-motorola.webp"
+  type="article"
+  publishedTime="2026-03-13T08:33:01.928Z"
+  modifiedTime="2026-03-13T08:33:01.928Z"
+  author="Andrei Ionescu"
+  faq={faq}
+  breadcrumbs={breadcrumbs}
+>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <ol>
+        <li><a href="/">Acasa</a></li>
+        <li>Telefoane</li>
+        <li><span>Cel mai bun telefon Motorola</span></li>
+      </ol>
+    </nav>
+
+    Telefoane
+    <h1 class="article-page-title">Cel mai bun telefon Motorola</h1>
+
+    <div class="article-page-meta">
+      <span>Andrei Ionescu</span>
+      <span>&middot;</span>
+      <span>Publicat: 13 martie 2026</span>
+      <span>&middot;</span>
+      <span>Actualizat: 13 martie 2026</span>
+    </div>
+
+    <div class="article-hero">
+      <img src="/images/articles/cel-mai-bun-telefon-motorola.webp" alt="Cel mai bun telefon Motorola" width="800" height="600" decoding="async" fetchpriority="high" />
+    </div>
+
+    <div class="article-layout">
+      <div>
+        <div class="toc-mobile" id="toc-mobile">
+          <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-list">
+            Cuprins
+            <span class="toc-chevron">&#9660;</span>
+          </button>
+          <ol class="toc-mobile-list" id="toc-mobile-list">
+            {toc.map(item => (
+              <li><a href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="article-content">
+          <section id="intro">
+            <p>Daca vrei sa stii <strong>cel mai bun telefon Motorola</strong> in 2026, raspunsul depinde strict de prioritatile tale si buget. Pentru performanta de top si experienta premium, Motorola Edge 50 Ultra se distinge prin procesorul sau puternic si ecranul de inalta calitate. Daca insa cauti un echilibru intre functii avansate si un pret mai accesibil, Motorola Edge 50 Pro ofera o experienta multumitoare. Pentru utilizatorii cu un buget limitat, Motorola Moto G84 ramane o optiune solida, concentrata pe autonomie si un ecran decent.</p>
+<p>Piata de telefoane Motorola este diversificata, acoperind de la varfuri de gama cu specificatii impresionante, pana la modele de buget menite sa ofere functionalitate zilnica la un pret minim. Alegerea <strong>cel mai bun telefon Motorola</strong> pentru tine implica intelegerea nevoilor tale specifice: ai nevoie de o camera foto de exceptie pentru a capta momente importante? Prioritizezi viteza si fluiditatea in jocuri si aplicatii solicitante? Sau poate autonomia bateriei este factorul decisiv?</p>
+<p>In acest articol vom analiza cele mai relevante modele Motorola disponibile pe piata din Romania in 2026, comparand caracteristicile cheie, avantajele si dezavantajele fiecaruia. Vom puncta pentru ce tip de utilizator este potrivit fiecare dispozitiv, ajutandu-te sa faci cea mai informata decizie de cumparare. Fie ca esti in cautarea unui flagship sau a unui telefon echilibrat, vei gasi aici informatiile necesare pentru a alege <strong>cel mai bun telefon Motorola</strong> care se potriveste stilului tau de viata.</p>
+          </section>
+
+
+          <article class="product-review" id="motorola-edge-50-ultra">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Motorola Edge 50 Ultra</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 8s Gen 3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch pOLED, 144Hz, 2800 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>512 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>4500 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal, OIS) + 50MP (ultrawide) + 64MP (telephoto 3x optica)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Edge 50 Ultra este, fara indoiala, o declaratie de intentie din partea producatorului, pozitionandu-se ca un competitor serios in segmentul de top. Procesorul Snapdragon 8s Gen 3 ofera performante de top, gestionand cu usurinta cele mai solicitante aplicatii si jocuri, asigurand o experienta fluida chiar si in multitasking intens. Ecranul pOLED de 6.7 inch, cu o rata de refresh de 144Hz si o luminozitate de 2800 nits, este pur si simplu spectaculos, oferind culori vibrante, negru profund si o claritate impresionanta, chiar si in lumina soarelui.</p>
+<p>Cat priveste fotografia, Motorola Edge 50 Ultra exceleaza. Camera principala de 50MP cu stabilizare optica (OIS) capteaza imagini detaliate si luminoase in aproape orice conditii. Modulul ultrawide de 50MP este, de asemenea, foarte capabil, oferind un camp vizual larg fara distorsiuni majore. Senzorul telephoto de 64MP cu zoom optic 3x este un atu major, permitand obtinerea de fotografii clare la distanta, un aspect unde multe telefoane din aceasta categorie au dificultati.</p>
+<p>Autonomia bateriei de 4500 mAh este decenta, insa nu exceptionala pentru un varf de gama. Cu utilizare moderata, telefonul va ajunge la finalul zilei, insa utilizatorii intensivi ar putea avea nevoie de o reincarcare. In plus, dispune de incarcare rapida la 125W, ceea ce inseamna ca puteti incarca telefonul de la 0 la 100% in aproximativ 20 de minute, un avantaj considerabil.</p>
+<p>Ce nu este perfect la Motorola Edge 50 Ultra? Pretul este unul dintre cele mai ridicate din oferta Motorola, apropiindu-se de cel al concurenței directe de la Samsung sau Apple. De asemenea, desi software-ul Motorola este curat si rapid, lipsa unor functii avansate de AI integrate la nivel de sistem, prezente la competitori, ar putea fi un minus pentru unii utilizatori. Nu in ultimul rand, rezistenta la apa si praf, desi prezenta (IP68), nu este intotdeauna cel mai robust aspect al telefoanelor Motorola comparativ cu alți producători de top.</p>
+<p>Pentru cine este acest telefon? Motorola Edge 50 Ultra este alegerea ideală pentru pasionații de tehnologie, fotografi amatori și utilizatorii care caută performanță de top, un ecran de excepție și o experiență Android curată, fără bloatware. Dacă bugetul nu este o problemă și doriți unul dintre cele mai bune telefoane de pe piață, Motorola Edge 50 Ultra merită luat în considerare. Recomandarea noastră este clară: dacă prioritizezi performanța brută și un sistem de camere versatil, acesta este <strong>cel mai bun telefon Motorola</strong> pentru tine.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Performanță de top cu Snapdragon 8s Gen 3</li>
+              <li>Ecran pOLED 144Hz exceptional, cu luminozitate ridicată</li>
+              <li>Sistem de camere versatil și de înaltă calitate</li>
+              <li>Încărcare rapidă ultra-rapidă la 125W</li>
+              <li>Experiență software Android curată, fără bloatware</li>
+              <li>Design premium, materiale de calitate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Autonomie a bateriei decentă, dar nu excepțională</li>
+              <li>Preț premium, concurează cu flagship-urile consacrate</li>
+              <li>Lipsa unor funcții AI avansate la nivel de sistem</li>
+              <li>Actualizări software pe termen lung, dar nu la fel de rapide ca la concurență</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-edge-50-pro">
+            <div class="product-review__header">
+              <span class="section-tag">Raport Calitate-Pret</span>
+              <h3>Motorola Edge 50 Pro</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 7 Gen 3
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.7 inch pOLED, 144Hz, 1700 nits
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB / 12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>4500 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal, OIS) + 13MP (ultrawide) + 10MP (telephoto 3x optica)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Edge 50 Pro se poziționează strategic între segmentul mid-range și cel high-end, oferind un pachet atractiv pentru cei care caută performanță solidă și funcții premium la un preț mai rezonabil decât vârful de gamă. Procesorul Snapdragon 7 Gen 3 oferă suficientă putere pentru majoritatea sarcinilor zilnice, inclusiv gaming moderat și multitasking. Ecranul pOLED de 6.7 inch cu rată de refresh de 144Hz este un punct forte, aducând fluiditate și culori vii, chiar dacă luminozitatea maximă este mai mică decât la modelul Ultra.</p>
+<p>Cat despre camere, Motorola Edge 50 Pro vine echipat cu un senzor principal de 50MP cu OIS, capabil să producă fotografii bune în condiții de lumină bună. Modulul ultrawide de 13MP este decent, iar senzorul telephoto de 10MP cu zoom optic 3x este o surpriză plăcută la acest nivel de preț, adăugând versatilitate capturilor. Performanța camerei este bună pentru social media și amintiri zilnice, dar nu se compară cu senzorii de pe modelele de top.</p>
+<p>Autonomia bateriei de 4500 mAh, similară cu cea a modelului Edge 50 Ultra, susține o zi de utilizare. Încărcarea rapidă la 125W este un avantaj major, permițând reîncărcarea rapidă în caz de nevoie. Telefonul rulează o versiune curată de Android, ceea ce este un plus pentru utilizatorii care preferă o experiență simplă și fără aplicații inutile.</p>
+<p>Ce ar putea fi îmbunătățit? Deși Snapdragon 7 Gen 3 este un cip bun, nu se compară cu performanța brută a unui Snapdragon 8 Gen 3 sau echivalent, deci utilizatorii foarte pretențioși în materie de gaming ar putea observa diferențe. De asemenea, deși camerele sunt versatile, calitatea lor scade în condiții de lumină slabă comparativ cu vârfurile de gamă. Rezistența la apă și praf (IP68) este prezentă, dar, ca și la alte Motorola, nu este întotdeauna cel mai robust aspect.</p>
+<p>Pentru cine este potrivit acest telefon? Motorola Edge 50 Pro este o alegere excelentă pentru utilizatorii care doresc un telefon cu performanțe bune, un ecran superb și un sistem de camere decent, la un preț care nu sparge banca. Este ideal pentru cei care apreciază experiența Android curată și viteza de încărcare. Dacă vrei un telefon echilibrat, care să facă față majorității sarcinilor fără probleme și să arate bine, Edge 50 Pro este o propunere foarte bună. Recomandarea noastră este să îl considerați dacă sunteți în căutarea unui echilibru optim între funcționalități premium și cost.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran pOLED 144Hz vibrant și fluid</li>
+              <li>Performanță solidă pentru majoritatea utilizatorilor</li>
+              <li>Încărcare rapidă la 125W</li>
+              <li>Sistem de camere versatil, inclusiv zoom optic 3x</li>
+              <li>Experiență software Android curată</li>
+              <li>Preț competitiv pentru specificațiile oferite</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Performanța în gaming intens nu egalează flagships</li>
+              <li>Calitatea camerelor scade în lumină slabă</li>
+              <li>Designul, deși atractiv, poate fi mai puțin rezistent</li>
+              <li>Luminozitatea ecranului nu atinge nivelurile extreme ale modelelor de top</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g84-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Pentru Buget Mic</span>
+              <h3>Motorola Moto G84 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 695 5G
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.55 inch pOLED, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal, OIS) + 8MP (ultrawide)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G84 5G se impune ca o opțiune de luat în calcul pentru cei care caută un smartphone capabil, fără a cheltui o avere. Procesorul Snapdragon 695 5G, deși nu este un campion al performanței brute, este suficient pentru sarcinile zilnice esențiale: navigare web, social media, aplicații de mesagerie și chiar unele jocuri mai puțin solicitante. Disponibilitatea a 12GB de RAM este un plus semnificativ la acest preț, asigurând o bună gestionare a aplicațiilor deschise.</p>
+<p>Ce face Moto G84 5G remarcabil în segmentul său este ecranul pOLED de 6.55 inch cu o rată de refresh de 120Hz. Acesta oferă culori bogate și negrul profund specific tehnologiei OLED, iar fluiditatea de 120Hz transformă experiența de navigare și scrolling. Pentru un telefon din clasa sa de preț, acest display este un atu major.</p>
+<p>Cum se descurcă camera? Camera principală de 50MP cu stabilizare optică (OIS) poate produce fotografii surprinzător de bune în condiții de lumină bună, cu detalii decente și culori corecte. Senzorul ultrawide de 8MP este prezent, dar calitatea sa este mult inferioară celui principal, fiind mai mult o completare utilă decât o componentă performantă. Nu vă așteptați la minuni în lumină slabă sau la zoom de calitate.</p>
+<p>Unul dintre cele mai mari avantaje ale lui Moto G84 5G este bateria de 5000 mAh. Aceasta oferă o autonomie excelentă, permițând utilizatorilor să treacă cu ușurință de o zi întreagă de utilizare intensă, ajungând adesea la două zile cu un usage mai moderat. Încărcarea la 30W este standard pentru această gamă, completând bateria în aproximativ o oră și jumătate.</p>
+<p>Ce nu este grozav? Procesorul, deși capabil, nu este cel mai performant de pe piață și poate întâmpina dificultăți cu jocuri grafice intensive sau aplicații foarte solicitante. Lipsa unui senzor telephoto sau a unui ultrawide de calitate superioară limitează versatilitatea fotografică. De asemenea, deși are 5G, vitezele de procesare nu sunt la nivelul telefoanelor mai scumpe.</p>
+<p>Pentru cine este acest telefon? Motorola Moto G84 5G este perfect pentru utilizatorii care prioritizează autonomia bateriei, un ecran de calitate superioară pentru consumul de conținut media și o experiență Android simplă. Este o alegere solidă pentru studenți, utilizatori care folosesc telefonul preponderent pentru comunicare și social media, sau oricine caută un telefon secundar bun. Dacă ai un buget redus și vrei un telefon care să te țină toată ziua și să arate bine, Moto G84 5G este <strong>cel mai bun telefon Motorola</strong> pentru tine în această categorie.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Autonomie excelentă a bateriei (5000 mAh)</li>
+              <li>Ecran pOLED 120Hz vibrant și fluid</li>
+              <li>12 GB RAM pentru multitasking fluid</li>
+              <li>Cameră principală decentă cu OIS</li>
+              <li>Experiență Android curată</li>
+              <li>Preț foarte accesibil</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Procesorul nu este cel mai performant</li>
+              <li>Camera ultrawide și lipsa zoom optic</li>
+              <li>Încărcare standard (30W)</li>
+              <li>Nu excelează în gaming intensiv</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-edge-40-neo">
+            <div class="product-review__header">
+              <span class="section-tag">Best Buy 2026</span>
+              <h3>Motorola Edge 40 Neo</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Dimensity 7030
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.55 inch pOLED, 144Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>12 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal, OIS) + 13MP (ultrawide)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Edge 40 Neo continuă tradiția seriei Edge, oferind un echilibru remarcabil între specificații moderne și un preț atractiv, ceea ce îl face o opțiune excelentă pentru mulți utilizatori. Procesorul MediaTek Dimensity 7030, deși nu este de top, oferă performanțe solide pentru sarcinile de zi cu zi și chiar pentru gaming, fiind eficient din punct de vedere energetic. Combinat cu 12GB de RAM, telefonul rulează aplicațiile fluid și gestionează multitasking-ul fără probleme.</p>
+<p>Ecranul este, fără îndoială, unul dintre punctele forte. Este un panou pOLED de 6.55 inch cu o rată de refresh de 144Hz, ceea ce înseamnă imagini incredibil de fluide și culori vii. Pentru consumul de conținut video, navigare pe internet și jocuri, acest ecran este o plăcere de utilizat, mai ales la acest preț.</p>
+<p>Cum se compară camera? Senzorul principal de 50MP, echipat cu stabilizare optică (OIS), captează fotografii bune în majoritatea condițiilor de iluminare. Poți obține imagini clare și detaliate, potrivite pentru social media și amintiri. Camera ultrawide de 13MP servește și ca macro, oferind o oarecare versatilitate, dar calitatea sa este inferioară camerei principale, mai ales în condiții de lumină slabă.</p>
+<p>Ce îl face pe Edge 40 Neo o alegere populară? Autonomia bateriei de 5000 mAh este un alt aspect pozitiv major. Telefonul va rezista cu ușurință o zi întreagă de utilizare intensă, iar cu un usage moderat, poate ajunge chiar la două zile. Încărcarea rapidă la 68W completează pachetul, permițând o reîncărcare rapidă a bateriei.</p>
+<p>Care sunt dezavantajele? Performanța procesorului, deși bună, nu se compară cu cipurile de top din seria Snapdragon 8, deci jucătorii foarte pasionați ar putea căuta alternative mai puternice. Lipsa unui senzor telephoto dedicat limitează posibilitățile de zoom. De asemenea, deși are certificare IP68 pentru rezistență la apă și praf, construcția din plastic, deși arată bine, nu oferă aceeași senzație premium ca sticla sau metalul.</p>
+<p>Pentru cine este acest telefon? Motorola Edge 40 Neo este ideal pentru utilizatorii care caută un telefon cu un ecran superb, performanță fluidă pentru uz zilnic și gaming moderat, autonomie excelentă a bateriei și încărcare rapidă, totul la un preț foarte competitiv. Dacă vrei un pachet complet fără compromisuri majore în materie de preț, acesta este <strong>cel mai bun telefon Motorola</strong> pe care îl poți alege în 2026 pentru un raport calitate-preț excelent.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Ecran pOLED 144Hz de excepție</li>
+              <li>Autonomie excelentă a bateriei (5000 mAh)</li>
+              <li>Încărcare rapidă la 68W</li>
+              <li>12 GB RAM pentru multitasking fluid</li>
+              <li>Performanță bună pentru preț</li>
+              <li>Rezistență la apă și praf (IP68)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Procesorul nu este de top pentru gaming extrem</li>
+              <li>Camera ultrawide/macro are calitatea inferioară</li>
+              <li>Construcția din plastic, deși arată bine</li>
+              <li>Fără senzor telephoto dedicat</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-moto-g54-5g">
+            <div class="product-review__header">
+              <span class="section-tag">Alegerea Noastra</span>
+              <h3>Motorola Moto G54 5G</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Dimensity 7020
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.5 inch IPS LCD, 120Hz
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>5000 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>50MP (principal, OIS) + 8MP (ultrawide)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Moto G54 5G este un competitor puternic în segmentul mid-range, oferind un set de caracteristici atrăgătoare pentru prețul său. Procesorul MediaTek Dimensity 7020 oferă performanțe echilibrate, gestionând bine sarcinile zilnice și permițând o experiență de gaming decentă, mai ales având în vedere că este un telefon accesibil. Ce diferențiază Moto G54 este prezența OIS (stabilizare optică) pe camera principală, un feature rar întâlnit în această gamă de preț.</p>
+<p>Display-ul este un IPS LCD de 6.5 inch cu o rată de refresh de 120Hz. Deși nu oferă negrul profund și contrastul unui panou OLED, culorile sunt vibrante, iar rata de refresh înaltă asigură o experiență vizuală fluidă. Este un ecran bun pentru consum de conținut și navigare.</p>
+<p>Cum se descurcă camera principală de 50MP cu OIS? Aceasta captează fotografii clare și luminoase în condiții de lumină bună, iar stabilizarea optică ajută semnificativ la reducerea blur-ului cauzat de mișcare, rezultând imagini mai bune, în special în scenarii cu mișcare sau lumină mai slabă. Camera ultrawide de 8MP este prezentă, dar calitatea imaginilor este mediocră, fiind potrivită mai degrabă pentru peisaje largi în lumină bună.</p>
+<p>Autonomia bateriei este un alt punct forte, cu un acumulator de 5000 mAh care asigură o zi întreagă sau chiar două de utilizare, în funcție de intensitate. Telefonul suportă încărcare la 30W, ceea ce este decent, permițând o reîncărcare completă în aproximativ o oră și jumătate.</p>
+<p>Ce anume nu ne-a convins pe deplin? Calitatea ecranului IPS, deși bună, nu se compară cu cea a panourilor OLED oferite de alte modele Motorola din game similare sau superioare. Performanța procesorului este bună, dar nu excepțională pentru jocuri foarte solicitante. De asemenea, lipsa unui senzor telephoto sau a unui ultrawide de calitate superioară limitează opțiunile fotografice.</p>
+<p>Pentru cine este acest telefon? Motorola Moto G54 5G este o alegere excelentă pentru utilizatorii cu un buget limitat care caută un telefon fiabil, cu o cameră principală decentă datorită OIS, o autonomie bună a bateriei și performanțe suficiente pentru uz zilnic. Este ideal pentru cei care vor un telefon care să funcționeze bine fără a cheltui prea mult. Dacă prioritatea ta este un echilibru bun între funcționalități esențiale și preț, Moto G54 5G este o alegere solidă.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Cameră principală de 50MP cu OIS</li>
+              <li>Autonomie excelentă a bateriei (5000 mAh)</li>
+              <li>Ecran IPS LCD 120Hz fluid</li>
+              <li>Performanță decentă pentru preț</li>
+              <li>Suport 5G</li>
+              <li>Preț accesibil</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Ecran IPS LCD, nu OLED</li>
+              <li>Performanța nu excelează în gaming intensiv</li>
+              <li>Camera ultrawide este mediocră</li>
+              <li>Încărcare standard (30W)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-review" id="motorola-razr-40-ultra">
+            <div class="product-review__header">
+              <span class="section-tag">Premium</span>
+              <h3>Motorola Razr 40 Ultra</h3>
+              <div class="product-review__specs-grid">
+              <div class="product-review__spec">
+                <strong>Procesor</strong>Snapdragon 8+ Gen 1
+              </div>
+              <div class="product-review__spec">
+                <strong>Display</strong>6.9 inch Foldable pOLED, 165Hz (interior) + 3.6 inch OLED (exterior)
+              </div>
+              <div class="product-review__spec">
+                <strong>Ram</strong>8 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Stocare</strong>256 GB
+              </div>
+              <div class="product-review__spec">
+                <strong>Baterie</strong>3800 mAh
+              </div>
+              <div class="product-review__spec">
+                <strong>Camera</strong>12MP (principal, OIS) + 13MP (ultrawide/macro)
+              </div>
+              </div>
+            </div>
+            <div class="product-review__content">
+              <p>Motorola Razr 40 Ultra este un statement de design și tehnologie, aducând experiența unui telefon pliabil la un nivel înalt. Ecranele sale sunt spectaculoase: cel interior, un pOLED pliabil de 6.9 inch cu o rată de refresh incredibilă de 165Hz, oferă o experiență vizuală premium, iar ecranul exterior OLED de 3.6 inch este suficient de mare și util pentru notificări rapide, răspunsuri la mesaje sau chiar pentru a face selfie-uri cu camera principală.</p>
+<p>Ce se întâmplă cu performanța? Procesorul Snapdragon 8+ Gen 1, deși nu este cel mai nou, este încă foarte puternic și asigură o experiență fluidă în majoritatea aplicațiilor și jocurilor. Nu veți întâmpina probleme de performanță în utilizarea zilnică sau chiar în scenarii mai solicitante.</p>
+<p>Cum se descurcă camerele? Camera principală de 12MP cu OIS este capabilă să producă fotografii decente în condiții de lumină bună. Modulul ultrawide de 13MP, care servește și ca macro, este versatil, dar calitatea imaginilor nu se ridică la nivelul telefoanelor non-pliabile din aceeași gamă de preț. Punctul forte aici este posibilitatea de a folosi camerele principale pentru selfie-uri de înaltă calitate, utilizând ecranul exterior.</p>
+<p>Unul dintre cele mai mari compromisuri la Razr 40 Ultra este bateria. Cu o capacitate de doar 3800 mAh, autonomia este, în cel mai bun caz, de o zi de utilizare moderată. Utilizatorii intensivi vor avea nevoie aproape sigur de o reîncărcare. Încărcarea rapidă la 30W este prezentă, dar nu este la nivelul altor telefoane Motorola.</p>
+<p>Ce anume ar putea fi îmbunătățit? Autonomia bateriei este principalul dezavantaj. De asemenea, deși ecranul interior este impresionant, linia de pliere este vizibilă și poate fi deranjantă pentru unii utilizatori. Fiabilitatea pe termen lung a mecanismului de pliere este, de asemenea, o preocupare pentru unii potențiali cumpărători. Prețul este, desigur, un factor major, fiind un dispozitiv premium.</p>
+<p>Pentru cine este acest telefon? Motorola Razr 40 Ultra este pentru utilizatorii care caută un telefon pliabil cu stil, performanță solidă și un ecran exterior mare și util. Este un telefon pentru cei care vor să iasă în evidență și își doresc tehnologia de ultimă oră, fiind dispuși să facă un compromis la capitolul autonomie. Dacă bugetul permite și vrei un dispozitiv pliabil care arată spectaculos, Razr 40 Ultra este o opțiune de luat în considerare.</p>
+
+              <div class="product-review__lists">
+                <div>
+                  <h4>Avantaje</h4>
+                  <ul class="product-review__pros">
+              <li>Design pliabil spectaculos și ecran exterior mare</li>
+              <li>Ecran interior pOLED 165Hz de excepție</li>
+              <li>Performanță puternică cu Snapdragon 8+ Gen 1</li>
+              <li>Camere versatile pentru selfie-uri de calitate</li>
+              <li>Experiență Android curată</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Dezavantaje</h4>
+                  <ul class="product-review__cons">
+              <li>Autonomie a bateriei limitată (3800 mAh)</li>
+              <li>Preț premium foarte ridicat</li>
+              <li>Linia de pliere vizibilă pe ecranul interior</li>
+              <li>Fiabilitatea pe termen lung a mecanismului de pliere poate fi o preocupare</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <section id="comparatie">
+            <h2>Comparatie</h2>
+            <p>Iată o comparație rapidă a principalelor modele Motorola pentru a te ajuta să alegi cel mai bun telefon Motorola pentru nevoile tale specifice.</p>
+            <div class="comparison-outer">
+              <div class="comparison-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                Gliseaza pentru a vedea tot tabelul
+              </div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Procesor</th>
+                      <th>Display</th>
+                      <th>Baterie</th>
+                      <th>Camera</th>
+                      <th>Potrivit pentru</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+              <tr>
+                <td><strong>Motorola Edge 50 Ultra</strong></td>
+                <td>Snapdragon 8s Gen 3</td>
+                <td>6.7" pOLED 144Hz</td>
+                <td>4500 mAh</td>
+                <td>50MP principal</td>
+                <td>Performanță, Fotografie Premium</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Edge 50 Pro</strong></td>
+                <td>Snapdragon 7 Gen 3</td>
+                <td>6.7" pOLED 144Hz</td>
+                <td>4500 mAh</td>
+                <td>50MP principal</td>
+                <td>Echilibru Funcții-Preț</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G84 5G</strong></td>
+                <td>Snapdragon 695 5G</td>
+                <td>6.55" pOLED 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP principal</td>
+                <td>Autonomie, Buget Mic</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Edge 40 Neo</strong></td>
+                <td>Dimensity 7030</td>
+                <td>6.55" pOLED 144Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP principal</td>
+                <td>Valoare Bună, Ecran Fluid</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Moto G54 5G</strong></td>
+                <td>Dimensity 7020</td>
+                <td>6.5" IPS 120Hz</td>
+                <td>5000 mAh</td>
+                <td>50MP principal cu OIS</td>
+                <td>Buget, Cameră cu OIS</td>
+              </tr>
+
+              <tr>
+                <td><strong>Motorola Razr 40 Ultra</strong></td>
+                <td>Snapdragon 8+ Gen 1</td>
+                <td>6.9" Foldable 165Hz</td>
+                <td>3800 mAh</td>
+                <td>12MP principal</td>
+                <td>Design Pliabil, Stil</td>
+              </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="sfaturi">
+            <h2>Cum alegi cel mai bun telefon Motorola pentru tine?</h2>
+            <div class="guide">
+              <p>Alegerea celui mai bun telefon Motorola depinde de prioritățile tale. Nu există un singur model care să fie perfect pentru toată lumea, așa că analizează ce este cel mai important pentru tine înainte de a cumpăra.</p>
+<h4>Ce buget ai alocat?</h4>
+<p>Motorola oferă telefoane pe toate palierele de preț. Modelele din seria Moto G, cum ar fi Moto G84 sau Moto G54, sunt opțiuni excelente pentru cei cu un buget limitat, oferind funcționalități esențiale la un preț accesibil. Seria Edge, precum Edge 40 Neo sau Edge 50 Pro, se încadrează în segmentul mid-range spre premium, oferind un echilibru bun între performanță și funcții avansate. Vârful de gamă, Edge 50 Ultra și Razr 40 Ultra, sunt destinate celor care caută ce e mai bun și sunt dispuși să plătească un preț pe măsură.</p>
+<h4>Ce prioritizezi: performanță, cameră foto sau autonomie?</h4>
+<p>Dacă performanța brută este crucială pentru tine, fie că e vorba de gaming sau aplicații solicitante, modelele cu procesoare Snapdragon din seria 8, cum ar fi Edge 50 Ultra sau Razr 40 Ultra, sunt cele mai potrivite. Pentru fotografie, Edge 50 Ultra impresionează prin versatilitatea sistemului de camere. Dacă autonomia bateriei este pe primul loc, Moto G84, Moto G54 și Edge 40 Neo, cu bateriile lor de 5000 mAh, sunt alegeri de top care te vor ține conectat toată ziua, ba chiar mai mult.</p>
+<h4>Ce fel de ecran dorești?</h4>
+<p>Motorola excelează la capitolul display-uri, mai ales în seria Edge. Modelele Edge 50 Ultra, Edge 50 Pro și Edge 40 Neo vin cu ecrane pOLED cu rate de refresh de 144Hz, oferind culori vibrante și mișcare ultra-fluidă. Chiar și modelele mai accesibile precum Moto G84 dispun de pOLED, iar Moto G54 oferă un ecran IPS de 120Hz, care este decent. Dacă vrei ceva cu adevărat diferit, Razr 40 Ultra oferă o experiență pliabilă unică.</p>
+<h4>Cât de importantă este experiența software?</h4>
+<p>Unul dintre avantajele Motorola este experiența software Android curată, cu puține modificări și fără bloatware excesiv. Acest lucru se aplică la majoritatea modelelor, de la seria Moto G la seria Edge. Dacă preferi o interfață simplă, rapidă și intuitivă, telefoanele Motorola sunt o alegere excelentă. Actualizările software pot varia ca frecvență și durată în funcție de model și segment de preț, dar Motorola s-a îmbunătățit în acest sens.</p>
+            </div>
+          </section>
+
+          <section class="faq-section" id="faq">
+            <h2 class="faq-title">Intrebari Frecvente</h2>
+
+            <details class="faq-item" id="faq-0">
+              <summary>
+                Care este cel mai bun telefon Motorola pentru fotografie in 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Cel mai bun telefon Motorola pentru fotografie, oferind versatilitate si calitate, este Motorola Edge 50 Ultra. Dispune de un sistem triplu de camere cu senzori de 50MP (principal cu OIS), 50MP (ultrawide) si 64MP (telephoto 3x optic), capabil sa produca imagini detaliate si clare in diverse conditii de iluminare.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-1">
+              <summary>
+                Ce telefon Motorola ofera cea mai buna autonomie a bateriei?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Telefoanele Motorola cu cea mai buna autonomie a bateriei sunt cele din seria Moto G si unele modele Edge, echipate cu acumulatori de 5000 mAh. Exemple notabile includ Motorola Moto G84 5G, Moto G54 5G si Edge 40 Neo, care pot rezista cu usurinta o zi intreaga de utilizare intensa, ajungand uneori la doua zile.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-2">
+              <summary>
+                Merita sa cumpar un telefon Motorola pliabil precum Razr 40 Ultra in 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Achizitionarea unui Motorola Razr 40 Ultra depinde de buget si de dorinta de a avea un dispozitiv pliabil premium. Oferta performanta, ecrane de top si un design spectaculos, dar vine cu o autonomie limitata a bateriei si un pret ridicat. Este o alegere pentru cei care cauta stil si tehnologie de varf, fara a se preocupa excesiv de costuri sau autonomie maxima.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-3">
+              <summary>
+                Cat costa un telefon Motorola mid-range in 2026?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Telefoanele Motorola mid-range, cum ar fi cele din seria Edge (ex: Edge 40 Neo, Edge 50 Pro) sau unele modele Moto G cu specificatii bune (ex: Moto G84 5G), au preturi cuprinse, in general, intre 1500 si 2500 lei in 2026, in functie de specificatii si ofertele disponibile.
+              </div>
+            </details>
+
+            <details class="faq-item" id="faq-4">
+              <summary>
+                Care este diferenta principala intre seria Moto G si seria Edge de la Motorola?
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-answer">
+                Seria Moto G de la Motorola se concentreaza pe oferirea unui raport calitate-pret excelent, cu accent pe autonomie si functionalitati esentiale la preturi accesibile, fiind potrivite pentru utilizatorii cu buget redus. Seria Edge se adreseaza unui segment superior, oferind performante mai bune, ecrane de calitate superioara (adesea OLED/pOLED 120Hz sau 144Hz), camere mai avansate si design premium.
+              </div>
+            </details>
+          </section>
+        </div>
+
+        <div class="author-line">
+          <div class="author-avatar">AI</div>
+          <div>
+            <div class="author-name">Andrei Ionescu</div>
+            <div class="author-role">Iubitor de telefoane, impatimit in tehnologie</div>
+          </div>
+        </div>
+
+        <SimilarArticles
+          currentSlug="cel-mai-bun-telefon-motorola"
+          currentCategory="telefoane"
+          articles={allArticles}
+        />
+      </div>
+
+      <aside class="toc-sidebar">
+        <p class="toc-sidebar-title">Cuprins</p>
+        <ol class="toc-sidebar-list" id="toc-desktop-list">
+          {toc.map(item => (
+            <li><a href={`#${item.id}`} data-toc-id={item.id}>{item.title}</a></li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </article>
+
+  <script>
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocMobile = document.getElementById('toc-mobile');
+    tocToggle?.addEventListener('click', () => {
+      const isOpen = tocMobile?.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    // IO for active section tracking
+    const tocLinks = document.querySelectorAll('#toc-desktop-list a[data-toc-id]');
+    if (tocLinks.length > 0) {
+      const ids = Array.from(tocLinks).map(a => a.dataset.tocId);
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const match = Array.from(tocLinks).find(a => a.dataset.tocId === entry.target.id);
+              match?.classList.add('active');
+            }
+          }
+        },
+        { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      );
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // Comparison table scroll fade
+    document.querySelectorAll('.comparison-outer').forEach(outer => {
+      const wrap = outer.querySelector('.comparison-wrap');
+      if (!wrap) return;
+      function checkScroll() {
+        const canScroll = wrap.scrollWidth > wrap.clientWidth;
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+        outer.classList.toggle('can-scroll', canScroll && !atEnd);
+      }
+      checkScroll();
+      wrap.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll, { passive: true });
+    });
+  </script>
+</Layout>
